@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://the-internet.herokuapp.com/');
+  await page.getByRole('link', { name: 'Challenging DOM' }).click();
+  await page.getByRole('link', { name: 'bar' }).click();
+  await page.getByRole('link', { name: 'baz' }).nth(1).click();
+  await page.getByRole('link', { name: 'baz' }).click();
+  await page.getByRole('link', { name: 'qux' }).click();
+  await page.getByRole('link', { name: 'foo' }).nth(1).click();
+  await page.getByRole('link', { name: 'bar' }).click();
+  await page.getByRole('link', { name: 'edit' }).first().click();
+  await page.getByRole('link', { name: 'edit' }).first().click();
+  await page.getByRole('link', { name: 'delete' }).first().click();
+  await page.getByRole('link', { name: 'delete' }).first().click();
+  await page.getByRole('link', { name: 'delete' }).first().click();
+  await page.getByRole('link', { name: 'delete' }).nth(1).click();
+  await page.getByRole('link', { name: 'edit' }).nth(1).click();
+  await page.getByRole('cell', { name: 'edit delete' }).nth(2).click();
+  await page.getByRole('cell', { name: 'edit delete' }).nth(2).click();
+  await page.getByRole('cell', { name: 'edit delete' }).nth(2).click();
+  await page.getByRole('link', { name: 'edit' }).nth(3).click();
+  await page.getByRole('link', { name: 'delete' }).nth(3).click();
+  await page.getByRole('link', { name: 'edit' }).nth(4).click();
+  await page.getByRole('link', { name: 'edit' }).nth(4).click();
+  await page.getByRole('link', { name: 'edit' }).nth(5).click();
+  await page.getByRole('link', { name: 'delete' }).nth(5).click();
+  await page.locator('tr:nth-child(7) > td:nth-child(7) > a').first().click();
+  await page.locator('tr:nth-child(7) > td:nth-child(7) > a').first().click();
+  await page.locator('tr:nth-child(8) > td:nth-child(7) > a').first().click();
+  await page.locator('tr:nth-child(8) > td:nth-child(7) > a').first().click();
+  await page.locator('tr:nth-child(9) > td:nth-child(7)').click();
+  await page.locator('tr:nth-child(9) > td:nth-child(7)').click();
+  await page.locator('tr:nth-child(10) > td:nth-child(7) > a').first().click();
+  await page.locator('tr:nth-child(10) > td:nth-child(7) > a').first().click();
+});

@@ -1,0 +1,22 @@
+{
+  "name": "90-day-qa-challenge",
+  "version": "1.0.0",
+  "description": "QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance &amp; Advanced Target Envs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quality-tester-hub/90-day-qa-challenge.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/quality-tester-hub/90-day-qa-challenge/issues"
+  },
+  "homepage": "https://github.com/quality-tester-hub/90-day-qa-challenge#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}
