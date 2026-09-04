@@ -4,7 +4,8 @@
   "description": "QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance &amp; Advanced Target Envs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:list": "playwright test --list"
   },
   "repository": {
     "type": "git",
