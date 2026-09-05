@@ -52,6 +52,18 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `infinite-scroll.spec.ts`: Page scrolling and asynchronous DOM element appending checks.
   * `contact.spec.ts`: End-to-end contact form submission and success banner assertions.
 
+🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (`/day-05-uitestingplayground`)
+* **Core Focus:** Navigating technical UI automation challenges—dynamic IDs, volatile CSS classes, Z-index layer stacks, long-running AJAX requests, and server load delays.
+* **Test Suite Breakdown:**
+  * `class-attribute.spec.ts`: Primary/secondary button matching using dynamic class strings.
+  * `dynamic-id.spec.ts`: Locating elements without relying on dynamic runtime IDs.
+  * `hidden-layer.spec.ts`: Managing Z-index overlays and verifying non-clickable dynamic states.
+  * `load-delay.spec.ts`: Auto-waiting navigation handling under artificial server load.
+  * `ajax-data.spec.ts`: Handling 15-second dynamic DOM insertions using explicit assertion timeouts.
+* **Bug Reports Tracked:**
+  * `BUG-001-load-delay-performance-threshold.md`: SLA performance violation on `/loaddelay`.
+  * `BUG-002-inaccurate-geolocation-picker.md`: Inaccurate coordinate resolution and picker failure.
+
 ---
 
 ## 🛠️ Project Directory Structure
@@ -66,26 +78,20 @@ Module-1-UI-Automation/
 ├── day-03-sauce-demo/
 │   ├── Defects_&_Bugreports/
 │   ├── Tests/
-│   │   ├── auth.spec.ts
-│   │   ├── cart_&_checkout.spec.ts
-│   │   ├── filter-and-sort.spec.ts
-│   │   └── menu-navigation.spec.ts
 │   └── README.md
 ├── day-04-practice-expandtesting/
 │   ├── Tests/
-│   │   ├── autocomplete.spec.ts
-│   │   ├── contact.spec.ts
-│   │   ├── dynamic-table.spec.ts
-│   │   ├── form-validation.spec.ts
-│   │   ├── infinite-scroll.spec.ts
-│   │   ├── login.spec.ts
-│   │   ├── my-browser.spec.ts
-│   │   ├── notification-message.spec.ts
-│   │   ├── otp.spec.ts
-│   │   ├── password-reset.spec.ts
-│   │   ├── register.spec.ts
-│   │   ├── spies-stubs-clocks.spec.ts
-│   │   └── web-inputs.spec.ts
+│   └── README.md
+├── day-05-uitestingplayground/
+│   ├── Defects_&_Bugreports/
+│   │   ├── BUG-001-load-delay-performance-threshold.md
+│   │   └── BUG-002-inaccurate-geolocation-picker.md
+│   ├── Tests/
+│   │   ├── ajax-data.spec.ts
+│   │   ├── class-attribute.spec.ts
+│   │   ├── dynamic-id.spec.ts
+│   │   ├── hidden-layer.spec.ts
+│   │   └── load-delay.spec.ts
 │   └── README.md
 ├── playwright.config.ts
 ├── package.json
