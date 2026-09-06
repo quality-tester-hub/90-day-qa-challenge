@@ -15,6 +15,8 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 2, 2026** | **Day 02** | DemoQA | Complex UI Widgets, Form Handling, Defect Reports | ✅ Completed |
 | **September 3, 2026** | **Day 03** | SauceDemo (`Swag Labs`) | Auth, Storage State, Cart/Checkout, Sorting & Navigation | ✅ Completed |
 | **September 4, 2026** | **Day 04** | Practice ExpandTesting | Dynamic Workflows, OTP, Autocomplete, Clock Mocks & Infinite Scroll | ✅ Completed |
+| **September 5, 2026** | **Day 05** | UI Testing Playground | Edge Cases, Dynamic IDs, Hidden Layers, Load Delays | ✅ Completed |
+| **September 6, 2026** | **Day 06** | QA Playground | Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling | ✅ Completed |
 
 ---
 
@@ -52,7 +54,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `infinite-scroll.spec.ts`: Page scrolling and asynchronous DOM element appending checks.
   * `contact.spec.ts`: End-to-end contact form submission and success banner assertions.
 
-🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (`/day-05-uitestingplayground`)
+### 🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (`/day-05-uitestingplayground`)
 * **Core Focus:** Navigating technical UI automation challenges—dynamic IDs, volatile CSS classes, Z-index layer stacks, long-running AJAX requests, and server load delays.
 * **Test Suite Breakdown:**
   * `class-attribute.spec.ts`: Primary/secondary button matching using dynamic class strings.
@@ -63,6 +65,19 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 * **Bug Reports Tracked:**
   * `BUG-001-load-delay-performance-threshold.md`: SLA performance violation on `/loaddelay`.
   * `BUG-002-inaccurate-geolocation-picker.md`: Inaccurate coordinate resolution and picker failure.
+
+### 🗓️ September 6, 2026 — Day 06: QA Playground & Dev Environment Integrations (`/day-06-qa-playground`)
+* **Core Focus:** Automating complex UI widgets, managing multi-window contexts, resolving pointer event interception bugs, integrating VS Code Live Server, and using GitHub Copilot for code acceleration.
+* **Test Suite Breakdown:**
+  * `date-picker.spec.ts`: Date picker widget interactions and input validations.
+  * `links.spec.ts`: Navigation triggers, status code checks, and target URL routing.
+  * `tabs-windows.spec.ts`: Intercepting and switching between new browser tab contexts using `context.waitForEvent('page')`.
+  * `multi-select.spec.ts`: Selecting multiple option items and validating container tags.
+  * `modals.spec.ts`: Managing overlay dialog visibility, focus traps, and dismissal actions.
+  * `banking-app.spec.ts`: Multi-step banking workflow, form options, and loan calculations.
+* **Bug Reports Tracked:**
+  * `BUG-003-date-picker-element-timeout.md`: Element timeout on invalid container input target fill.
+  * `BUG-004-banking-app-multitab-server-crash.md`: Portal overlay pointer interception and multi-tab state failure.
 
 ---
 
@@ -87,11 +102,18 @@ Module-1-UI-Automation/
 │   │   ├── BUG-001-load-delay-performance-threshold.md
 │   │   └── BUG-002-inaccurate-geolocation-picker.md
 │   ├── Tests/
-│   │   ├── ajax-data.spec.ts
-│   │   ├── class-attribute.spec.ts
-│   │   ├── dynamic-id.spec.ts
-│   │   ├── hidden-layer.spec.ts
-│   │   └── load-delay.spec.ts
+│   └── README.md
+├── day-06-qa-playground/
+│   ├── Defects_&_Bugreports/
+│   │   ├── Defect-01-date-picker-element-timeout.md
+│   │   └── BUG-02-banking-app-multitab-server-crash.md
+│   ├── Tests/
+│   │   ├── banking-app.spec.ts
+│   │   ├── date-picker.spec.ts
+│   │   ├── links.spec.ts
+│   │   ├── modals.spec.ts
+│   │   ├── multi-select.spec.ts
+│   │   └── tabs-windows.spec.ts
 │   └── README.md
 ├── playwright.config.ts
 ├── package.json
