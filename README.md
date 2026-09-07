@@ -7,7 +7,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ---
 
-## 📌 Progress Dashboard
+## Progress Dashboard
 
 | Date | Day | Target Site | Core Focus Areas | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -17,6 +17,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 4, 2026** | **Day 04** | Practice ExpandTesting | Dynamic Workflows, OTP, Autocomplete, Clock Mocks & Infinite Scroll | ✅ Completed |
 | **September 5, 2026** | **Day 05** | UI Testing Playground | Edge Cases, Dynamic IDs, Hidden Layers, Load Delays | ✅ Completed |
 | **September 6, 2026** | **Day 06** | QA Playground | Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling | ✅ Completed |
+| **September 7, 2026** | **Day 07** | Tricentis Obstacle Course | Complex Logic, String Extraction, Dynamic Timers, Cookies | ✅ Completed |
 
 ---
 
