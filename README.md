@@ -81,6 +81,15 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ---
 
+#### 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (`/day-07-tricentis-Obstacale`)
+* **Core Focus:** Solving complex algorithmic web obstacles including dynamic string extraction, regex processing, asynchronous calculating state timers, and cookie manipulation.
+* **Test Suite Breakdown:**
+  * `obstacle-45618-tough-cookie.spec.ts`: Regex-based number extraction from random string payloads and input field populating.
+  * `obstacle-33678-wait-a-moment.spec.ts`: Managing asynchronous dynamic wait states, button state transitions, and state triggers.
+  * `obstacle-73590-comprehensive.spec.ts`: Multi-step form flows, structural page assertions, and state verification.
+
+---
+
 ## 🛠️ Project Directory Structure
 
 ```text
@@ -114,6 +123,12 @@ Module-1-UI-Automation/
 │   │   ├── modals.spec.ts
 │   │   ├── multi-select.spec.ts
 │   │   └── tabs-windows.spec.ts
+│   └── README.md
+├── day-07-tricentis-Obstacale/
+│   ├── Tests/
+│   │   ├── obstacle-33678-wait-a-moment.spec.ts
+│   │   ├── obstacle-45618-tough-cookie.spec.ts
+│   │   └── obstacle-73590-comprehensive.spec.ts
 │   └── README.md
 ├── playwright.config.ts
 ├── package.json

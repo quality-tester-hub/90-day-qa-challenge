@@ -141,6 +141,17 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# System / OS
 .DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Playwright Test Automation
 test-results/
- 
+playwright-report/
+blob-report/
+playwright/.cache/
