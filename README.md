@@ -7,7 +7,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ---
 
-## Progress Dashboard
+## 📌 Progress Dashboard
 
 | Date | Day | Target Site | Core Focus Areas | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -18,7 +18,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 5, 2026** | **Day 05** | UI Testing Playground | Edge Cases, Dynamic IDs, Hidden Layers, Load Delays | ✅ Completed |
 | **September 6, 2026** | **Day 06** | QA Playground | Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling | ✅ Completed |
 | **September 7, 2026** | **Day 07** | Tricentis Obstacle Course | Complex Logic, String Extraction, Dynamic Timers, Cookies | ✅ Completed |
-
+| **September 8, 2026** | **Day 08** | TestMu AI Selenium Playground | AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App | ✅ Completed |
 ---
 
 ## 📅 Daily Execution Log
@@ -89,7 +89,27 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `obstacle-33678-wait-a-moment.spec.ts`: Managing asynchronous dynamic wait states, button state transitions, and state triggers.
   * `obstacle-73590-comprehensive.spec.ts`: Multi-step form flows, structural page assertions, and state verification.
 
----
+### Day 08 - testmuai-selenium-playground
+## Overview
+Focused on automating complex UI components on the TestMu AI Selenium Playground, including dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management using Playwright with TypeScript.
+
+## Key Learnings & Milestones
+
+* **Manual Codegen & Locator Refactoring**: Utilized Playwright `codegen` to capture raw browser events and systematically refactored brittle selectors into resilient, user-centric locators (`getByRole`, `getByLabel`, `locator`).
+* **Asynchronous AJAX & Progress Tracking**: Implemented dynamic assertions (`toContainText`, `toHaveText`) with extended timeouts to handle delayed DOM state changes in progress bars and AJAX responses.
+* **Multi-Window & Popup Handling**: Automated multi-tab/popup flows using `waitForEvent('popup')` and Playwright `BrowserContext` to manage multiple simultaneous window triggers cleanly.
+* **Dynamic DOM & Auto-Healing Validation**: Validated locator resilience against dynamic DOM mutation scenarios (such as ID changes) to prevent element selection breakage.
+
+## Modules & Test Execution Summary
+
+* **AJAX Form Submit**: `Tests/ajax-form-submit.spec.ts` | Form input, submit action, and dynamic response verification
+* **Bootstrap Dual List Box**: `Tests/bootstrap-dual-list-box.spec.ts` | Item movement (single/all), cross-box transfer, and real-time list filtering
+* **Bootstrap Modals**: `Tests/bootstrap-modal.spec.ts` | Single modal launch/save and multi-layered nested modal interactions
+* **Download Progress Bar**: `Tests/bootstrap-download-progress.spec.ts` | Start trigger, percentage tracking, and 100% completion state assertions
+* **Hover Demo**: `Tests/hover-demo.spec.ts` | Dynamic element hover state triggers and overlay visibility checks
+* **Window Popup Modal**: `Tests/window-popup-modal.spec.ts` | Single popup intercept, multi-window generation, and URL path assertions
+* **To-Do App**: `Tests/todo-app.spec.ts` | Item creation, checkbox toggle state management, and dynamic element verification
+* **Auto Healing Demo**: `Tests/auto-healing.spec.ts` | Resilient selector behavior during dynamic DOM ID mutation
 
 ## 🛠️ Project Directory Structure
 
@@ -134,3 +154,14 @@ Module-1-UI-Automation/
 ├── playwright.config.ts
 ├── package.json
 └── README.md
+├── day-08-testmuai-selenium-playground/
+│   ├── Tests/
+│   │   ├── ajax-form-submit.spec.ts
+│   │   ├── auto-healing.spec.ts
+│   │   ├── bootstrap-download-progress.spec.ts
+│   │   ├── bootstrap-dual-list-box.spec.ts
+│   │   ├── bootstrap-modal.spec.ts
+│   │   ├── hover-demo.spec.ts
+│   │   ├── todo-app.spec.ts
+│   │   └── window-popup-modal.spec.ts
+│   └── README.md

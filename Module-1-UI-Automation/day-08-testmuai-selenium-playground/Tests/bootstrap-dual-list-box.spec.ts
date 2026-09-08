@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.testmuai.com/selenium-playground/bootstrap-dual-list-box-demo/');
+  await page.getByRole('textbox', { name: 'search' }).first().click();
+  await page.getByRole('textbox', { name: 'search' }).first().fill('ke');
+  await page.getByText('Kedungjenar').click();
+  await page.locator('button').filter({ hasText: /^>$/ }).dblclick();
+  await page.getByRole('button', { name: '>' }).nth(1).click();
+  await page.getByRole('textbox', { name: 'search' }).nth(1).click();
+  await page.getByRole('textbox', { name: 'search' }).nth(1).fill('gr');
+  await page.getByText('Grange').click();
+  await page.getByText('Grange').click();
+  await page.getByText('> >').click();
+  await page.locator('button').filter({ hasText: /^>$/ }).click();
+  await page.getByRole('button', { name: '>' }).nth(1).click();
+  await page.getByRole('textbox', { name: 'search' }).first().click();
+  await page.getByRole('textbox', { name: 'search' }).first().fill('');
+  await page.getByText('Danville').click();
+  await page.getByText('Mynamaki').click();
+  await page.getByText('Grange').click();
+  await page.getByRole('textbox', { name: 'search' }).nth(1).click();
+  await page.getByRole('textbox', { name: 'search' }).nth(1).fill('');
+  await page.getByText('Milan').click();
+  await page.getByText('Milan').click();
+  await page.getByText('Ngodo').dblclick();
+  await page.getByText('Milan').click();
+  await page.locator('button').filter({ hasText: /^>$/ }).dblclick();
+  await page.getByRole('button', { name: '>' }).nth(1).dblclick();
+  await page.getByRole('button', { name: '>' }).nth(1).click();
+  await page.locator('button').filter({ hasText: /^>$/ }).click();
+  await page.getByRole('button', { name: '>' }).nth(1).click();
+});

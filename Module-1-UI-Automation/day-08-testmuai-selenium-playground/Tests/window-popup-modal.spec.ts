@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.testmuai.com/selenium-playground/window-popup-modal-demo/');
+  await page.locator('div').filter({ hasText: 'Single Window popup ModalOpen' }).nth(2).click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Follow On Twitter' }).click();
+  const page1 = await page1Promise;
+  await page.getByText('Open Twitter WindowFollow On TwitterOpen Facebook PopupLike us On FacebookOpen').click();
+  const page2Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Like us On Facebook' }).click();
+  const page2 = await page2Promise;
+  const page3Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Follow us On Linkedin' }).click();
+  const page3 = await page3Promise;
+  await page.getByText('Window popup ModalSingle').click();
+  await page.getByRole('textbox', { name: 'e.g. www.google.com' }).click();
+  const page4Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Follow Twitter & Facebook' }).click();
+  const page4 = await page4Promise;
+  const page5Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Follow All' }).click();
+  const page5 = await page5Promise;
+  await page.getByText('Open Facebook, Twitter & LinkedIn popupFollow All').click();
+  await page.getByRole('textbox', { name: 'e.g. www.google.com' }).click();
+  await page.getByRole('textbox', { name: 'e.g. www.google.com' }).fill('https://www.testmuai.com/selenium-playground/hover-demo/');
+  await page.locator('div').filter({ hasText: /^Open URL$/ }).click();
+  const page6Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Open URL' }).click();
+  const page6 = await page6Promise;
+  await page.locator('div').filter({ hasText: /^Open URL$/ }).click();
+});
