@@ -18,8 +18,11 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 5, 2026** | **Day 05** | UI Testing Playground | Edge Cases, Dynamic IDs, Hidden Layers, Load Delays | ✅ Completed |
 | **September 6, 2026** | **Day 06** | QA Playground | Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling | ✅ Completed |
 | **September 7, 2026** | **Day 07** | Tricentis Obstacle Course | Complex Logic, String Extraction, Dynamic Timers, Cookies | ✅ Completed |
-| **September 8, 2026** | **Day 08** | TestMu AI Selenium Playground | AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App | ✅ Completed |                                           | **September 9, 2026** | **Day 09** | Testsmith Locator Game | Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience | ✅ Completed |
+| **September 8, 2026** | **Day 08** | TestMu AI Selenium Playground | AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App | ✅ Completed |
+| **September 9, 2026** | **Day 09** | Testsmith Locator Game | Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience | ✅ Completed |
+| **September 10, 2026** | **Day 10** | Automation Camp (`Play 2`) | Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling | ✅ Completed |
 
+---
 
 ## 📅 Daily Execution Log
 
@@ -110,6 +113,7 @@ Focused on automating complex UI components on the TestMu AI Selenium Playground
 * **Window Popup Modal**: `Tests/window-popup-modal.spec.ts` | Single popup intercept, multi-window generation, and URL path assertions
 * **To-Do App**: `Tests/todo-app.spec.ts` | Item creation, checkbox toggle state management, and dynamic element verification
 * **Auto Healing Demo**: `Tests/auto-healing.spec.ts` | Resilient selector behavior during dynamic DOM ID mutation 
+
 ### 🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (`/day-09-locator-game`)
 * **Core Focus:** Automating sequential SPA level progression, handling dynamic tour overlays (`tour-step-backdrop`), resolving React state input desynchronization, and analyzing framework compatibility boundaries.
 * **Test Suite Breakdown:**
@@ -121,6 +125,11 @@ Focused on automating complex UI components on the TestMu AI Selenium Playground
   * **Input State Desynchronization:** Playwright’s default `.fill()` types directly into the visual DOM input, but fails to fire native `onChange`/`onInput` handlers in event-heavy SPAs. Resolved by explicitly dispatching synthetic events (`locatorInput.dispatchEvent('input')`).
   * **Overlay Pointer Interception:** Third-party tour backdrop overlays intercept standard mouse clicks during level transition animations. Bypassed by using direct DOM click execution (`submitButton.evaluate(b => b.click())`).
   * **Automation Limits:** Identified architectural friction points when running automated E2E test drivers against interactive, state-heavy game sandboxes designed for manual input.
+
+### 🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (`/day-10-automation-camp`)
+* **Core Focus:** Automating native browser form controls, custom color/range pickers, popup window contexts, and alert dialog triggers inside a clean single-file execution suite.
+* **Test Suite Breakdown:**
+  * `play2-automation.spec.ts`: Single-file test suite validating native inputs, radio toggles, multi-select dropdowns, popup interception (`waitForEvent('popup')`), and alert handling (`page.once('dialog')`).
 
 ## 🛠️ Project Directory Structure
 
@@ -162,9 +171,6 @@ Module-1-UI-Automation/
 │   │   ├── obstacle-45618-tough-cookie.spec.ts
 │   │   └── obstacle-73590-comprehensive.spec.ts
 │   └── README.md
-├── playwright.config.ts
-├── package.json
-└── README.md
 ├── day-08-testmuai-selenium-playground/
 │   ├── Tests/
 │   │   ├── ajax-form-submit.spec.ts
@@ -175,7 +181,7 @@ Module-1-UI-Automation/
 │   │   ├── hover-demo.spec.ts
 │   │   ├── todo-app.spec.ts
 │   │   └── window-popup-modal.spec.ts
-│   └── README.md  
+│   └── README.md
 ├── day-09-locator-game/
 │   ├── Tests/
 │   │   ├── level-1.spec.ts
@@ -183,3 +189,8 @@ Module-1-UI-Automation/
 │   │   ├── level-3.spec.ts
 │   │   └── level-4.spec.ts
 │   └── README.md
+├── day-10-automation-camp/
+│   └── play2-automation.spec.ts
+├── playwright.config.ts
+├── package.json
+└── README.md
