@@ -20,7 +20,7 @@ Intercepted native browser alert/dialog boxes asynchronously using page.once('di
 Dynamic Spinners: Validated numeric value entries using native spinbutton controls.
 
 Technical Learnings: Dedicated Sandboxes vs. Flaky SPAs
-Native Event Bubbling: Standard .fill() and .check() actions trigger expected browser events instantly without requiring synthetic dispatchEvent('input') overrides.
+Native Event Bubbling: Standard .fill() and .check() actions trigger expectead browser events instantly without requiring synthetic dispatchEvent('input') overrides.
 
 Clean DOM Hierarchy: Zero third-party tour overlays (tour-step-backdrop) or pointer interception masks, allowing native Playwright click actions to execute without timing out.
 
