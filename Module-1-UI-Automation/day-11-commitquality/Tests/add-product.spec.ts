@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://commitquality.com/');
+  await page.getByTestId('add-a-product-button').click();
+  await page.getByTestId('product-textbox').click();
+  await page.getByTestId('product-textbox').fill('Add ');
+  await page.getByTestId('product-textbox').press('CapsLock');
+  await page.getByTestId('product-textbox').fill('Add Product');
+  await page.getByTestId('price-textbox').click();
+  await page.getByTestId('price-textbox').fill('999');
+  await page.getByTestId('date-stocked').fill('2026-10-11');
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('date-stocked').fill('2026-10-19');
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('date-stocked').fill('2026-10-13');
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('product-textbox').click();
+  await page.getByTestId('product-textbox').press('CapsLock');
+  await page.getByTestId('product-textbox').fill('Add product');
+  await page.getByTestId('price-textbox').click();
+  await page.getByTestId('price-textbox').fill('999');
+  await page.getByTestId('date-stocked').fill('2026-09-13');
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('date-stocked').fill('2026-09-07');
+  await page.getByTestId('submit-form').click();
+  await page.getByTestId('submit-form').click();
+});

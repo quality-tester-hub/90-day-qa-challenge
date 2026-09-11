@@ -21,6 +21,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 8, 2026** | **Day 08** | TestMu AI Selenium Playground | AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App | ✅ Completed |
 | **September 9, 2026** | **Day 09** | Testsmith Locator Game | Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience | ✅ Completed |
 | **September 10, 2026** | **Day 10** | Automation Camp (`Play 2`) | Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling | ✅ Completed |
+| **September 11, 2026** | **Day 11** | CommitQuality | Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock | ✅ Completed |
 
 ---
 
@@ -83,36 +84,24 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `BUG-003-date-picker-element-timeout.md`: Element timeout on invalid container input target fill.
   * `BUG-004-banking-app-multitab-server-crash.md`: Portal overlay pointer interception and multi-tab state failure.
 
----
-
-#### 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (`/day-07-tricentis-Obstacale`)
+### 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (`/day-07-tricentis-Obstacale`)
 * **Core Focus:** Solving complex algorithmic web obstacles including dynamic string extraction, regex processing, asynchronous calculating state timers, and cookie manipulation.
 * **Test Suite Breakdown:**
   * `obstacle-45618-tough-cookie.spec.ts`: Regex-based number extraction from random string payloads and input field populating.
   * `obstacle-33678-wait-a-moment.spec.ts`: Managing asynchronous dynamic wait states, button state transitions, and state triggers.
   * `obstacle-73590-comprehensive.spec.ts`: Multi-step form flows, structural page assertions, and state verification.
 
-### Day 08 - testmuai-selenium-playground
-## Overview
-Focused on automating complex UI components on the TestMu AI Selenium Playground, including dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management using Playwright with TypeScript.
-
-## Key Learnings & Milestones
-
-* **Manual Codegen & Locator Refactoring**: Utilized Playwright `codegen` to capture raw browser events and systematically refactored brittle selectors into resilient, user-centric locators (`getByRole`, `getByLabel`, `locator`).
-* **Asynchronous AJAX & Progress Tracking**: Implemented dynamic assertions (`toContainText`, `toHaveText`) with extended timeouts to handle delayed DOM state changes in progress bars and AJAX responses.
-* **Multi-Window & Popup Handling**: Automated multi-tab/popup flows using `waitForEvent('popup')` and Playwright `BrowserContext` to manage multiple simultaneous window triggers cleanly.
-* **Dynamic DOM & Auto-Healing Validation**: Validated locator resilience against dynamic DOM mutation scenarios (such as ID changes) to prevent element selection breakage.
-
-## Modules & Test Execution Summary
-
-* **AJAX Form Submit**: `Tests/ajax-form-submit.spec.ts` | Form input, submit action, and dynamic response verification
-* **Bootstrap Dual List Box**: `Tests/bootstrap-dual-list-box.spec.ts` | Item movement (single/all), cross-box transfer, and real-time list filtering
-* **Bootstrap Modals**: `Tests/bootstrap-modal.spec.ts` | Single modal launch/save and multi-layered nested modal interactions
-* **Download Progress Bar**: `Tests/bootstrap-download-progress.spec.ts` | Start trigger, percentage tracking, and 100% completion state assertions
-* **Hover Demo**: `Tests/hover-demo.spec.ts` | Dynamic element hover state triggers and overlay visibility checks
-* **Window Popup Modal**: `Tests/window-popup-modal.spec.ts` | Single popup intercept, multi-window generation, and URL path assertions
-* **To-Do App**: `Tests/todo-app.spec.ts` | Item creation, checkbox toggle state management, and dynamic element verification
-* **Auto Healing Demo**: `Tests/auto-healing.spec.ts` | Resilient selector behavior during dynamic DOM ID mutation 
+### 🗓️ September 8, 2026 — Day 08: TestMu AI Selenium Playground (`/day-08-testmuai-selenium-playground`)
+* **Core Focus:** Automating dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management.
+* **Test Suite Breakdown:**
+  * `ajax-form-submit.spec.ts`: Form input, submit action, and dynamic response verification.
+  * `bootstrap-dual-list-box.spec.ts`: Item movement (single/all), cross-box transfer, and real-time list filtering.
+  * `bootstrap-modal.spec.ts`: Single modal launch/save and multi-layered nested modal interactions.
+  * `bootstrap-download-progress.spec.ts`: Start trigger, percentage tracking, and 100% completion state assertions.
+  * `hover-demo.spec.ts`: Dynamic element hover state triggers and overlay visibility checks.
+  * `window-popup-modal.spec.ts`: Single popup intercept, multi-window generation, and URL path assertions.
+  * `todo-app.spec.ts`: Item creation, checkbox toggle state management, and dynamic element verification.
+  * `auto-healing.spec.ts`: Resilient selector behavior during dynamic DOM ID mutation.
 
 ### 🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (`/day-09-locator-game`)
 * **Core Focus:** Automating sequential SPA level progression, handling dynamic tour overlays (`tour-step-backdrop`), resolving React state input desynchronization, and analyzing framework compatibility boundaries.
@@ -121,15 +110,27 @@ Focused on automating complex UI components on the TestMu AI Selenium Playground
   * `level-2.spec.ts`: ID selector extraction (`#description`) and transition handling.
   * `level-3.spec.ts`: Class selector matching (`li.active`) and level increment verification.
   * `level-4.spec.ts`: Direct container hierarchy locator (`#toolbar button`) and DOM state assertion.
-* **Key Learnings & SPA Edge Cases:**
-  * **Input State Desynchronization:** Playwright’s default `.fill()` types directly into the visual DOM input, but fails to fire native `onChange`/`onInput` handlers in event-heavy SPAs. Resolved by explicitly dispatching synthetic events (`locatorInput.dispatchEvent('input')`).
-  * **Overlay Pointer Interception:** Third-party tour backdrop overlays intercept standard mouse clicks during level transition animations. Bypassed by using direct DOM click execution (`submitButton.evaluate(b => b.click())`).
-  * **Automation Limits:** Identified architectural friction points when running automated E2E test drivers against interactive, state-heavy game sandboxes designed for manual input.
 
 ### 🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (`/day-10-automation-camp`)
 * **Core Focus:** Automating native browser form controls, custom color/range pickers, popup window contexts, and alert dialog triggers inside a clean single-file execution suite.
 * **Test Suite Breakdown:**
   * `play2-automation.spec.ts`: Single-file test suite validating native inputs, radio toggles, multi-select dropdowns, popup interception (`waitForEvent('popup')`), and alert handling (`page.once('dialog')`).
+
+### 🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (`/day-11-commitquality`)
+* **Core Focus:** Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality (`https://commitquality.com/practice`).
+* **Test Suite Breakdown:**
+  * `filter-product.spec.ts`: Validates product table search queries, exact name matching, non-existent item queries, and search resets.
+  * `add-product.spec.ts`: Validates new product creation flows, unique item additions, and mandatory field validation errors.
+  * `components.spec.ts`: Automates standard navigation, click types (single/double/right), radio buttons, checkboxes, and select dropdowns on `https://commitquality.com/practice`.
+  * `accordion.spec.ts`: Tests expand/collapse states and conditional text element visibility.
+  * `popups.spec.ts`: Intercepts native browser alert dialogs (`page.once('dialog')`) and verifies modal overlay triggers.
+  * `api-mocking.spec.ts`: Validates real network responses and mocks API payloads using Playwright's `page.route()` handler.
+  * `contact-us.spec.ts`: Validates contact form submission workflows and edge cases.
+  * `clock.spec.ts`: Verifies dynamic clock timer assertions over time delays.
+* **Bug Reports Tracked:**
+  * `BUG-CQ-011`: Contact Form payload mismatch & backend API silent drop (Tested across macOS, Windows, Linux, Android).
+
+---
 
 ## 🛠️ Project Directory Structure
 
@@ -191,6 +192,18 @@ Module-1-UI-Automation/
 │   └── README.md
 ├── day-10-automation-camp/
 │   └── play2-automation.spec.ts
+├── day-11-commitquality/
+│   ├── Defects_&_Bugreports/
+│   │   └── BUG-CQ-011-contact-form-backend-failure.md
+│   └── Tests/
+│       ├── accordion.spec.ts
+│       ├── add-product.spec.ts
+│       ├── api-mocking.spec.ts
+│       ├── clock.spec.ts
+│       ├── components.spec.ts
+│       ├── contact-us.spec.ts
+│       ├── filter-product.spec.ts
+│       └── popups.spec.ts
 ├── playwright.config.ts
 ├── package.json
 └── README.md
