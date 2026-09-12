@@ -22,6 +22,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 9, 2026** | **Day 09** | Testsmith Locator Game | Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience | ✅ Completed |
 | **September 10, 2026** | **Day 10** | Automation Camp (`Play 2`) | Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling | ✅ Completed |
 | **September 11, 2026** | **Day 11** | CommitQuality | Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock | ✅ Completed |
+| **September 12, 2026** | **Day 12** | Restful-Booker-Platform | Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency | ✅ Completed |
 
 ---
 
@@ -130,6 +131,16 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 * **Bug Reports Tracked:**
   * `BUG-CQ-011`: Contact Form payload mismatch & backend API silent drop (Tested across macOS, Windows, Linux, Android).
 
+### 🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (`/day-12-restful-booker-platform`)
+* **Core Focus:** Automating hotel reservation workflows, date pickers, contact query submissions, single-page application (SPA) routing issues, and backend concurrency performance logging on `https://automationintesting.online/`.
+* **Test Suite Breakdown:**
+  * `check-availability.spec.ts`: Validates date input fields, manual check-in/check-out pickers, and availability search triggers.
+  * `booking.spec.ts`: Automates room selection, guest personal details entry, date selection drag, and booking confirmation modal verification.
+  * `contact-message.spec.ts`: Validates customer inquiry form submissions and required input field validation error states.
+* **Bug Reports Tracked:**
+  * `BUG-RBP-001`: Navigation route updates URL but target page content fails to load (`/amenities`). (Tested across macOS, Windows, Linux, Android).
+  * `BUG-RBP-002`: Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load. (Tested across macOS, Windows, Linux, Android).
+
 ---
 
 ## 🛠️ Project Directory Structure
@@ -137,40 +148,128 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 ```text
 Module-1-UI-Automation/
 ├── day-01-the-internet/
-│   └── Tests/
-├── day-2-demoQa/
 │   ├── Defects_&_Bugreports/
-│   └── Tests/
+│   │   ├── DEFECT-001-basic-auth.md
+│   │   ├── DEFECT-002-broken-image.md
+│   │   └── DEFECT-003-element-disappearing.md
+│   ├── Tests/
+│   │   ├── add-remove-elements.spec.ts
+│   │   ├── basic-auth.spec.ts
+│   │   ├── challenging-dom.spec.ts
+│   │   ├── checkboxes.spec.ts
+│   │   ├── context-menu.spec.ts
+│   │   ├── drag-and-drop.spec.ts
+│   │   ├── dropdown.spec.ts
+│   │   ├── dynamic-content.spec.ts
+│   │   ├── dynamic-controls.spec.ts
+│   │   ├── dynamic-loading.spec.ts
+│   │   ├── elements.spec.ts
+│   │   ├── entry-ad-and-exit-intent.spec.ts
+│   │   ├── file-upload-download.spec.ts
+│   │   ├── floating-menu.spec.ts
+│   │   ├── frames-and-geolocation.spec.ts
+│   │   └── images.spec.ts
+│   └── README.md
+├── day-02-demoQa/
+│   ├── Defects_&_Bugreports/
+│   │   └── DEFECT-001-disabled-button.md
+│   ├── Tests/
+│   │   ├── alerts_windows.spec.ts
+│   │   ├── book_store.spec.ts
+│   │   ├── elements.spec.ts
+│   │   ├── forms.spec.ts
+│   │   ├── interactions.spec.ts
+│   │   └── widgets.spec.ts
+│   └── README.md
 ├── day-03-sauce-demo/
 │   ├── Defects_&_Bugreports/
 │   ├── Tests/
+│   │   ├── auth.spec.ts
+│   │   ├── cart_&_checkout.spec.ts
+│   │   ├── filter-and-sort.spec.ts
+│   │   └── menu-navigation.spec.ts
 │   └── README.md
 ├── day-04-practice-expandtesting/
-│   ├── Tests/
-│   └── README.md
-├── day-05-uitestingplayground/
 │   ├── Defects_&_Bugreports/
-│   │   ├── BUG-001-load-delay-performance-threshold.md
-│   │   └── BUG-002-inaccurate-geolocation-picker.md
+│   │   ├── DEFECT-01-failed-to-register.md
+│   │   └── DEFECT-01-failed-to-register.png
 │   ├── Tests/
+│   │   ├── autocomplete.spec.ts
+│   │   ├── contact.spec.ts
+│   │   ├── form-validation.spec.ts
+│   │   ├── infinite-scroll.spec.ts
+│   │   ├── login.spec.ts
+│   │   ├── my-browser.spec.ts
+│   │   ├── notification-message.spec.ts
+│   │   ├── otp.spec.ts
+│   │   ├── password-reset.spec.ts
+│   │   ├── register.spec.ts
+│   │   ├── spies-stubs-clocks.spec.ts
+│   │   └── web-inputs.spec.ts
+│   └── README.md
+├── day-05-ui-testing-playground/
+│   ├── Defects_&_Bugreports/
+│   │   ├── Defect-01-load-delay.md
+│   │   └── Defect-02-inaccurate-location.md
+│   ├── Tests/
+│   │   ├── Ajax.data.spec.ts
+│   │   ├── Alerts.spec.ts
+│   │   ├── Animated Button.spec.ts
+│   │   ├── Auto Wait.spec.ts
+│   │   ├── class-attribute.spec.ts
+│   │   ├── Clear Input.spec.ts
+│   │   ├── click.spec.ts
+│   │   ├── clientside-delay.spec.ts
+│   │   ├── CSS Selectors.spec.ts
+│   │   ├── Disabled Input.spec.ts
+│   │   ├── dynamic-id.spec.ts
+│   │   ├── dynamic-table.spec.ts
+│   │   ├── Frames.spec.ts
+│   │   ├── Geo Location.spec.ts
+│   │   ├── hidden-layers.spec.ts
+│   │   ├── load-delay.spec.ts
+│   │   ├── mouse-over.spec.ts
+│   │   ├── non-breakingspace.spec.ts
+│   │   ├── Overlapped Element.spec.ts
+│   │   ├── progressbar.spec.ts
+│   │   ├── sample-app.spec.ts
+│   │   ├── Scroll to Click.spec.ts
+│   │   ├── scrollbar.spec.ts
+│   │   ├── Select.spec.ts
+│   │   ├── Shadow DOM.spec.ts
+│   │   ├── text-input.spec.ts
+│   │   ├── verify-text.spec.ts
+│   │   └── visibility.spec.ts
 │   └── README.md
 ├── day-06-qa-playground/
 │   ├── Defects_&_Bugreports/
-│   │   ├── Defect-01-date-picker-element-timeout.md
-│   │   └── BUG-02-banking-app-multitab-server-crash.md
+│   │   ├── Defect-01-datepicker-timeout&locator-issue.md
+│   │   └── Defect-02-Server-crash.md
 │   ├── Tests/
+│   │   ├── alerts-dialogs.spec.ts
+│   │   ├── annotations.spec.ts
 │   │   ├── banking-app.spec.ts
+│   │   ├── buttons.spec.ts
+│   │   ├── data-table.spec.ts
 │   │   ├── date-picker.spec.ts
+│   │   ├── drag-drop.spec.ts
+│   │   ├── dropdowns.spec.ts
+│   │   ├── dynamic-waits.spec.ts
+│   │   ├── filling-forms.spec.ts
+│   │   ├── iframes.spec.ts
+│   │   ├── input-fields.spec.ts
 │   │   ├── links.spec.ts
 │   │   ├── modals.spec.ts
 │   │   ├── multi-select.spec.ts
+│   │   ├── radio-checkbox.spec.ts
+│   │   ├── shadow-dom.spec.ts
 │   │   └── tabs-windows.spec.ts
 │   └── README.md
 ├── day-07-tricentis-Obstacale/
 │   ├── Tests/
-│   │   ├── obstacle-33678-wait-a-moment.spec.ts
-│   │   ├── obstacle-45618-tough-cookie.spec.ts
-│   │   └── obstacle-73590-comprehensive.spec.ts
+│   │   ├── comprehensive.spec.ts
+│   │   ├── tough-cookie.spec.ts
+│   │   └── wait-a-moment.spec.ts
 │   └── README.md
 ├── day-08-testmuai-selenium-playground/
 │   ├── Tests/
@@ -191,19 +290,34 @@ Module-1-UI-Automation/
 │   │   └── level-4.spec.ts
 │   └── README.md
 ├── day-10-automation-camp/
-│   └── play2-automation.spec.ts
+│   ├── play2-automation.spec.ts
+│   └── README.md
 ├── day-11-commitquality/
 │   ├── Defects_&_Bugreports/
-│   │   └── BUG-CQ-011-contact-form-backend-failure.md
-│   └── Tests/
-│       ├── accordion.spec.ts
-│       ├── add-product.spec.ts
-│       ├── api-mocking.spec.ts
-│       ├── clock.spec.ts
-│       ├── components.spec.ts
-│       ├── contact-us.spec.ts
-│       ├── filter-product.spec.ts
-│       └── popups.spec.ts
-├── playwright.config.ts
+│   │   └── Backend Data Transport Failure.md
+│   ├── Tests/
+│   │   ├── accordion.spec.ts
+│   │   ├── add-product.spec.ts
+│   │   ├── api-mocking.spec.ts
+│   │   ├── clock.spec.ts
+│   │   ├── components.spec.ts
+│   │   ├── contact-us.spec.ts
+│   │   ├── filter-product.spec.ts
+│   │   └── popups.spec.ts
+│   └── README.md
+├── day-12-restful-booker-platform/
+│   ├── Defect_&_Bugreports/
+│   │   ├── DEFECT-01-button_visible_but_page_not_loading.md
+│   │   └── DEFECT-02-servercrash.md
+│   ├── Tests/
+│   │   ├── booking.spec.ts
+│   │   ├── check-availability.spec.ts
+│   │   └── contact-message.spec.ts
+│   └── README.md
+├── node_modules
+├── test-results
+├── .gitignore
+├── package-lock.json
 ├── package.json
+├── playwright.config.ts
 └── README.md

@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://automationintesting.online/');
+  await page.getByTestId('ContactName').click();
+  await page.getByTestId('ContactName').fill('Red Tqar');
+  await page.getByTestId('ContactEmail').click();
+  await page.getByTestId('ContactEmail').fill('tqared@gmail.com');
+  await page.getByTestId('ContactEmail').click();
+  await page.getByTestId('ContactEmail').click();
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').press('ArrowLeft');
+  await page.getByTestId('ContactEmail').fill('tqared@fuckgmail.com');
+  await page.getByTestId('ContactPhone').click();
+  await page.getByTestId('ContactPhone').fill('098765433218492094');
+  await page.getByTestId('ContactPhone').press('CapsLock');
+  await page.getByTestId('ContactSubject').click();
+  await page.getByTestId('ContactSubject').press('CapsLock');
+  await page.getByTestId('ContactSubject').fill('');
+  await page.getByTestId('ContactSubject').press('CapsLock');
+  await page.getByTestId('ContactSubject').fill('Cleaning has even showed. up yet,evryhing looks filthy and toilet is stuck ');
+  await page.getByTestId('ContactDescription').click();
+  await page.getByTestId('ContactDescription').click();
+  await page.getByTestId('ContactDescription').fill('im unable fuck my wife to poor conditons');
+  await page.getByRole('button', { name: 'Submit' }).click();
+});
