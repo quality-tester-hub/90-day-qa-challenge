@@ -23,6 +23,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 10, 2026** | **Day 10** | Automation Camp (`Play 2`) | Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling | ✅ Completed |
 | **September 11, 2026** | **Day 11** | CommitQuality | Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock | ✅ Completed |
 | **September 12, 2026** | **Day 12** | Restful-Booker-Platform | Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency | ✅ Completed |
+| **September 13, 2026** | **Day 13** | OrangeHRM Open Source | Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs | ✅ Completed |
 
 ---
 
@@ -140,6 +141,22 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 * **Bug Reports Tracked:**
   * `BUG-RBP-001`: Navigation route updates URL but target page content fails to load (`/amenities`). (Tested across macOS, Windows, Linux, Android).
   * `BUG-RBP-002`: Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load. (Tested across macOS, Windows, Linux, Android).
+
+### 🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (`/day-13-orangehrm`)
+* **Core Focus:** Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs on `https://opensource-demo.orangehrmlive.com/`.
+* **Test Suite Breakdown:**
+  * `login.spec.ts`: Validates user login authentication and dashboard redirection.
+  * `dashboard.spec.ts`: Main navigation side-menu and UI element visibility checks.
+  * `admin.spec.ts`: User role filtering and search result table grid verification.
+  * `pim.spec.ts`: Employee search by name/ID and record table population.
+  * `leave.spec.ts`: Leave list filters, date picker inputs, and form container state.
+  * `apply-leave.spec.ts`: Navigation to apply sub-tab, leave type selection, and form submission checks.
+  * `leave-requirements.spec.ts`: Accessing configuration options and validating leave type tables.
+  * `recruitment.spec.ts`: Filtering candidates by name/job title and grid assertions.
+  * `performance.spec.ts`: Searching performance trackers and evaluating result tables.
+  * `directory.spec.ts`: Employee directory queries and card view assertions.
+  * `maintenance.spec.ts`: Password re-authentication prompt handling and record purge options.
+  * `claim.spec.ts`: Search filters and claim request records display.
 
 ---
 
@@ -313,6 +330,21 @@ Module-1-UI-Automation/
 │   │   ├── booking.spec.ts
 │   │   ├── check-availability.spec.ts
 │   │   └── contact-message.spec.ts
+│   └── README.md
+├── day-13-orangehrm/
+│   ├── Tests/
+│   │   ├── login.spec.ts
+│   │   ├── dashboard.spec.ts
+│   │   ├── admin.spec.ts
+│   │   ├── pim.spec.ts
+│   │   ├── leave.spec.ts
+│   │   ├── apply-leave.spec.ts
+│   │   ├── leave-requirements.spec.ts
+│   │   ├── recruitment.spec.ts
+│   │   ├── performance.spec.ts
+│   │   ├── directory.spec.ts
+│   │   ├── maintenance.spec.ts
+│   │   └── claim.spec.ts
 │   └── README.md
 ├── node_modules
 ├── test-results

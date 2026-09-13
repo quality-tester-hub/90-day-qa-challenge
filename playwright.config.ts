@@ -1,10 +1,1 @@
-import { defineConfig } from '@playwright/test';
-
-export default defineConfig({
-  testDir: '.',
-  testMatch: '**/*.spec.ts',
-  reporter: 'list',
-  use: {
-    trace: 'on-first-retry',
-  },
-});
+import { defineConfig } from '@playwright/test'; export default defineConfig({ testDir: './Module-1-UI-Automation/day-13-orange-hrm/Tests', use: { baseURL: 'https://opensource-demo.orangehrmlive.com/' } });
