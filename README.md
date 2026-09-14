@@ -24,6 +24,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 11, 2026** | **Day 11** | CommitQuality | Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock | ✅ Completed |
 | **September 12, 2026** | **Day 12** | Restful-Booker-Platform | Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency | ✅ Completed |
 | **September 13, 2026** | **Day 13** | OrangeHRM Open Source | Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs | ✅ Completed |
+| **September 14, 2026** | **Day 14** | Cymbal Direct (`cymbal-shops`) | Microservices E-Commerce Platform, Catalog Iteration, Cart Operations & E2E Checkout | ✅ Completed |
 
 ---
 
@@ -157,6 +158,14 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `directory.spec.ts`: Employee directory queries and card view assertions.
   * `maintenance.spec.ts`: Password re-authentication prompt handling and record purge options.
   * `claim.spec.ts`: Search filters and claim request records display.
+
+### 🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (`/day-14-cymbal-direct`)
+* **Core Focus:** Automating end-to-end user journeys for the Cymbal Direct microservices platform (`https://cymbal-shops.retail.cymbal.dev/`), product catalog iterations, dynamic cart drawer management, and order completions.
+* **Test Suite Breakdown:**
+  * `select-product.spec.ts`: Navigates through individual product catalog items sequentially.
+  * `add-to-cart.spec.ts`: Validates item selection, quantities, and cart additions across product routes.
+  * `emty-cart.spec.ts`: Tests quantity dropdown updates and clearing cart inventory.
+  * `place-order.spec.ts`: Verifies checkout input forms, shipping details, and order submission flows.
 
 ---
 
@@ -345,6 +354,13 @@ Module-1-UI-Automation/
 │   │   ├── directory.spec.ts
 │   │   ├── maintenance.spec.ts
 │   │   └── claim.spec.ts
+│   └── README.md
+├── day-14-cymbal-direct/
+│   ├── Tests/
+│   │   ├── select-product.spec.ts
+│   │   ├── add-to-cart.spec.ts
+│   │   ├── emty-cart.spec.ts
+│   │   └── place-order.spec.ts
 │   └── README.md
 ├── node_modules
 ├── test-results
