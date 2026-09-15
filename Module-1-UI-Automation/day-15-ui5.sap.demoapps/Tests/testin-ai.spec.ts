@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://ui5.sap.com/#/demoapps');
+  await page.getByRole('button', { name: 'Accept All' }).click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.locator('[id="__link1-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-__cssgrid0-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-4"]').click();
+  const page1 = await page1Promise;
+  await page1.getByRole('button', { name: 'Close' }).click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('textbox').fill('i slept with your wife');
+  await page1.getByRole('button', { name: 'Send Emphasized' }).click();
+  await page1.getByRole('button', { name: 'Generate', exact: true }).click();
+  await page1.locator('div').filter({ hasText: /^Stop Generating$/ }).click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('textbox').dblclick();
+  await page1.getByRole('textbox').fill('Experience the future of cooking with our state-of-the-art smart oven. This innovative appliance offers a range of feat');
+  await page1.getByText('DL Marketing Sector SAP').click();
+  await page1.getByText('DL Marketing Sector SAP').click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('textbox').fill('');
+  await page1.getByRole('button', { name: 'Send Emphasized' }).click();
+  await page1.getByRole('button', { name: 'Send Emphasized' }).click();
+  await page1.locator('div').filter({ hasText: /^Revise$/ }).click();
+  await page1.locator('div').filter({ hasText: /^Rewrite Text$/ }).first().click();
+  await page1.getByRole('button', { name: 'Send Emphasized' }).click();
+  await page1.getByRole('textbox').click();
+  await page1.getByRole('button', { name: 'Revise', exact: true }).click();
+  await page1.locator('div').filter({ hasText: /^Generate Error$/ }).first().click();
+  await page1.getByRole('button', { name: 'Send Emphasized' }).click();
+});

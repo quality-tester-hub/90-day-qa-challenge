@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://ui5.sap.com/#/demoapps');
+  await page.getByRole('button', { name: 'Accept All' }).click();
+  await page.getByLabel('Downloads Overview').getByText('UXC Integration').click();
+  const page1Promise = page.waitForEvent('popup');
+  await page.locator('[id="__link1-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-__cssgrid0-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-2"]').click();
+  const page1 = await page1Promise;
+  const page2Promise = page.waitForEvent('popup');
+  await page.locator('[id="__link1-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-__cssgrid0-sdk---demoApps--sapUiDemoKitDemoAppsMain-0-3"]').click();
+  const page2 = await page2Promise;
+  await page2.getByRole('treeitem', { name: 'Favorites Favorites' }).click();
+  await page2.getByRole('treeitem', { name: 'Favorites' }).click();
+  await page2.getByRole('treeitem', { name: 'My Accounts' }).click();
+  await page2.getByRole('treeitem', { name: 'My Orders' }).click();
+  await page2.getByRole('treeitem', { name: 'Contacts' }).click();
+  await page2.getByRole('treeitem', { name: 'Companies' }).click();
+  await page2.getByRole('treeitem', { name: 'Sales Sales' }).click();
+  await page2.getByRole('treeitem', { name: 'Products Products' }).click();
+  await page2.getByRole('treeitem', { name: 'Marketing Marketing' }).click();
+  await page2.getByRole('treeitem', { name: 'Reports Reports' }).click();
+  await page2.getByRole('treeitem', { name: 'Quick Create' }).click();
+  await page2.getByRole('button', { name: 'Create' }).click();
+  await page2.getByRole('img', { name: 'Avatar' }).click();
+  await page2.getByLabel('Current user information').locator('div').filter({ hasText: /^Tag$/ }).click();
+  await page2.getByLabel('Current user information').locator('div').filter({ hasText: /^Tag$/ }).click();
+  await page2.getByRole('button', { name: 'Manage Account' }).click();
+  await page2.getByRole('button', { name: 'Expand/Collapse' }).click();
+  await page2.locator('#ui5wc_28-inner > slot').click();
+});

@@ -25,6 +25,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 12, 2026** | **Day 12** | Restful-Booker-Platform | Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency | ✅ Completed |
 | **September 13, 2026** | **Day 13** | OrangeHRM Open Source | Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs | ✅ Completed |
 | **September 14, 2026** | **Day 14** | Cymbal Direct (`cymbal-shops`) | Microservices E-Commerce Platform, Catalog Iteration, Cart Operations & E2E Checkout | ✅ Completed |
+| **September 15, 2026** | **Day 15** | SAP UI5 Demo Apps (`ui5.sap.com`) | Enterprise Framework Controls, Dynamic Popups, Theme Switching, Data Tables & UX Integrations | ✅ Completed |
 
 ---
 
@@ -166,6 +167,19 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `add-to-cart.spec.ts`: Validates item selection, quantities, and cart additions across product routes.
   * `emty-cart.spec.ts`: Tests quantity dropdown updates and clearing cart inventory.
   * `place-order.spec.ts`: Verifies checkout input forms, shipping details, and order submission flows.
+
+### 🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (`/day-15-ui5.sap.demoapps`)
+* **Core Focus:** Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (`sap_horizon_dark`), database view grids, and AI integrations on `https://ui5.sap.com/#/demoapps`.
+* **Test Suite Breakdown:**
+  * `brose.list.spec.ts`: Product catalog navigation and list filtering.
+  * `calender.spec.ts`: Interactive Planning Calendar views (Day/Week/Month), team selector dropdowns, appointment modal creations, and legend toggles.
+  * `shoping-cart.spec.ts`: Shopping demo app cart management and inventory check flows.
+  * `SQL.spec.ts`: Interactive table grid views and SQL query execution views.
+  * `testin-ai.spec.ts`: Dynamic AI integration components and interactive output view states.
+  * `Tools.spec.ts`: Popup window listeners, external link navigation, and administrative grid interaction.
+  * `uxc-integration.spec.ts`: Custom UI theme assertion (`sap_horizon_dark`) and integration verification.
+* **Bug Reports Tracked:**
+  * `Navbar cart counter fails to update and out-of-stock items allowed`: Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
 
 ---
 
@@ -361,6 +375,18 @@ Module-1-UI-Automation/
 │   │   ├── add-to-cart.spec.ts
 │   │   ├── emty-cart.spec.ts
 │   │   └── place-order.spec.ts
+│   └── README.md
+├── day-15-ui5.sap.demoapps/
+│   ├── Defects_&_Bugreports/
+│   │   └── Navbar cart counter fails to update and out of stock.md
+│   ├── Tests/
+│   │   ├── brose.list.spec.ts
+│   │   ├── calender.spec.ts
+│   │   ├── shoping-cart.spec.ts
+│   │   ├── SQL.spec.ts
+│   │   ├── testin-ai.spec.ts
+│   │   ├── Tools.spec.ts
+│   │   └── uxc-integration.spec.ts
 │   └── README.md
 ├── node_modules
 ├── test-results
