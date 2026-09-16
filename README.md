@@ -26,6 +26,11 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 | **September 13, 2026** | **Day 13** | OrangeHRM Open Source | Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs | ✅ Completed |
 | **September 14, 2026** | **Day 14** | Cymbal Direct (`cymbal-shops`) | Microservices E-Commerce Platform, Catalog Iteration, Cart Operations & E2E Checkout | ✅ Completed |
 | **September 15, 2026** | **Day 15** | SAP UI5 Demo Apps (`ui5.sap.com`) | Enterprise Framework Controls, Dynamic Popups, Theme Switching, Data Tables & UX Integrations | ✅ Completed |
+| **September 16, 2026** | **Day 16** | SelectorsHub (`selectorshub.com/xpath-practice-page`) | Form Inputs, Boundary Values, Submit Handlers & Async Popup Window Events | ✅ Completed |
+
+---
+
+🎉 **Module 1: UI Automation Mastery with Playwright — Complete!**
 
 ---
 
@@ -179,7 +184,12 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
   * `Tools.spec.ts`: Popup window listeners, external link navigation, and administrative grid interaction.
   * `uxc-integration.spec.ts`: Custom UI theme assertion (`sap_horizon_dark`) and integration verification.
 * **Bug Reports Tracked:**
-  * `Navbar cart counter fails to update and out-of-stock items allowed`: Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
+  * `Navbar cart counter fails to update and out of stock.md`: Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
+
+### 🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (`/day-16-selectorshub`)
+* **Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers on `https://selectorshub.com/xpath-practice-page/`.
+* **Test Suite Breakdown:**
+  * `xpath-practice.spec.ts`: Validates input form entries (email, password, company, location), tests negative and large boundary value inputs for mobile spin buttons, executes form submissions, and intercepts external YouTube channel popup events (`page.waitForEvent('popup')`).
 
 ---
 
@@ -387,6 +397,10 @@ Module-1-UI-Automation/
 │   │   ├── testin-ai.spec.ts
 │   │   ├── Tools.spec.ts
 │   │   └── uxc-integration.spec.ts
+│   └── README.md
+├── day-16-selectorshub/
+│   ├── Tests/
+│   │   └── xpath-practice.spec.ts
 │   └── README.md
 ├── node_modules
 ├── test-results

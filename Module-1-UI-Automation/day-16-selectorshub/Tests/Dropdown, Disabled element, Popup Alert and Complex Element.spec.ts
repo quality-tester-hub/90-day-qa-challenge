@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://selectorshub.com/xpath-practice-page/');
+  await page.getByRole('textbox', { name: 'user name field' }).click();
+  await page.getByRole('textbox', { name: 'user name field' }).fill('Red Rqe');
+  await page.getByRole('textbox', { name: 'Enter pizza name' }).click();
+  await page.getByRole('textbox', { name: 'Enter pizza name' }).fill('coco');
+  await page.locator('#concepts').click();
+  await page.locator('#concepts').click();
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.getByText('Skip to content Get free').press('Alt+ƒ');
+  await page.locator('#userPass').click();
+  await page.locator('#concepts').dblclick();
+  await page.locator('#concepts').click();
+  await page.getByText('Skip to content Get free').press('ControlOrMeta+f');
+  await page.getByRole('link', { name: 'Click to practice iframe' }).click();
+  const download1Promise = page.waitForEvent('download');
+  await page.getByRole('link', { name: 'Click to practice iframe' }).click();
+  const download1 = await download1Promise;
+  const download2Promise = page.waitForEvent('download');
+  await page.getByRole('link', { name: 'Click to practice iframe' }).click();
+  const download2 = await download2Promise;
+  await page.locator('#userPass').click();
+  await page.getByRole('button', { name: 'Checkout here' }).dblclick();
+});
