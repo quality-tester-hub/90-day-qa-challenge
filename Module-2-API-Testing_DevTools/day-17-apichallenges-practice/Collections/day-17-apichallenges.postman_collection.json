@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "d299354b-ad53-4552-b6ac-19d2abe1343c",
+    "name": "day-17-apichallenges",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55615134",
+    "_collection_link": "https://go.postman.co/collection/55615134-d299354b-ad53-4552-b6ac-19d2abe1343c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01_POST_Start_Challenger_Session",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const challengerToken = pm.response.headers.get(\"x-challenger\");",
+              "if (challengerToken) {",
+              "    pm.environment.set(\"X-Challenger\", challengerToken);",
+              "    console.log(\"Token saved automatically:\", challengerToken);",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://apichallenges.eviltester.com/challenger",
+          "protocol": "https",
+          "host": [
+            "apichallenges",
+            "eviltester",
+            "com"
+          ],
+          "path": [
+            "challenger"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02_GET_Todos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Challenger",
+            "value": "{{X-Challenger}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://apichallenges.eviltester.com/todos",
+          "protocol": "https",
+          "host": [
+            "apichallenges",
+            "eviltester",
+            "com"
+          ],
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03_POST_Create_Todo",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Challenger",
+            "value": "{{X-Challenger}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Complete Day 17 API Challenge\",\n  \"doneStatus\": false,\n  \"description\": \"Executing POST request to create a new todo object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://apichallenges.eviltester.com/todos",
+          "protocol": "https",
+          "host": [
+            "apichallenges",
+            "eviltester",
+            "com"
+          ],
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

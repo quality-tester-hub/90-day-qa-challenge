@@ -1,6 +1,8 @@
 # 90-day-qa-challenge
 QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance & Advanced Target Envs
 
+---
+
 # 🚀 Module 1: UI Automation Mastery with Playwright
 
 Welcome to the central repository for **Module 1 - UI Automation**. This project tracks hands-on practice covering modern Web QA Automation patterns, end-to-end workflows, resilient locators, session management, dynamic element handling, and test execution using Playwright and TypeScript.
@@ -190,6 +192,31 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 * **Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers on `https://selectorshub.com/xpath-practice-page/`.
 * **Test Suite Breakdown:**
   * `xpath-practice.spec.ts`: Validates input form entries (email, password, company, location), tests negative and large boundary value inputs for mobile spin buttons, executes form submissions, and intercepts external YouTube channel popup events (`page.waitForEvent('popup')`).
+
+---
+
+# 🌐 Module 2: API Testing & Browser DevTools Integration
+
+Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTful API validation, browser network traffic inspection, and programmatic execution logging across API challenge endpoints.
+
+---
+
+## 📌 Progress Dashboard
+
+| Date | Day | Target Site | Core Focus Areas | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **September 17, 2026** | **Day 17** | EvilTester API Challenges (`apichallenges.eviltester.com`) | Multi-Layered API Testing: Postman Collections, DevTools HAR Traces & Node.js Execution Simulation | ✅ Completed |
+
+---
+
+## 📅 Daily Execution Log
+
+### 🗓️ September 17, 2026 — Day 17: Multi-Layered API Testing & Audit Logging (`/day-17-apichallenges-practice`)
+* **Core Focus:** Establishing a 3-layer QA verification process across Postman, Chrome DevTools, and automated Node.js simulation scripts while persisting session audit logs.
+* **Multi-Tool Architecture Breakdown:**
+  * **Postman Integration**: Configured session token retrieval (`POST /challenger`), stored dynamic `X-Challenger` header parameters inside environment variables (`day-17-apichallenges-env.postman_environment.json`), and verified `GET /todos` / `POST /todos` end-to-end endpoints.
+  * **Browser DevTools HAR Trace**: Monitored HTTP request/response lifecycles during live web interactions and exported raw network activity as a HAR log (`apichallenges.com.har`) to `Logs/`.
+  * **Node.js Simulation Script (`simulation.js`)**: Developed an asynchronous script using native `fetch` to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk (`01_POST_Start_Challenger_Session.log`, `02_GET_Todos.log`, `03_POST_Create_Todo.log`).
 
 ---
 
@@ -398,14 +425,29 @@ Module-1-UI-Automation/
 │   │   ├── Tools.spec.ts
 │   │   └── uxc-integration.spec.ts
 │   └── README.md
-├── day-16-selectorshub/
-│   ├── Tests/
-│   │   └── xpath-practice.spec.ts
-│   └── README.md
-├── node_modules
-├── test-results
-├── .gitignore
-├── package-lock.json
-├── package.json
-├── playwright.config.ts
-└── README.md
+└── day-16-selectorshub/
+    ├── Tests/
+    │   └── xpath-practice.spec.ts
+    └── README.md
+
+Module-2-API-Testing_DevTools/
+└── day-17-apichallenges-practice/
+    ├── Collections/
+    │   └── day-17-apichallenges.postman_collection.json
+    ├── Environments/
+    │   └── day-17-apichallenges-env.postman_environment.json
+    ├── Logs/
+    │   ├── apichallenges.com.har
+    │   ├── 01_POST_Start_Challenger_Session.log
+    │   ├── 02_GET_Todos.log
+    │   └── 03_POST_Create_Todo.log
+    ├── README.md
+    └── simulation.js
+
+node_modules/
+test-results/
+.gitignore
+package-lock.json
+package.json
+playwright.config.ts
+README.md

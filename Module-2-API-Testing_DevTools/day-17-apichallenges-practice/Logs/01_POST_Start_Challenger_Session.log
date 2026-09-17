@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://apichallenges.eviltester.com/challenger"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "x-challenger": "d635d7fe-4a81-4274-bdb6-c28ac1394f39"
+    }
+  }
+}
