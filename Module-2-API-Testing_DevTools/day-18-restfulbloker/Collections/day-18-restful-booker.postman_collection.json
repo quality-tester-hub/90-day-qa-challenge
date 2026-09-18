@@ -1,0 +1,185 @@
+{
+  "info": {
+    "_postman_id": "b7f7eaaf-b808-47fe-8f35-b5db53ebd90a",
+    "name": "day-18-restful-booker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55615134",
+    "_collection_link": "https://go.postman.co/collection/55615134-b7f7eaaf-b808-47fe-8f35-b5db53ebd90a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth_CreateToken",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetBookingIds",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstname\": \"James\",\n  \"lastname\": \"Brown\",\n  \"totalprice\": 111,\n  \"depositpaid\": true,\n  \"bookingdates\": {\n    \"checkin\": \"2026-01-01\",\n    \"checkout\": \"2026-01-05\"\n  },\n  \"additionalneeds\": \"Breakfast\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "booking"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET {{baseUrl}}/booking"
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateBooking",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstname\":\"James\",\"lastname\":\"Brown\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2018-01-01\",\"checkout\":\"2019-01-01\"},\"additionalneeds\":\"Breakfast\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking/{{bookingId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "booking",
+            "{{bookingId}}"
+          ]
+        },
+        "description": "Generated from cURL: curl -X PUT {{baseUrl}}/booking/{{bookingId}} -H \"Content-Type: application/json\" -H \"Accept: application/json\" -H \"Cookie: token={{token}}\" -d '{\"firstname\":\"James\",\"lastname\":\"Brown\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2018-01-01\",\"checkout\":\"2019-01-01\"},\"additionalneeds\":\"Breakfast\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "PartialUpdateBooking",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstname\":\"James\",\"lastname\":\"Brown\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/booking/{{bookingId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "booking",
+            "{{bookingId}}"
+          ]
+        },
+        "description": "Generated from cURL: curl -X PATCH {{baseUrl}}/booking/{{bookingId}} -H \"Content-Type: application/json\" -H \"Accept: application/json\" -H \"Cookie: token={{token}}\" -d '{\"firstname\":\"James\",\"lastname\":\"Brown\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteBooking",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}",
+            "disabled": false
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/booking/{{bookingId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "booking",
+            "{{bookingId}}"
+          ]
+        },
+        "description": "Generated from cURL: curl -X DELETE {{baseUrl}}/booking/{{bookingId}} -H \"Content-Type: application/json\" -H \"Cookie: token={{token}}\""
+      },
+      "response": []
+    }
+  ]
+}

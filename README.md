@@ -206,6 +206,8 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 | Date | Day | Target Site | Core Focus Areas | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **September 17, 2026** | **Day 17** | EvilTester API Challenges (`apichallenges.eviltester.com`) | Multi-Layered API Testing: Postman Collections, DevTools HAR Traces & Node.js Execution Simulation | ✅ Completed |
+| **September 18, 2026** | **Day 18** | Restful Booker (`restful-booker.herokuapp.com`) | End-to-End Restful Booker API Workflows, Environment State Binding, DevTools Tracing & Performance Profiling | ✅ Completed |
+| **September 19, 2026** | **Day 19** | Practice Software Testing (`api.practicesoftwaretesting.com`) | AI-Assisted Postman Automation, Bearer Token Auth, Cart/Invoice Workflows & DevTools Tracing | ✅ Completed |
 
 ---
 
@@ -217,6 +219,18 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
   * **Postman Integration**: Configured session token retrieval (`POST /challenger`), stored dynamic `X-Challenger` header parameters inside environment variables (`day-17-apichallenges-env.postman_environment.json`), and verified `GET /todos` / `POST /todos` end-to-end endpoints.
   * **Browser DevTools HAR Trace**: Monitored HTTP request/response lifecycles during live web interactions and exported raw network activity as a HAR log (`apichallenges.com.har`) to `Logs/`.
   * **Node.js Simulation Script (`simulation.js`)**: Developed an asynchronous script using native `fetch` to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk (`01_POST_Start_Challenger_Session.log`, `02_GET_Todos.log`, `03_POST_Create_Todo.log`).
+
+### 🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (`/day-18-restfulbooker`)
+* **Core Focus:** Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions on `https://restful-booker.herokuapp.com/` while generating DevTools trace profiles.
+* **Multi-Tool Architecture Breakdown:**
+  * **Postman Integration**: Dynamic token extraction (`POST /auth`), environment binding (`baseUrl`, `token`, `bookingId`), Cookie header authentication (`Cookie: token={{token}}`), and complete CRUD request validations (`POST`, `GET`, `PUT`, `PATCH`, `DELETE`).
+  * **DevTools Network & Performance Profiling**: Exported raw network request HAR traces (`restful-booker_network_trace.har`) and recorded performance profiles (`Profile-restful-booker.json`) capturing DOM shifts, network latency, and rendering benchmarks.
+
+### 🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (`/day-19-practice-software-testing`)
+* **Core Focus:** Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts on `https://api.practicesoftwaretesting.com`.
+* **Multi-Tool Architecture Breakdown:**
+  * **Postman AI Integration**: Prompt-engineered Postman AI Agent to create `day-19-practice-software-testing` collection and `Day 19 - Practice Software Testing Environment`. Managed dynamic variable extraction for `bearerToken` (`POST /users/login`), `productId` (`GET /products`), `cartId` (`POST /carts`), cart item insertion (`POST /carts/{{cartId}}`), and final checkout invoice creation (`POST /invoices`).
+  * **DevTools Tracing & Performance**: Intercepted browser request/response cascades as `api.practicesoftwaretesting.com.har` and recorded CPU main-thread rendering performance profiles as `Trace-20260919T191850.json`.
 
 ---
 
@@ -431,18 +445,41 @@ Module-1-UI-Automation/
     └── README.md
 
 Module-2-API-Testing_DevTools/
-└── day-17-apichallenges-practice/
+├── day-17-apichallenges-practice/
+│   ├── Collections/
+│   │   └── day-17-apichallenges.postman_collection.json
+│   ├── Environments/
+│   │   └── day-17-apichallenges-env.postman_environment.json
+│   ├── Logs/
+│   │   ├── apichallenges.com.har
+│   │   ├── 01_POST_Start_Challenger_Session.log
+│   │   ├── 02_GET_Todos.log
+│   │   └── 03_POST_Create_Todo.log
+│   ├── README.md
+│   └── simulation.js
+├── day-18-restfulbooker/
+│   ├── Collections/
+│   │   └── day-18-restful-booker.postman_collection.json
+│   ├── Enviroments/
+│   │   └── Day 18 - Restful Booker Environment.postman_environment.json
+│   ├── Devtools/
+│   │   ├── Network_Configs/
+│   │   │   └── restful-booker_network_trace.har
+│   │   └── Performance/
+│   │       └── Profile-restful-booker.json
+│   └── README.md
+└── day-19-practice-software-testing/
     ├── Collections/
-    │   └── day-17-apichallenges.postman_collection.json
-    ├── Environments/
-    │   └── day-17-apichallenges-env.postman_environment.json
-    ├── Logs/
-    │   ├── apichallenges.com.har
-    │   ├── 01_POST_Start_Challenger_Session.log
-    │   ├── 02_GET_Todos.log
-    │   └── 03_POST_Create_Todo.log
-    ├── README.md
-    └── simulation.js
+    │   └── day-19-practice-software-testing.postman_collection.json
+    ├── Devtools/
+    │   ├── Network/
+    │   │   └── api.practicesoftwaretesting.com.har
+    │   ├── Performance/
+    │   │   └── Trace-20260919T191850.json
+    │   └── Screenshoots/
+    ├── Enviroments/
+    │   └── Day 19 - Practice Software Testing Environment.postman_environment.json
+    └── README.md
 
 node_modules/
 test-results/

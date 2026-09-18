@@ -1,0 +1,262 @@
+{
+  "info": {
+    "_postman_id": "922e862c-30f8-4f88-8176-1636e8f12d06",
+    "name": "day-19-practice-software-testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55615134",
+    "_collection_link": "https://go.postman.co/collection/55615134-922e862c-30f8-4f88-8176-1636e8f12d06?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth_Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.access_token) {",
+              "    pm.environment.set(\"bearerToken\", jsonData.access_token);",
+              "    console.log(\"bearerToken saved:\", jsonData.access_token);",
+              "}",
+              "pm.test(\"Login successful\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Token received\", function () {",
+              "    pm.expect(jsonData.access_token).to.be.a('string');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"customer@practicesoftwaretesting.com\",\n  \"password\": \"welcome01\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetProducts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.data && jsonData.data.length > 0) {",
+              "    pm.environment.set(\"productId\", jsonData.data[0].id);",
+              "    console.log(\"productId saved:\", jsonData.data[0].id);",
+              "}",
+              "pm.test(\"Products retrieved successfully\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Product list is not empty\", function () {",
+              "    pm.expect(jsonData.data).to.be.an('array').that.is.not.empty;",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateCart",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.id) {",
+              "    pm.environment.set(\"cartId\", jsonData.id);",
+              "    console.log(\"cartId saved:\", jsonData.id);",
+              "}",
+              "pm.test(\"Cart created successfully\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test(\"Cart ID received\", function () {",
+              "    pm.expect(jsonData.id).to.exist;",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/carts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "carts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AddToCart",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Item added to cart successfully\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Cart updated\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.exist;",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product_id\": \"{{productId}}\",\n  \"quantity\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/carts/{{cartId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "carts",
+            "{{cartId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateOrder",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Invoice/Order created successfully\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test(\"Order ID received\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.id).to.exist;",
+              "    console.log(\"Order ID:\", jsonData.id);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cart_id\": \"{{cartId}}\",\n  \"billing_street\": \"Test Street 1\",\n  \"billing_city\": \"Amsterdam\",\n  \"billing_country\": \"NL\",\n  \"billing_postcode\": \"1234AB\",\n  \"billing_state\": \"Noord-Holland\",\n  \"payment_method\": \"bank-transfer\",\n  \"payment_details\": {\n    \"bank_name\": \"Test Bank\",\n    \"account_name\": \"Test Account\",\n    \"account_number\": \"NL00TEST0123456789\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/invoices",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "invoices"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
