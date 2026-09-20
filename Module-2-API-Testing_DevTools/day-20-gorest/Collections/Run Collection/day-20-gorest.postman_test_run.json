@@ -1,0 +1,464 @@
+{
+	"id": "bf454388-7958-4a84-80c0-59241c70fe3d",
+	"name": "day-20-gorest",
+	"timestamp": "2026-09-20T15:40:29.549Z",
+	"collection_id": "55615134-76251194-7493-4f78-ae06-bc5795ce294c",
+	"folder_id": 0,
+	"environment_id": "55615134-d03c4eb1-5a01-4130-a97a-bc7ec485f866",
+	"totalPass": 25,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-09-20T15:40:07.869Z",
+	"totalFail": 7,
+	"results": [
+		{
+			"id": "4aaed97f-c2b1-44c2-89cc-f124ee77cfd1",
+			"name": "GET_Users_InvalidToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 3423,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Response has error message": true,
+				"Response time is under 3000ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has error message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				3423
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Response has error message": true,
+					"Response time is under 3000ms": false
+				}
+			]
+		},
+		{
+			"id": "4de315a7-bb5a-4839-b339-ec0b075f8562",
+			"name": "POST_CreateUser_InvalidToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 3197,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Response has error message": true,
+				"Response time is under 3000ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has error message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				3197
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Response has error message": true,
+					"Response time is under 3000ms": false
+				}
+			]
+		},
+		{
+			"id": "f0614030-9b45-4194-bdce-2e6d640ee2bc",
+			"name": "GET_Users_NoToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 1936,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": false,
+				"Response has authentication error": false,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response has authentication error": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1936
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": false,
+					"Response has authentication error": false,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "f1fa15e4-8e17-4749-883f-8c35317923ac",
+			"name": "POST_CreateUser_NoToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 1688,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Response has authentication error": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has authentication error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1688
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Response has authentication error": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "df66bcd3-8175-48c6-a8da-49f06b295656",
+			"name": "GET_Users_MalformedToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 701,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Malformed token is rejected": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Malformed token is rejected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				701
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Malformed token is rejected": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "4306c2c9-69be-4ba1-8819-446b546efc42",
+			"name": "POST_CreateUser_MalformedToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 2021,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Malformed token is rejected": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Malformed token is rejected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2021
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Malformed token is rejected": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "c12cec9e-c574-4267-a7d9-5ef41f0a2132",
+			"name": "GET_Users_EmptyToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 661,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": false,
+				"Empty token is rejected": false,
+				"No 500 Internal Server Error": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Empty token is rejected": {
+					"pass": 0,
+					"fail": 1
+				},
+				"No 500 Internal Server Error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				661
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": false,
+					"Empty token is rejected": false,
+					"No 500 Internal Server Error": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "4dd0a59f-125c-43ac-8701-419ffdfd0b78",
+			"name": "POST_CreateUser_EmptyToken",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 652,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 Unauthorized": true,
+				"Empty token is rejected": true,
+				"No 500 Internal Server Error": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 Unauthorized": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Empty token is rejected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No 500 Internal Server Error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				652
+			],
+			"allTests": [
+				{
+					"Status code is 401 Unauthorized": true,
+					"Empty token is rejected": true,
+					"No 500 Internal Server Error": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "6b956850-2a6c-4e1b-b037-cf1d63445263",
+			"name": "DELETE_Users_WrongMethod",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 5193,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 or 405 - Wrong method or not found": true,
+				"No 500 Internal Server Error": true,
+				"Response time is under 3000ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404 or 405 - Wrong method or not found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No 500 Internal Server Error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				5193
+			],
+			"allTests": [
+				{
+					"Status code is 404 or 405 - Wrong method or not found": true,
+					"No 500 Internal Server Error": true,
+					"Response time is under 3000ms": false
+				}
+			]
+		},
+		{
+			"id": "f9938e45-4ad6-45ed-9df9-b2e355ae9024",
+			"name": "PATCH_Users_WrongMethod",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 1326,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 or 405 - Wrong method or not found": true,
+				"No 500 Internal Server Error": true,
+				"Response time is under 3000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404 or 405 - Wrong method or not found": {
+					"pass": 1,
+					"fail": 0
+				},
+				"No 500 Internal Server Error": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is under 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1326
+			],
+			"allTests": [
+				{
+					"Status code is 404 or 405 - Wrong method or not found": true,
+					"No 500 Internal Server Error": true,
+					"Response time is under 3000ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 20798,
+	"collection": {
+		"requests": [
+			{
+				"id": "4aaed97f-c2b1-44c2-89cc-f124ee77cfd1",
+				"method": "GET"
+			},
+			{
+				"id": "4de315a7-bb5a-4839-b339-ec0b075f8562",
+				"method": "POST"
+			},
+			{
+				"id": "f0614030-9b45-4194-bdce-2e6d640ee2bc",
+				"method": "GET"
+			},
+			{
+				"id": "f1fa15e4-8e17-4749-883f-8c35317923ac",
+				"method": "POST"
+			},
+			{
+				"id": "df66bcd3-8175-48c6-a8da-49f06b295656",
+				"method": "GET"
+			},
+			{
+				"id": "4306c2c9-69be-4ba1-8819-446b546efc42",
+				"method": "POST"
+			},
+			{
+				"id": "c12cec9e-c574-4267-a7d9-5ef41f0a2132",
+				"method": "GET"
+			},
+			{
+				"id": "4dd0a59f-125c-43ac-8701-419ffdfd0b78",
+				"method": "POST"
+			},
+			{
+				"id": "6b956850-2a6c-4e1b-b037-cf1d63445263",
+				"method": "DELETE"
+			},
+			{
+				"id": "f9938e45-4ad6-45ed-9df9-b2e355ae9024",
+				"method": "PATCH"
+			}
+		]
+	}
+}
