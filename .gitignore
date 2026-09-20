@@ -8,4 +8,4 @@ blob-report/
 playwright/.cache/
 
 # System / OS files
-.DS_Store
+.DS_Storenode_modules/

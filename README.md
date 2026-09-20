@@ -208,6 +208,7 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 | **September 17, 2026** | **Day 17** | EvilTester API Challenges (`apichallenges.eviltester.com`) | Multi-Layered API Testing: Postman Collections, DevTools HAR Traces & Node.js Execution Simulation | ✅ Completed |
 | **September 18, 2026** | **Day 18** | Restful Booker (`restful-booker.herokuapp.com`) | End-to-End Restful Booker API Workflows, Environment State Binding, DevTools Tracing & Performance Profiling | ✅ Completed |
 | **September 19, 2026** | **Day 19** | Practice Software Testing (`api.practicesoftwaretesting.com`) | AI-Assisted Postman Automation, Bearer Token Auth, Cart/Invoice Workflows & DevTools Tracing | ✅ Completed |
+| **September 20, 2026** | **Day 20** | GoREST API (`gorest.co.in`) | API Bearer Token Negative Auth Testing, Newman/Postman CLI Execution & GitHub Actions CI/CD Integration | ✅ Completed |
 
 ---
 
@@ -231,6 +232,13 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 * **Multi-Tool Architecture Breakdown:**
   * **Postman AI Integration**: Prompt-engineered Postman AI Agent to create `day-19-practice-software-testing` collection and `Day 19 - Practice Software Testing Environment`. Managed dynamic variable extraction for `bearerToken` (`POST /users/login`), `productId` (`GET /products`), `cartId` (`POST /carts`), cart item insertion (`POST /carts/{{cartId}}`), and final checkout invoice creation (`POST /invoices`).
   * **DevTools Tracing & Performance**: Intercepted browser request/response cascades as `api.practicesoftwaretesting.com.har` and recorded CPU main-thread rendering performance profiles as `Trace-20260919T191850.json`.
+
+### 🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (`/day-20-gorest`)
+* **Core Focus:** Comprehensive negative authentication testing for Bearer Token APIs on `https://gorest.co.in`, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
+* **Multi-Tool Architecture Breakdown:**
+  * **Postman Collection & Environment**: Built test suites for invalid, missing, malformed, empty, and expired tokens across `GET`, `POST`, `PATCH`, and `DELETE` methods (`day-20-gorest.postman_collection.json`). Bound authentication state inside `Day 20 - GoRest Environment.postman_environment.json`.
+  * **CI/CD Automation (GitHub Actions)**: Automated collection execution on `push` triggers using Postman CLI inside `.github/workflows/postman.yml` with secure secret variable injections (`POSTMAN_API_KEY`).
+  * **Run Artifacts**: Exported local execution test summaries (`day-20-gorest.postman_test_run.json`) and terminal output screenshots.
 
 ---
 
@@ -468,21 +476,34 @@ Module-2-API-Testing_DevTools/
 │   │   └── Performance/
 │   │       └── Profile-restful-booker.json
 │   └── README.md
-└── day-19-practice-software-testing/
+├── day-19-practice-software-testing/
+│   ├── Collections/
+│   │   └── day-19-practice-software-testing.postman_collection.json
+│   ├── Devtools/
+│   │   ├── Network/
+│   │   │   └── api.practicesoftwaretesting.com.har
+│   │   ├── Performance/
+│   │   │   └── Trace-20260919T191850.json
+│   │   └── Screenshoots/
+│   ├── Enviroments/
+│   │   └── Day 19 - Practice Software Testing Environment.postman_environment.json
+│   └── README.md
+└── day-20-gorest/
     ├── Collections/
-    │   └── day-19-practice-software-testing.postman_collection.json
-    ├── Devtools/
-    │   ├── Network/
-    │   │   └── api.practicesoftwaretesting.com.har
-    │   ├── Performance/
-    │   │   └── Trace-20260919T191850.json
-    │   └── Screenshoots/
-    ├── Enviroments/
-    │   └── Day 19 - Practice Software Testing Environment.postman_environment.json
+    │   └── day-20-gorest.postman_collection.json
+    ├── Enviroment/
+    │   └── Day 20 - GoRest Environment.postman_environment.json
+    ├── Run Collection/
+    │   └── day-20-gorest.postman_test_run.json
+    ├── Screenshots/
+    │   └── Screenshot 2026-09-20 at 9.10.38 PM.png
+    ├── github-workflows/
+    │   └── postman.yml
     └── README.md
 
-node_modules/
-test-results/
+.github/
+└── workflows/
+    └── postman.yml
 .gitignore
 package-lock.json
 package.json
