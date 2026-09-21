@@ -1,0 +1,40 @@
+name: API Automated Test Runner
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Postman CLI / Newman
+        run: sudo npm install -g newman
+
+      - name: Run All Postman Collections Automatically
+        run: |
+          echo "Scanning repository for Postman collections..."
+          
+          # Find all postman_collection.json files in any subfolder
+          find . -name "*.postman_collection.json" | while read -r collection; do
+            echo "---------------------------------------------------"
+            echo "Executing Collection: $collection"
+            
+            # Check if a matching environment file exists in the same module/day directory
+            dir=$(dirname "$collection")
+            env_file=$(find "$dir" -name "*.postman_environment.json" | head -n 1)
+            
+            if [ -n "$env_file" ]; then
+              echo "Using Environment File: $env_file"
+              newman run "$collection" -e "$env_file" --bail || exit 1
+            else
+              echo "No matching environment file found. Running collection standalone..."
+              newman run "$collection" --bail || exit 1
+            fi
+          done
