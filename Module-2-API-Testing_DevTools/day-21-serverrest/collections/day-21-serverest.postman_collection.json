@@ -1,0 +1,829 @@
+{
+  "info": {
+    "_postman_id": "be54be4f-1d52-4208-bec2-3062076b6b42",
+    "name": "day-21-serverest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55615134",
+    "_collection_link": "https://go.postman.co/collection/55615134-be54be4f-1d52-4208-bec2-3062076b6b42?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "POST Login (Happy Path)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has success message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Login realizado com sucesso\");",
+                  "});",
+                  "",
+                  "pm.test(\"Authorization token is returned\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.authorization).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.authorization).to.include(\"Bearer \");",
+                  "});",
+                  "",
+                  "// Capture token to environment variable",
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.authorization) {",
+                  "    pm.environment.set(\"authToken\", jsonData.authorization);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{loginEmail}}\",\n  \"password\": \"{{loginPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Login (Negative - Invalid Credentials)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has invalid credentials message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Email e/ou senha inválidos\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"invalid@email.com\",\n  \"password\": \"wrongpassword\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "GET List Users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has quantidade field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"quantidade\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response has usuarios array\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.usuarios).to.be.an(\"array\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create John Wick (Happy Path)",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Generate a unique email for John Wick using timestamp",
+                  "var timestamp = Date.now();",
+                  "pm.environment.set(\"johnWickEmail\", \"johnwick\" + timestamp + \"@continental.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has success message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response has _id\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData._id).to.be.a(\"string\");",
+                  "});",
+                  "",
+                  "// Capture John Wick's _id",
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData._id) {",
+                  "    pm.environment.set(\"johnWickId\", jsonData._id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"John Wick\",\n  \"email\": \"{{johnWickEmail}}\",\n  \"password\": \"Baba_Yaga_1\",\n  \"administrador\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create User - Duplicate Email (Negative)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has duplicate email message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Este email já está sendo usado\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"John Wick\",\n  \"email\": \"{{johnWickEmail}}\",\n  \"password\": \"Baba_Yaga_1\",\n  \"administrador\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET John Wick by ID (Happy Path)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"User is John Wick\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.nome).to.eql(\"John Wick\");",
+                  "});",
+                  "",
+                  "pm.test(\"_id matches captured ID\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData._id).to.eql(pm.environment.get(\"johnWickId\"));",
+                  "});",
+                  "",
+                  "pm.test(\"Email matches captured email\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.email).to.eql(pm.environment.get(\"johnWickEmail\"));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{johnWickId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{johnWickId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET User by ID - Not Found (Negative)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has user not found message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Usuário não encontrado\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/nonexistent1234ab",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "nonexistent1234ab"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Server Error (Deliberate 500 Test)",
+      "item": [
+        {
+          "name": "Trigger Server Error (Deliberate)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// DELIBERATELY TRIGGERED SERVER ERROR TEST",
+                  "// Purpose: Detect and document unexpected server failures",
+                  "// The 'administrador' param only accepts 'true' or 'false'",
+                  "// Passing an invalid value may trigger a 500 Internal Server Error",
+                  "",
+                  "var statusCode = pm.response.code;",
+                  "",
+                  "pm.test(\"[DELIBERATE] Server responded to invalid input\", function () {",
+                  "    // We accept either 400 (validation) or 500 (server crash) as valid outcomes",
+                  "    pm.expect([400, 500]).to.include(statusCode);",
+                  "});",
+                  "",
+                  "if (statusCode === 500) {",
+                  "    pm.test(\"[DELIBERATE] 500 Internal Server Error was triggered and captured\", function () {",
+                  "        pm.expect(statusCode).to.eql(500);",
+                  "        console.log(\"DELIBERATE SERVER ERROR TRIGGERED\");",
+                  "        console.log(\"Status: \" + statusCode);",
+                  "        console.log(\"Response: \" + pm.response.text());",
+                  "    });",
+                  "} else {",
+                  "    pm.test(\"[INFO] Server returned \" + statusCode + \" instead of 500 - server handled invalid input gracefully\", function () {",
+                  "        pm.expect(statusCode).to.be.oneOf([400, 500]);",
+                  "        console.log(\"Server did not crash. Status: \" + statusCode);",
+                  "        console.log(\"Response: \" + pm.response.text());",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios?administrador=INVALID_VALUE_TO_TRIGGER_500",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "administrador",
+                  "value": "INVALID_VALUE_TO_TRIGGER_500"
+                }
+              ]
+            },
+            "description": "This request deliberately attempts to trigger a 500 Internal Server Error by passing an invalid value for the 'administrador' query parameter. The 'administrador' field only accepts 'true' or 'false'. Passing an invalid value may cause the server to crash. This test documents the server's behavior under unexpected input. If the server returns 400 instead of 500, that is also acceptable and should be noted."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Update User",
+      "item": [
+        {
+          "name": "PUT Update John Wick (Happy Path)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has update success message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Registro alterado com sucesso\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"John Wick Updated\",\n  \"email\": \"{{johnWickEmail}}\",\n  \"password\": \"Baba_Yaga_2\",\n  \"administrador\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{johnWickId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{johnWickId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update - Nonexistent ID Creates New User",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var timestamp = Date.now();",
+                  "pm.environment.set(\"ghostUserEmail\", \"ghostuser\" + timestamp + \"@test.com\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201 (new user created for nonexistent ID)\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has registration success message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Cadastro realizado com sucesso\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response has _id for newly created user\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData._id).to.be.a(\"string\");",
+                  "});",
+                  "",
+                  "// Capture ghost user ID for cleanup",
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData._id) {",
+                  "    pm.environment.set(\"ghostUserId\", jsonData._id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ghost User\",\n  \"email\": \"{{ghostUserEmail}}\",\n  \"password\": \"ghost123\",\n  \"administrador\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/nonexistentid99999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "nonexistentid99999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Update - Duplicate Email (Negative)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has duplicate email message\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.eql(\"Este email já está sendo usado\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"John Wick\",\n  \"email\": \"fulano@qa.com\",\n  \"password\": \"Baba_Yaga_1\",\n  \"administrador\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{johnWickId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{johnWickId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Verify Updated John Wick",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"User name was updated to John Wick Updated\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.nome).to.eql(\"John Wick Updated\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{johnWickId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{johnWickId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cleanup",
+      "item": [
+        {
+          "name": "DELETE John Wick",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var statusCode = pm.response.code;",
+                  "var jsonData = pm.response.json();",
+                  "",
+                  "if (statusCode === 200) {",
+                  "    pm.test(\"John Wick deleted successfully\", function () {",
+                  "        pm.expect(jsonData.message).to.eql(\"Registro excluído com sucesso\");",
+                  "    });",
+                  "} else if (statusCode === 400 && jsonData.idCarrinho) {",
+                  "    pm.test(\"[BLOCKED] Cannot delete user with active cart\", function () {",
+                  "        pm.expect(jsonData.message).to.eql(\"Não é permitido excluir usuário com carrinho cadastrado\");",
+                  "        console.log(\"Cart ID blocking deletion: \" + jsonData.idCarrinho);",
+                  "        pm.environment.set(\"johnWickCartId\", jsonData.idCarrinho);",
+                  "    });",
+                  "} else {",
+                  "    pm.test(\"Unexpected response on DELETE\", function () {",
+                  "        console.log(\"Status: \" + statusCode);",
+                  "        console.log(\"Response: \" + pm.response.text());",
+                  "        pm.expect(statusCode).to.be.oneOf([200, 400]);",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{johnWickId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{johnWickId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Ghost User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var statusCode = pm.response.code;",
+                  "var jsonData = pm.response.json();",
+                  "",
+                  "if (statusCode === 200) {",
+                  "    pm.test(\"Ghost user deleted successfully\", function () {",
+                  "        pm.expect(jsonData.message).to.eql(\"Registro excluído com sucesso\");",
+                  "    });",
+                  "} else {",
+                  "    pm.test(\"Ghost user deletion response documented\", function () {",
+                  "        console.log(\"Status: \" + statusCode);",
+                  "        console.log(\"Response: \" + pm.response.text());",
+                  "        pm.expect(statusCode).to.be.oneOf([200, 400]);",
+                  "    });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{ghostUserId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{ghostUserId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Final Verification",
+      "item": [
+        {
+          "name": "GET Final Users List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has quantidade field\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"quantidade\");",
+                  "});",
+                  "",
+                  "pm.test(\"John Wick is no longer in the users list\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var johnWickId = pm.environment.get(\"johnWickId\");",
+                  "    var found = jsonData.usuarios.some(function(u) { return u._id === johnWickId; });",
+                  "    pm.expect(found).to.be.false;",
+                  "});",
+                  "",
+                  "pm.test(\"Ghost user is no longer in the users list\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    var ghostUserId = pm.environment.get(\"ghostUserId\");",
+                  "    var found = jsonData.usuarios.some(function(u) { return u._id === ghostUserId; });",
+                  "    pm.expect(found).to.be.false;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -209,6 +209,7 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 | **September 18, 2026** | **Day 18** | Restful Booker (`restful-booker.herokuapp.com`) | End-to-End Restful Booker API Workflows, Environment State Binding, DevTools Tracing & Performance Profiling | ✅ Completed |
 | **September 19, 2026** | **Day 19** | Practice Software Testing (`api.practicesoftwaretesting.com`) | AI-Assisted Postman Automation, Bearer Token Auth, Cart/Invoice Workflows & DevTools Tracing | ✅ Completed |
 | **September 20, 2026** | **Day 20** | GoREST API (`gorest.co.in`) | API Bearer Token Negative Auth Testing, Newman/Postman CLI Execution & GitHub Actions CI/CD Integration | ✅ Completed |
+| **September 21, 2026** | **Day 21** | ServeRest API (`serverest.dev`) | End-to-End E-Commerce Auth & User Management, Dynamic Password Mutation, Server Crash Edge-Cases & English Log Assertions | ✅ Completed |
 
 ---
 
@@ -239,6 +240,13 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
   * **Postman Collection & Environment**: Built test suites for invalid, missing, malformed, empty, and expired tokens across `GET`, `POST`, `PATCH`, and `DELETE` methods (`day-20-gorest.postman_collection.json`). Bound authentication state inside `Day 20 - GoRest Environment.postman_environment.json`.
   * **CI/CD Automation (GitHub Actions)**: Automated collection execution on `push` triggers using Postman CLI inside `.github/workflows/postman.yml` with secure secret variable injections (`POSTMAN_API_KEY`).
   * **Run Artifacts**: Exported local execution test summaries (`day-20-gorest.postman_test_run.json`) and terminal output screenshots.
+
+### 🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (`/day-21-serverest`)
+* **Core Focus:** Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping on `https://serverest.dev`.
+* **Multi-Tool Architecture Breakdown:**
+  * **Postman Collection (`day-21-serverest.postman_collection.json`)**: Built a complete 15-request API testing collection covering authentication (`POST /login`), catalog queries (`GET /usuarios`), user registration (`POST /usuarios`), negative validation (`400 Bad Request`), deliberate server crashes (`500 Internal Server Error`), upsert updates (`PUT /usuarios/{_id}`), and total data cleanup (`DELETE /usuarios/{_id}`).
+  * **Environment Configuration (`Day 21 - ServeRest Environment.postman_environment.json`)**: Managed dynamic variables for `baseUrl`, `loginEmail`, `loginPassword`, `authToken`, `johnWickId`, and `johnWickEmail`.
+  * **CI/CD Pipeline Integration**: Exported test run summaries (`day-21-serverest_test_run.json`) and execution screenshots under `Screenshots/`, triggering GitHub Actions workflow execution automatically via root `.github/workflows/postman.yml`.
 
 ---
 
@@ -488,17 +496,26 @@ Module-2-API-Testing_DevTools/
 │   ├── Enviroments/
 │   │   └── Day 19 - Practice Software Testing Environment.postman_environment.json
 │   └── README.md
-└── day-20-gorest/
+├── day-20-gorest/
+│   ├── Collections/
+│   │   └── day-20-gorest.postman_collection.json
+│   ├── Enviroment/
+│   │   └── Day 20 - GoRest Environment.postman_environment.json
+│   ├── Run Collection/
+│   │   └── day-20-gorest.postman_test_run.json
+│   ├── Screenshots/
+│   │   └── Screenshot 2026-09-20 at 9.10.38 PM.png
+│   ├── github-workflows/
+│   │   └── postman.yml
+│   └── README.md
+└── day-21-serverest/
     ├── Collections/
-    │   └── day-20-gorest.postman_collection.json
-    ├── Enviroment/
-    │   └── Day 20 - GoRest Environment.postman_environment.json
+    │   └── day-21-serverest.postman_collection.json
+    ├── Environment/
+    │   └── Day 21 - ServeRest Environment.postman_environment.json
     ├── Run Collection/
-    │   └── day-20-gorest.postman_test_run.json
+    │   └── day-21-serverest_test_run.json
     ├── Screenshots/
-    │   └── Screenshot 2026-09-20 at 9.10.38 PM.png
-    ├── github-workflows/
-    │   └── postman.yml
     └── README.md
 
 .github/
