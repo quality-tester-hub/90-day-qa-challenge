@@ -1,0 +1,499 @@
+{
+  "info": {
+    "_postman_id": "b841e7fd-3456-45b9-aa0e-392af9d719e5",
+    "name": "Day 22 – JSONPlaceholder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58424468",
+    "_collection_link": "https://go.postman.co/collection/58424468-b841e7fd-3456-45b9-aa0e-392af9d719e5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Phase 1 – Posts",
+      "item": [
+        {
+          "name": "01 – GET /posts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array of 100 posts\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "    pm.expect(jsonData.length).to.eql(100);",
+                  "});",
+                  "",
+                  "pm.test(\"Each post has userId, id, title, body\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    jsonData.forEach(function(post) {",
+                  "        pm.expect(post).to.have.property('userId');",
+                  "        pm.expect(post).to.have.property('id');",
+                  "        pm.expect(post).to.have.property('title');",
+                  "        pm.expect(post).to.have.property('body');",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02 – POST /posts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains submitted fields and id\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData.userId).to.eql(1);",
+                  "    pm.expect(jsonData.title).to.eql(\"QA Portfolio Test Post\");",
+                  "    pm.expect(jsonData.body).to.eql(\"Automated content for Day 22 testing.\");",
+                  "});",
+                  "",
+                  "pm.test(\"Capture postId from response\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.environment.set(\"postId\", jsonData.id);",
+                  "    pm.expect(jsonData.id).to.exist;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"title\": \"QA Portfolio Test Post\",\n  \"body\": \"Automated content for Day 22 testing.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 2 – Volume / Edge Testing",
+      "item": [
+        {
+          "name": "03 – POST /posts Volume Simulation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has id field\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains submitted title\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.title).to.eql(\"Day 22 Volume Test\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"title\": \"Day 22 Volume Test\",\n  \"body\": \"Testing repeated POST requests.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/posts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 3 – Comments",
+      "item": [
+        {
+          "name": "04 – GET /posts/1/comments",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Each comment has postId, id, name, email, body\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    jsonData.forEach(function(comment) {",
+                  "        pm.expect(comment).to.have.property('postId');",
+                  "        pm.expect(comment).to.have.property('id');",
+                  "        pm.expect(comment).to.have.property('name');",
+                  "        pm.expect(comment).to.have.property('email');",
+                  "        pm.expect(comment).to.have.property('body');",
+                  "    });",
+                  "});",
+                  "",
+                  "pm.test(\"Capture commentId from first comment\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.environment.set(\"commentId\", jsonData[0].id);",
+                  "    pm.expect(jsonData[0].id).to.exist;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/posts/1/comments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "posts",
+                "1",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05 – DELETE /comments/{{commentId}}",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Verify actual status code returned by JSONPlaceholder\", function () {",
+                  "    const statusCode = pm.response.code;",
+                  "    pm.expect([200, 204]).to.include(statusCode);",
+                  "    console.log(\"DELETE /comments status code:\", statusCode);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is not a server error\", function () {",
+                  "    pm.expect(pm.response.code).to.be.below(500);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/comments/{{commentId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "comments",
+                "{{commentId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 4 – PATCH Photo",
+      "item": [
+        {
+          "name": "06 – PATCH /photos/1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains updated title\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.title).to.eql(\"Updated QA Photo Banner Title\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains resource ID\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated QA Photo Banner Title\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/photos/{{photoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "photos",
+                "{{photoId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 5 – PUT User",
+      "item": [
+        {
+          "name": "07 – PUT /users/1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains updated name\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.name).to.eql(\"Replaced QA User\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains updated username\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.username).to.eql(\"qa_tester_new\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains updated email\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.email).to.eql(\"qa.new@testing.com\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains user ID\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.id).to.eql(1);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Replaced QA User\",\n  \"username\": \"qa_tester_new\",\n  \"email\": \"qa.new@testing.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/{{userId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 6 – Users Baseline",
+      "item": [
+        {
+          "name": "08 – GET /users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array of 10 users\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.be.an('array');",
+                  "    pm.expect(jsonData.length).to.eql(10);",
+                  "});",
+                  "",
+                  "pm.test(\"Each user has expected JSON structure\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    jsonData.forEach(function(user) {",
+                  "        pm.expect(user).to.have.property('id');",
+                  "        pm.expect(user).to.have.property('name');",
+                  "        pm.expect(user).to.have.property('username');",
+                  "        pm.expect(user).to.have.property('email');",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Phase 7 – Invalid / Boundary User ID",
+      "item": [
+        {
+          "name": "09 – GET /users/1001",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Verify actual response - not a 500 error\", function () {",
+                  "    pm.expect(pm.response.code).to.be.below(500);",
+                  "    console.log(\"GET /users/1001 status code:\", pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is likely 404 (boundary/invalid ID)\", function () {",
+                  "    const statusCode = pm.response.code;",
+                  "    pm.expect([404, 200]).to.include(statusCode);",
+                  "    console.log(\"Boundary test status:\", statusCode);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/users/1001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "1001"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
