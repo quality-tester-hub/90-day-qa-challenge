@@ -33,7 +33,7 @@ jobs:
             
             # Check if a matching environment file exists in the same module/day directory
             dir=$(dirname "$collection")
-            env_file=$(find "$dir" -name "*.postman_environment.json" | head -n 1)
+            env_file=$(find "$(dirname "$dir")" -name "*.postman_environment.json" | head -n 1)
             
             if [ -n "$env_file" ]; then
               echo "Using Environment File: $env_file"
