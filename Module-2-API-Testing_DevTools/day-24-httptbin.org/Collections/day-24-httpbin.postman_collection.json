@@ -1,0 +1,2218 @@
+{
+  "info": {
+    "_postman_id": "d32a2729-d1b8-49e6-adf9-bf35a1e20819",
+    "name": "day-24-httpbin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58424468",
+    "_collection_link": "https://go.postman.co/collection/58424468-d32a2729-d1b8-49e6-adf9-bf35a1e20819?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Status Codes",
+      "item": [
+        {
+          "name": "GET Status Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code matches environment variable\", function () {",
+                  "    pm.response.to.have.status(parseInt(pm.environment.get(\"statusCode\")));",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/status/{{statusCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "status",
+                "{{statusCode}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Status Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code matches environment variable\", function () {",
+                  "    pm.response.to.have.status(parseInt(pm.environment.get(\"statusCode\")));",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/status/{{statusCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "status",
+                "{{statusCode}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Status Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code matches environment variable\", function () {",
+                  "    pm.response.to.have.status(parseInt(pm.environment.get(\"statusCode\")));",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/status/{{statusCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "status",
+                "{{statusCode}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH Status Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code matches environment variable\", function () {",
+                  "    pm.response.to.have.status(parseInt(pm.environment.get(\"statusCode\")));",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/status/{{statusCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "status",
+                "{{statusCode}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Status Code",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code matches environment variable\", function () {",
+                  "    pm.response.to.have.status(parseInt(pm.environment.get(\"statusCode\")));",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/status/{{statusCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "status",
+                "{{statusCode}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Request Inspection",
+      "item": [
+        {
+          "name": "Get Headers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has headers object\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"headers\");",
+                  "    pm.expect(json.headers).to.be.an(\"object\");",
+                  "});",
+                  "pm.test(\"Host header is present\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.headers).to.have.property(\"Host\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/headers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "headers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get IP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has origin field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"origin\");",
+                  "    pm.expect(json.origin).to.be.a(\"string\");",
+                  "});",
+                  "pm.test(\"Origin looks like an IP address\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.origin).to.match(/\\d+\\.\\d+\\.\\d+\\.\\d+/);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/ip",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ip"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Agent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has user-agent field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"user-agent\");",
+                  "    pm.expect(json[\"user-agent\"]).to.be.a(\"string\");",
+                  "});",
+                  "pm.test(\"User-agent is not empty\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json[\"user-agent\"]).to.not.be.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user-agent",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user-agent"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Response Inspection",
+      "item": [
+        {
+          "name": "Cache Control",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Last-Modified header is present\", function () {",
+                  "    pm.response.to.have.header(\"last-modified\");",
+                  "});",
+                  "pm.test(\"Response has expected fields\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"headers\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cache",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cache"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cache with Max-Age",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Cache-Control header contains max-age\", function () {",
+                  "    pm.response.to.have.header(\"Cache-Control\");",
+                  "    pm.expect(pm.response.headers.get(\"Cache-Control\")).to.include(\"max-age=60\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cache/60",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cache",
+                "60"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ETag",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"ETag header is present\", function () {",
+                  "    pm.response.to.have.header(\"ETag\");",
+                  "});",
+                  "pm.test(\"ETag value matches\", function () {",
+                  "    const etag = pm.environment.get(\"etag\");",
+                  "    pm.expect(pm.response.headers.get(\"ETag\")).to.include(etag);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/etag/{{etag}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "etag",
+                "{{etag}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Response Headers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Custom header is present in response\", function () {",
+                  "    pm.response.to.have.header(\"X-Custom-Header\");",
+                  "    pm.expect(pm.response.headers.get(\"X-Custom-Header\")).to.equal(\"TestValue\");",
+                  "});",
+                  "pm.test(\"Content-Type is set correctly\", function () {",
+                  "    pm.response.to.have.header(\"Content-Type\");",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/response-headers?Content-Type=application/json&X-Custom-Header=TestValue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "response-headers"
+              ],
+              "query": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-Custom-Header",
+                  "value": "TestValue"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Inspect Response Headers (POST)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"X-Test header is present\", function () {",
+                  "    pm.response.to.have.header(\"X-Test\");",
+                  "    pm.expect(pm.response.headers.get(\"X-Test\")).to.equal(\"PostmanTest\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/response-headers?X-Test=PostmanTest",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "response-headers"
+              ],
+              "query": [
+                {
+                  "key": "X-Test",
+                  "value": "PostmanTest"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Response Formats",
+      "item": [
+        {
+          "name": "Brotli Encoding",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has brotli field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"brotli\");",
+                  "    pm.expect(json.brotli).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/brotli",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "brotli"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deflate Encoding",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has deflated field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"deflated\");",
+                  "    pm.expect(json.deflated).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/deflate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deflate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GZip Encoding",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has gzipped field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"gzipped\");",
+                  "    pm.expect(json.gzipped).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/gzip",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "gzip"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "JSON Response",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is application/json\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+                  "});",
+                  "pm.test(\"Response is valid JSON\", function () {",
+                  "    pm.response.to.be.json;",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.be.an(\"object\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/json",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "json"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "XML Response",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is XML\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"xml\");",
+                  "});",
+                  "pm.test(\"Response body contains XML\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"<?xml\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/xml",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "xml"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HTML Response",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is HTML\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"html\");",
+                  "});",
+                  "pm.test(\"Response body contains HTML tags\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"<html\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/html",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "html"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Robots.txt",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is text/plain\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/plain\");",
+                  "});",
+                  "pm.test(\"Response contains User-agent\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"User-agent\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/robots.txt",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "robots.txt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deny (Forbidden)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response contains denied message\", function () {\n    pm.expect(pm.response.text()).to.include(\"YOU SHOULDN'T BE HERE\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/deny",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deny"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encoding UTF-8",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type includes UTF-8\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"utf-8\");",
+                  "});",
+                  "pm.test(\"Response body is not empty\", function () {",
+                  "    pm.expect(pm.response.text()).to.not.be.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/encoding/utf8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "encoding",
+                "utf8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Data",
+      "item": [
+        {
+          "name": "Base64 Decode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response is decoded text\", function () {",
+                  "    pm.expect(pm.response.text()).to.not.be.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/base64/{{encodedValue}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "base64",
+                "{{encodedValue}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Random Bytes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has content\", function () {",
+                  "    pm.expect(pm.response.responseSize).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bytes/{{byteCount}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bytes",
+                "{{byteCount}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delay Response",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response was delayed\", function () {",
+                  "    const delay = parseInt(pm.environment.get(\"delay\")) * 1000;",
+                  "    pm.expect(pm.response.responseTime).to.be.at.least(delay - 200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/delay/{{delay}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "delay",
+                "{{delay}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drip Feed",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has content\", function () {",
+                  "    pm.expect(pm.response.responseSize).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/drip?numbytes={{byteCount}}&duration={{delay}}&delay={{chunkDelay}}&code=200",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "drip"
+              ],
+              "query": [
+                {
+                  "key": "numbytes",
+                  "value": "{{byteCount}}"
+                },
+                {
+                  "key": "duration",
+                  "value": "{{delay}}"
+                },
+                {
+                  "key": "delay",
+                  "value": "{{chunkDelay}}"
+                },
+                {
+                  "key": "code",
+                  "value": "200"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Stream Response",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response body is not empty\", function () {",
+                  "    pm.expect(pm.response.text()).to.not.be.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/stream/{{streamCount}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "stream",
+                "{{streamCount}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Stream Bytes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has content\", function () {",
+                  "    pm.expect(pm.response.responseSize).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/stream-bytes/{{byteCount}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "stream-bytes",
+                "{{byteCount}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UUID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has uuid field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"uuid\");",
+                  "});",
+                  "pm.test(\"UUID format is valid\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.uuid).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i);",
+                  "});",
+                  "pm.environment.set(\"lastUUID\", pm.response.json().uuid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/uuid",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "uuid"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Range of Bytes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Range or Accept-Ranges header present\", function () {",
+                  "    const hasAcceptRanges = pm.response.headers.has(\"Accept-Ranges\");",
+                  "    const hasContentRange = pm.response.headers.has(\"Content-Range\");",
+                  "    pm.expect(hasAcceptRanges || hasContentRange).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/range/{{byteCount}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "range",
+                "{{byteCount}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Links",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response contains HTML links\", function () {",
+                  "    pm.expect(pm.response.text()).to.include(\"<a href\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/links/5/0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "links",
+                "5",
+                "0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image PNG",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is image/png\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"image/png\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/image/png",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "image",
+                "png"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image JPEG",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is image/jpeg\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"image/jpeg\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/image/jpeg",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "image",
+                "jpeg"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image SVG",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is SVG\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"svg\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/image/svg",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "image",
+                "svg"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Image WebP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Content-Type is image/webp\", function () {",
+                  "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"image/webp\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/image/webp",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "image",
+                "webp"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cookies",
+      "item": [
+        {
+          "name": "Set Cookie",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 or redirect followed\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cookies/set/{{cookieName}}/{{cookieValue}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cookies",
+                "set",
+                "{{cookieName}}",
+                "{{cookieValue}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Cookies",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has cookies object\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"cookies\");",
+                  "    pm.expect(json.cookies).to.be.an(\"object\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cookies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cookies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Cookie",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 or redirect followed\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cookies/delete?{{cookieName}}=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cookies",
+                "delete"
+              ],
+              "query": [
+                {
+                  "key": "{{cookieName}}",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Set Multiple Cookies",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 or redirect followed\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cookies/set?session=abc&user=postman&theme=dark",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cookies",
+                "set"
+              ],
+              "query": [
+                {
+                  "key": "session",
+                  "value": "abc"
+                },
+                {
+                  "key": "user",
+                  "value": "postman"
+                },
+                {
+                  "key": "theme",
+                  "value": "dark"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Redirects",
+      "item": [
+        {
+          "name": "Absolute Redirect",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after following redirects\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/absolute-redirect/{{numRedirects}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "absolute-redirect",
+                "{{numRedirects}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Relative Redirect",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after following redirects\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/relative-redirect/{{numRedirects}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "relative-redirect",
+                "{{numRedirects}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Redirect To (GET)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after redirect\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/redirect-to?url={{redirectTarget}}&status_code=302",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "redirect-to"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{redirectTarget}}"
+                },
+                {
+                  "key": "status_code",
+                  "value": "302"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Redirect To (POST)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after redirect\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/redirect-to?url={{redirectTarget}}&status_code=307",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "redirect-to"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "{{redirectTarget}}"
+                },
+                {
+                  "key": "status_code",
+                  "value": "307"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Redirect (n times)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after following redirects\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/redirect/{{numRedirects}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "redirect",
+                "{{numRedirects}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "No Follow Redirect",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});",
+                  "pm.test(\"Status code is 200 or 3xx\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 301, 302, 303, 307, 308]);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/redirect/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "redirect",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Redirect to HTTPS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 after redirect\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "    pm.expect(json.url).to.include(\"https\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/redirect-to?url=https://httpbin.org/get",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "redirect-to"
+              ],
+              "query": [
+                {
+                  "key": "url",
+                  "value": "https://httpbin.org/get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Redirect History",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/absolute-redirect/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "absolute-redirect",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Anything",
+      "item": [
+        {
+          "name": "GET Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is GET\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"GET\");",
+                  "});",
+                  "pm.test(\"Response has url field\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json).to.have.property(\"url\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is POST\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"POST\");",
+                  "});",
+                  "pm.test(\"Request body is echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.json).to.have.property(\"test\", \"postman\");",
+                  "    pm.expect(json.json).to.have.property(\"day\", 24);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"test\": \"postman\", \"day\": 24}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is PUT\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"PUT\");",
+                  "});",
+                  "pm.test(\"Request body is echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.json).to.have.property(\"update\", true);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"update\": true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is PATCH\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"PATCH\");",
+                  "});",
+                  "pm.test(\"Request body is echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.json).to.have.property(\"patch\", \"value\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"patch\": \"value\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is DELETE\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"DELETE\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "HEAD Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "HEAD",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "OPTIONS Anything",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is acceptable\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3000);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "OPTIONS",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Anything with Query Params",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Query params are echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.args).to.have.property(\"foo\", \"bar\");",
+                  "    pm.expect(json.args).to.have.property(\"baz\", \"qux\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/anything?foo=bar&baz=qux",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ],
+              "query": [
+                {
+                  "key": "foo",
+                  "value": "bar"
+                },
+                {
+                  "key": "baz",
+                  "value": "qux"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Anything with Headers",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Custom headers are echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.headers).to.have.property(\"X-Custom-Header\", \"PostmanTest\");",
+                  "    pm.expect(json.headers).to.have.property(\"X-Day\", \"24\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Custom-Header",
+                "value": "PostmanTest"
+              },
+              {
+                "key": "X-Day",
+                "value": "24"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Anything with Form Data",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Method is POST\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.method).to.equal(\"POST\");",
+                  "});",
+                  "pm.test(\"Form data is echoed back\", function () {",
+                  "    const json = pm.response.json();",
+                  "    pm.expect(json.form).to.have.property(\"name\", \"Postman\");",
+                  "    pm.expect(json.form).to.have.property(\"day\", \"24\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Postman"
+                },
+                {
+                  "key": "day",
+                  "value": "24"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/anything",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "anything"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

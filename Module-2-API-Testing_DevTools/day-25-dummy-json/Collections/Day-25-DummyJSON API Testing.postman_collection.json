@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "79347bc3-2433-439f-8142-d6e567282f5c",
+    "name": "Day-25-DummyJSON API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58518994",
+    "_collection_link": "https://go.postman.co/collection/58518994-79347bc3-2433-439f-8142-d6e567282f5c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "pm.test(\"Response has products array\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"products\");",
+              "    pm.expect(json.products).to.be.an(\"array\");",
+              "});",
+              "pm.test(\"Products array has at least one record\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json.products.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Carts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "pm.test(\"Response has carts array\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"carts\");",
+              "    pm.expect(json.carts).to.be.an(\"array\");",
+              "});",
+              "pm.test(\"Carts array has at least one record\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json.carts.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/carts",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "carts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Comments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response is JSON\", function () {",
+              "    pm.response.to.be.json;",
+              "});",
+              "pm.test(\"Response has comments array\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"comments\");",
+              "    pm.expect(json.comments).to.be.an(\"array\");",
+              "});",
+              "pm.test(\"Comments array has at least one record\", function () {",
+              "    const json = pm.response.json();",
+              "    pm.expect(json.comments.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/comments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "comments"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
