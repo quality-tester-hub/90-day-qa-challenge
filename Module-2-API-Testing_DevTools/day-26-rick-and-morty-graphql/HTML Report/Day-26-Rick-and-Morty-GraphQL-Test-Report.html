@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Day 26 — Rick and Morty GraphQL Test Report</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--content-color-primary); padding: 16px; font-size: 13px; }
+
+  .report-header { border-radius: 8px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: #fff; padding: 20px 24px; margin-bottom: 16px; }
+  .report-header h1 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .report-header .subtitle { font-size: 12px; opacity: 0.85; }
+  .report-header .meta { font-size: 11px; opacity: 0.75; margin-top: 6px; }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  .summary-card { border-radius: 8px; padding: 14px 16px; background: var(--background-color-secondary); border: 1px solid var(--border-color-default, rgba(128,128,128,0.2)); text-align: center; }
+  .summary-card .value { font-size: 26px; font-weight: 700; line-height: 1; }
+  .summary-card .label { font-size: 11px; color: var(--content-color-secondary); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .summary-card.green .value { color: #16a34a; }
+  .summary-card.blue .value { color: #2563eb; }
+  .summary-card.orange .value { color: #ea580c; }
+  .summary-card.purple .value { color: #7c3aed; }
+
+  .section-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; color: var(--content-color-primary); display: flex; align-items: center; gap: 6px; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border-color-default, rgba(128,128,128,0.2)); }
+
+  .progress-bar-wrap { background: var(--background-color-secondary); border-radius: 99px; height: 8px; margin-bottom: 16px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #16a34a, #22c55e); transition: width 0.6s ease; }
+
+  .folder-block { margin-bottom: 14px; }
+  .folder-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #ea580c; margin-bottom: 6px; padding: 4px 8px; background: rgba(234,88,12,0.08); border-radius: 4px; display: inline-block; }
+
+  .request-card { border-radius: 6px; border: 1px solid var(--border-color-default, rgba(128,128,128,0.2)); margin-bottom: 8px; overflow: hidden; background: var(--background-color-secondary); }
+  .request-header { display: flex; align-items: center; gap: 8px; padding: 9px 12px; cursor: pointer; user-select: none; }
+  .request-header:hover { background: rgba(128,128,128,0.06); }
+  .method-badge { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; background: #7c3aed; color: #fff; letter-spacing: 0.03em; flex-shrink: 0; }
+  .request-name { font-weight: 600; font-size: 12px; flex: 1; }
+  .status-badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 99px; flex-shrink: 0; }
+  .status-badge.pass { background: rgba(22,163,74,0.12); color: #16a34a; }
+  .status-badge.fail { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .http-code { font-size: 11px; color: #16a34a; font-weight: 600; flex-shrink: 0; }
+  .response-time { font-size: 11px; color: var(--content-color-secondary); flex-shrink: 0; }
+  .chevron { font-size: 10px; color: var(--content-color-secondary); flex-shrink: 0; transition: transform 0.2s; }
+  .request-card.open .chevron { transform: rotate(90deg); }
+
+  .request-body { display: none; padding: 0 12px 10px; border-top: 1px solid var(--border-color-default, rgba(128,128,128,0.15)); }
+  .request-card.open .request-body { display: block; }
+  .test-list { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+  .test-row { display: flex; align-items: center; gap: 7px; font-size: 11px; }
+  .test-icon { width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; flex-shrink: 0; }
+  .test-icon.pass { background: #16a34a; color: #fff; }
+  .test-icon.fail { background: #dc2626; color: #fff; }
+  .test-name { color: var(--content-color-primary); }
+
+  .chart-section { margin-bottom: 16px; }
+  .bar-chart { display: flex; flex-direction: column; gap: 6px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; }
+  .bar-label { font-size: 10px; width: 140px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--content-color-secondary); }
+  .bar-track { flex: 1; background: rgba(128,128,128,0.12); border-radius: 99px; height: 10px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #f97316, #ea580c); }
+  .bar-val { font-size: 10px; width: 36px; text-align: right; color: var(--content-color-secondary); flex-shrink: 0; }
+
+  .footer { text-align: center; font-size: 10px; color: var(--content-color-secondary); margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--border-color-default, rgba(128,128,128,0.2)); }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>🧪 Day 26 — Rick &amp; Morty GraphQL API</h1>
+  <div class="subtitle">Collection Test Report &nbsp;·&nbsp; day-26-rick-and-morty-graphql</div>
+  <div class="meta">Environment: day 26 rick and morty graphql &nbsp;·&nbsp; Run on: 26 Sep 2026 &nbsp;·&nbsp; Total duration: 3,912 ms</div>
+</div>
+
+<!-- Summary Cards -->
+<div class="summary-grid">
+  <div class="summary-card green"><div class="value">54</div><div class="label">Tests Passed</div></div>
+  <div class="summary-card blue"><div class="value">10</div><div class="label">Requests</div></div>
+  <div class="summary-card orange"><div class="value">3.9s</div><div class="label">Total Time</div></div>
+  <div class="summary-card purple"><div class="value">100%</div><div class="label">Pass Rate</div></div>
+</div>
+
+<!-- Overall Progress -->
+<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
+
+<!-- Response Time Chart -->
+<div class="chart-section">
+  <div class="section-title">Response Times</div>
+  <div class="bar-chart">
+    <div class="bar-row"><div class="bar-label">GET SINGLE CHARACTER</div><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><div class="bar-val">336ms</div></div>
+    <div class="bar-row"><div class="bar-label">CHARACTER WITH EPISODES</div><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><div class="bar-val">333ms</div></div>
+    <div class="bar-row"><div class="bar-label">MULTIPLE CHARACTERS</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">683ms</div></div>
+    <div class="bar-row"><div class="bar-label">LIST CHARACTERS</div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><div class="bar-val">341ms</div></div>
+    <div class="bar-row"><div class="bar-label">CHARACTERS PAGE 2</div><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><div class="bar-val">340ms</div></div>
+    <div class="bar-row"><div class="bar-label">GET SINGLE EPISODE</div><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><div class="bar-val">333ms</div></div>
+    <div class="bar-row"><div class="bar-label">EPISODE WITH CHARACTERS</div><div class="bar-track"><div class="bar-fill" style="width:53%"></div></div><div class="bar-val">362ms</div></div>
+    <div class="bar-row"><div class="bar-label">MULTIPLE EPISODES</div><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><div class="bar-val">331ms</div></div>
+    <div class="bar-row"><div class="bar-label">LIST EPISODES</div><div class="bar-track"><div class="bar-fill" style="width:73%"></div></div><div class="bar-val">502ms</div></div>
+    <div class="bar-row"><div class="bar-label">EPISODES PAGE 2</div><div class="bar-track"><div class="bar-fill" style="width:51%"></div></div><div class="bar-val">351ms</div></div>
+  </div>
+</div>
+
+<!-- Requests Detail -->
+<div class="section-title">Request Details</div>
+
+<!-- Characters Folder -->
+<div class="folder-block">
+  <div class="folder-label">📁 Characters</div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">GET SINGLE CHARACTER</span>
+      <span class="http-code">200</span>
+      <span class="response-time">336ms</span>
+      <span class="status-badge pass">7/7 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response contains data</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.character exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Returned ID matches characterId</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Requested fields exist</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Nested origin.name is returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Nested location.name is returned</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">CHARACTER WITH EPISODES</span>
+      <span class="http-code">200</span>
+      <span class="response-time">333ms</span>
+      <span class="status-badge pass">5/5 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response contains data</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.character exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">episode is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Episode objects contain requested fields</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">MULTIPLE CHARACTERS</span>
+      <span class="http-code">200</span>
+      <span class="response-time">683ms</span>
+      <span class="status-badge pass">6/6 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response contains data</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Result is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Three character records are returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Each record contains requested fields</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">IDs correspond to requested IDs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">LIST CHARACTERS</span>
+      <span class="http-code">200</span>
+      <span class="response-time">341ms</span>
+      <span class="status-badge pass">7/7 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.characters exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">info exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">results is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Pagination information is returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Each character contains requested fields</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Results are not empty</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">CHARACTERS PAGE 2</span>
+      <span class="http-code">200</span>
+      <span class="response-time">340ms</span>
+      <span class="status-badge pass">5/5 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.characters exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Pagination information exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Results are returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response represents page 2 (prev is not null)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Episodes Folder -->
+<div class="folder-block">
+  <div class="folder-label">📁 Episodes</div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">GET SINGLE EPISODE</span>
+      <span class="http-code">200</span>
+      <span class="response-time">333ms</span>
+      <span class="status-badge pass">4/4 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.episode exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Returned ID matches episodeId</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Requested episode fields exist</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">EPISODE WITH CHARACTERS</span>
+      <span class="http-code">200</span>
+      <span class="response-time">362ms</span>
+      <span class="status-badge pass">5/5 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.episode exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">characters is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Character objects contain requested fields</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Nested relationship data is present</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">MULTIPLE EPISODES</span>
+      <span class="http-code">200</span>
+      <span class="response-time">331ms</span>
+      <span class="status-badge pass">5/5 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Result is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Three episode records are returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Each record contains requested fields</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">IDs correspond to requested IDs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">LIST EPISODES</span>
+      <span class="http-code">200</span>
+      <span class="response-time">502ms</span>
+      <span class="status-badge pass">6/6 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">data.episodes exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">info exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">results is an array</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Pagination information is returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Episode records contain requested fields</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-card" onclick="toggle(this)">
+    <div class="request-header">
+      <span class="method-badge">GQL</span>
+      <span class="request-name">EPISODES PAGE 2</span>
+      <span class="http-code">200</span>
+      <span class="response-time">351ms</span>
+      <span class="status-badge pass">4/4 PASS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="request-body">
+      <div class="test-list">
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Response is successful</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Pagination information exists</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Results are returned</span></div>
+        <div class="test-row"><div class="test-icon pass">✓</div><span class="test-name">Request successfully retrieves another page</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Generated by Postman Agent &nbsp;·&nbsp; day-26-rick-and-morty-graphql &nbsp;·&nbsp; 54 tests · 0 failures</div>
+
+<script>
+  function toggle(card) {
+    card.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

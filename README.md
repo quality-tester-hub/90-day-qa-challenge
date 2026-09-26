@@ -47,7 +47,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 * **Core Focus:** Handling complex UI components, dynamic waits, frames, modal dialogs, and documenting bugs.
 
-* **Key Workflows:** Form edge-case testing, element visibility validations, and writing structured bug reports under `/Defects_&_Bugreports`. Learned how to cut out dynamic ad network frames and layout-shifting elements using custom `beforeEach` fixtures (`page.route()` and `page.evaluate()`) for flake-free execution.
+* **Key Workflows:** Form edge-case testing, element visibility validations, and writing structured bug reports under ` /Defects_&_Bugreports`. Learned how to cut out dynamic ad network frames and layout-shifting elements using custom `beforeEach` fixtures (`page.route()` and `page.evaluate()`) for flake-free execution.
 
 ### 🗓️ September 3, 2026 — Day 03: E-Commerce Workflows (`/day-03-sauce-demo`)
 
@@ -197,7 +197,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ### 🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (`/day-11-commitquality`)
 
-* **Core Focus:** Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality (`https://commitquality.com/practice`).
+* **Core Focus:** Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality.
 
 * **Test Suite Breakdown:**
 
@@ -205,7 +205,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 * `add-product.spec.ts`: Validates new product creation flows, unique item additions, and mandatory field validation errors.
 
-* `components.spec.ts`: Automates standard navigation, click types (single/double/right), radio buttons, checkboxes, and select dropdowns on `https://commitquality.com/practice`.
+* `components.spec.ts`: Automates standard navigation, click types (single/double/right), radio buttons, checkboxes, and select dropdowns.
 
 * `accordion.spec.ts`: Tests expand/collapse states and conditional text element visibility.
 
@@ -223,7 +223,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ### 🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (`/day-12-restful-booker-platform`)
 
-* **Core Focus:** Automating hotel reservation workflows, date pickers, contact query submissions, SPA routing issues, and backend concurrency performance logging on `https://automationintesting.online/`.
+* **Core Focus:** Automating hotel reservation workflows, date pickers, contact query submissions, SPA routing issues, and backend concurrency performance logging.
 
 * **Test Suite Breakdown:**
 
@@ -235,73 +235,73 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 * **Bug Reports Tracked:**
 
-* `BUG-RBP-001`: Navigation route updates URL but target page content fails to load (`/amenities`). (Tested across macOS, Windows, Linux, Android).
+* `BUG-RBP-001`: Navigation route updates URL but target page content fails to load (`/amenities`).
 
-* `BUG-RBP-002`: Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load. (Tested across macOS, Windows, Linux, Android).
+* `BUG-RBP-002`: Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load.
 
 ### 🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (`/day-13-orangehrm`)
 
-* **Core Focus:** Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs on `https://opensource-demo.orangehrmlive.com/`.
+* **Core Focus:** Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs.
 
 * **Test Suite Breakdown:**
 
-* `login.spec.ts`: Validates user login authentication and dashboard redirection.
+* `login.spec.ts`
 
-* `dashboard.spec.ts`: Main navigation side-menu and UI element visibility checks.
+* `dashboard.spec.ts`
 
-* `admin.spec.ts`: User role filtering and search result table grid verification.
+* `admin.spec.ts`
 
-* `pim.spec.ts`: Employee search by name/ID and record table population.
+* `pim.spec.ts`
 
-* `leave.spec.ts`: Leave list filters, date picker inputs, and form container state.
+* `leave.spec.ts`
 
-* `apply-leave.spec.ts`: Navigation to apply sub-tab, leave type selection, and form submission checks.
+* `apply-leave.spec.ts`
 
-* `leave-requirements.spec.ts`: Accessing configuration options and validating leave type tables.
+* `leave-requirements.spec.ts`
 
-* `recruitment.spec.ts`: Filtering candidates by name/job title and grid assertions.
+* `recruitment.spec.ts`
 
-* `performance.spec.ts`: Searching performance trackers and evaluating result tables.
+* `performance.spec.ts`
 
-* `directory.spec.ts`: Employee directory queries and card view assertions.
+* `directory.spec.ts`
 
-* `maintenance.spec.ts`: Password re-authentication prompt handling and record purge options.
+* `maintenance.spec.ts`
 
-* `claim.spec.ts`: Search filters and claim request records display.
+* `claim.spec.ts`
 
 ### 🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (`/day-14-cymbal-direct`)
 
-* **Core Focus:** Automating end-to-end user journeys for the Cymbal Direct microservices platform (`https://cymbal-shops.retail.cymbal.dev/`), product catalog iterations, dynamic cart drawer management, and order completions.
+* **Core Focus:** Automating end-to-end user journeys for the Cymbal Direct microservices platform, product catalog iterations, dynamic cart drawer management, and order completions.
 
 * **Test Suite Breakdown:**
 
-* `select-product.spec.ts`: Navigates through individual product catalog items sequentially.
+* `select-product.spec.ts`
 
-* `add-to-cart.spec.ts`: Validates item selection, quantities, and cart additions across product routes.
+* `add-to-cart.spec.ts`
 
-* `emty-cart.spec.ts`: Tests quantity dropdown updates and clearing cart inventory.
+* `emty-cart.spec.ts`
 
-* `place-order.spec.ts`: Verifies checkout input forms, shipping details, and order submission flows.
+* `place-order.spec.ts`
 
 ### 🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (`/day-15-ui5.sap.demoapps`)
 
-* **Core Focus:** Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (`sap_horizon_dark`), database view grids, and AI integrations on `https://ui5.sap.com/#/demoapps`.
+* **Core Focus:** Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (`sap_horizon_dark`), database view grids, and AI integrations.
 
 * **Test Suite Breakdown:**
 
-* `brose.list.spec.ts`: Product catalog navigation and list filtering.
+* `brose.list.spec.ts`
 
-* `calender.spec.ts`: Interactive Planning Calendar views (Day/Week/Month), team selector dropdowns, appointment modal creations, and legend toggles.
+* `calender.spec.ts`
 
-* `shoping-cart.spec.ts`: Shopping demo app cart management and inventory check flows.
+* `shoping-cart.spec.ts`
 
-* `SQL.spec.ts`: Interactive table grid views and SQL query execution views.
+* `SQL.spec.ts`
 
-* `testin-ai.spec.ts`: Dynamic AI integration components and interactive output view states.
+* `testin-ai.spec.ts`
 
-* `Tools.spec.ts`: Popup window listeners, external link navigation, and administrative grid interaction.
+* `Tools.spec.ts`
 
-* `uxc-integration.spec.ts`: Custom UI theme assertion (`sap_horizon_dark`) and integration verification.
+* `uxc-integration.spec.ts`
 
 * **Bug Reports Tracked:**
 
@@ -309,7 +309,7 @@ Welcome to the central repository for **Module 1 - UI Automation**. This project
 
 ### 🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (`/day-16-selectorshub`)
 
-* **Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers on `https://selectorshub.com/xpath-practice-page/`.
+* **Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers.
 
 * **Test Suite Breakdown:**
 
@@ -336,6 +336,11 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 | **September 23, 2026** | **Day 23** | ReqRes API (`reqres.in`)                                      | Functional API Testing, Postman/Newman CI Integration, Collection-Level Authentication, Dynamic Variables & Request Chaining     | ✅ Completed |
 | **September 24, 2026** | **Day 24** | HTTPBin API (`httpbin.org`)                                   | HTTP Methods, Status Codes, Headers, Query Parameters, Cookies, Redirects, Delays, Streaming, Bytes, UUIDs & Response Inspection | ✅ Completed |
 | **September 25, 2026** | **Day 25** | DummyJSON                                                     | GET Requests, HTTP Status Validation, JSON Response Validation & Basic Response-Structure Checks                                 | ✅ Completed |
+| **September 26, 2026** | **Day 26** | Rick and Morty GraphQL API                                    | GraphQL Queries, Nested Relationships, Multiple Records, Pagination & Automated Response Assertions                              | ✅ Completed |
+
+> **API Testing Status:** ✅ **Complete through Day 26**
+>
+> **Module 2 Status:** 🔄 **DevTools work remains to be completed before Module 2 is fully closed.**
 
 ---
 
@@ -351,11 +356,11 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 
 * **Browser DevTools HAR Trace:** Monitored HTTP request/response lifecycles during live web interactions and exported raw network activity as a HAR log (`apichallenges.com.har`) to `Logs/`.
 
-* **Node.js Simulation Script (`simulation.js`):** Developed an asynchronous script using native `fetch` to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk (`01_POST_Start_Challenger_Session.log`, `02_GET_Todos.log`, `03_POST_Create_Todo.log`).
+* **Node.js Simulation Script (`simulation.js`):** Developed an asynchronous script using native `fetch` to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk.
 
 ### 🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (`/day-18-restfulbooker`)
 
-* **Core Focus:** Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions on `https://restful-booker.herokuapp.com/` while generating DevTools trace profiles.
+* **Core Focus:** Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions while generating DevTools trace profiles.
 
 * **Multi-Tool Architecture Breakdown:**
 
@@ -365,21 +370,21 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 
 ### 🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (`/day-19-practice-software-testing`)
 
-* **Core Focus:** Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts on `https://api.practicesoftwaretesting.com`.
+* **Core Focus:** Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts.
 
 * **Multi-Tool Architecture Breakdown:**
 
-* **Postman AI Integration:** Prompt-engineered Postman AI Agent to create `day-19-practice-software-testing` collection and `Day 19 - Practice Software Testing Environment`. Managed dynamic variable extraction for `bearerToken` (`POST /users/login`), `productId` (`GET /products`), `cartId` (`POST /carts`), cart item insertion (`POST /carts/{{cartId}}`), and final checkout invoice creation (`POST /invoices`).
+* **Postman AI Integration:** Prompt-engineered Postman AI Agent to create `day-19-practice-software-testing` collection and `Day 19 - Practice Software Testing Environment`. Managed dynamic variable extraction for `bearerToken`, `productId`, `cartId`, cart item insertion, and final checkout invoice creation.
 
 * **DevTools Tracing & Performance:** Intercepted browser request/response cascades as `api.practicesoftwaretesting.com.har` and recorded CPU main-thread rendering performance profiles as `Trace-20260919T191850.json`.
 
 ### 🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (`/day-20-gorest`)
 
-* **Core Focus:** Comprehensive negative authentication testing for Bearer Token APIs on `https://gorest.co.in`, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
+* **Core Focus:** Comprehensive negative authentication testing for Bearer Token APIs, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
 
 * **Postman Collection & Environment:**
 
-* Built test suites for invalid, missing, malformed, empty, and expired tokens across `GET`, `POST`, `PATCH`, and `DELETE` methods (`day-20-gorest.postman_collection.json`).
+* Built test suites for invalid, missing, malformed, empty, and expired tokens across `GET`, `POST`, `PATCH`, and `DELETE` methods.
 
 * Bound authentication state inside `Day 20 - GoRest Environment.postman_environment.json`.
 
@@ -389,11 +394,11 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 
 * **Run Artifacts:**
 
-* Exported local execution test summaries (`day-20-gorest.postman_test_run.json`) and terminal output screenshots.
+* Exported local execution test summaries and terminal output screenshots.
 
 ### 🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (`/day-21-serverest`)
 
-* **Core Focus:** Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping on `https://serverest.dev`.
+* **Core Focus:** Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping.
 
 * **Postman Collection (`day-21-serverest.postman_collection.json`):**
 
@@ -405,11 +410,11 @@ Welcome to **Module 2 - API Testing & DevTools**. This section focuses on RESTfu
 
 * **CI/CD Pipeline Integration:**
 
-* Exported test run summaries (`day-21-serverest_test_run.json`) and execution screenshots under `Screenshots/`, triggering GitHub Actions workflow execution automatically via root `.github/workflows/postman.yml`.
+* Exported test run summaries and execution screenshots under `Screenshots/`, triggering GitHub Actions workflow execution automatically via root `.github/workflows/postman.yml`.
 
 ### 🗓️ September 22, 2026 — Day 22: JSONPlaceholder Integration & Edge Testing (`/day-22-jsonplaceholder`)
 
-* **Core Focus:** End-to-end integration and edge-case testing against JSONPlaceholder (`https://jsonplaceholder.typicode.com`). Executed full CRUD cycles, dynamic variable chaining, comment moderation, partial updates, full record replacement, and high-volume boundary stress testing.
+* **Core Focus:** End-to-end integration and edge-case testing against JSONPlaceholder. Executed full CRUD cycles, dynamic variable chaining, comment moderation, partial updates, full record replacement, and high-volume boundary stress testing.
 
 * **Test Suite Breakdown & Assertion Results (28/28 Passed):**
 
@@ -463,8 +468,6 @@ This module covers automated functional API testing against the **ReqRes API** u
 
 * **Header:** `x-api-key: {{api_key}}` applied automatically across all endpoints.
 
----
-
 ### 1. Users Folder
 
 #### 1.1 `GET /api/users?page={{page}}` — List Users
@@ -501,8 +504,8 @@ This module covers automated functional API testing against the **ReqRes API** u
 
 ```json
 {
-"name": "morpheus",
-"job": "leader"
+  "name": "morpheus",
+  "job": "leader"
 }
 ```
 
@@ -722,6 +725,7 @@ pm.environment.set("lastUUID", pm.response.json().uuid);
 
 ```text
 day-24-httpbin/
+
 ├── Collections/
 │   └── day-24-httpbin.postman_collection.json
 ├── Environment/
@@ -757,13 +761,9 @@ The objective of Day 25 was to practice basic API testing with Postman by valida
 The tests focused on:
 
 * Verifying successful HTTP responses
-
 * Confirming that responses are returned as JSON
-
 * Validating the presence of expected response arrays
-
 * Confirming that returned arrays contain at least one record
-
 * Running multiple API requests together as a collection
 
 ## 🔖 Day 25 Summary
@@ -924,7 +924,138 @@ Day 25 completed with **3 API requests** and **12 total tests**, with all tests 
 
 ---
 
-## 📁 Project Structure
+# 🗓️ September 26, 2026 — Day 26: Rick and Morty GraphQL API Testing (`/day-26`)
+
+## 🎯 Objective
+
+Day 26 focused on GraphQL API testing using Postman against the Rick and Morty GraphQL API.
+
+The goal was to move beyond basic REST GET validation and test GraphQL-specific response structures, nested relationships, multiple-record queries, and pagination while using environment-driven test data and automated JavaScript assertions.
+
+This completes the **API Testing portion of Module 2**.
+
+---
+
+## 🚀 Collection Overview
+
+The collection contains **10 POST requests** structured into two core folders:
+
+## 📁 Characters
+
+* **GET SINGLE CHARACTER:** Validates scalar fields (`id`, `name`, `status`, `species`, `type`, `gender`) and single nested objects (`origin`, `location`).
+* **CHARACTER WITH EPISODES:** Tests nested array relationships (`character → episode`).
+* **MULTIPLE CHARACTERS:** Validates array queries using `charactersByIds(ids: [...])`.
+* **LIST CHARACTERS:** Tests paginated character queries along with metadata (`info` & `results`).
+* **CHARACTERS PAGE 2:** Validates `page` parameter arguments directly within GraphQL queries (`page: 2`).
+
+## 📁 Episodes
+
+* **GET SINGLE EPISODE:** Validates single episode fetching and scalar assertions.
+* **EPISODE WITH CHARACTERS:** Tests reverse nested array relationships (`episode → characters`).
+* **MULTIPLE EPISODES:** Validates multi-record fetching using `episodesByIds(ids: [...])`.
+* **LIST EPISODES:** Tests listing episodes with pagination details (`count`, `pages`, `next`, `prev`).
+* **EPISODES PAGE 2:** Verifies pagination transitions on page 2.
+
+---
+
+# 📊 Automated Assertions & Quality Checks
+
+Every request includes JavaScript tests checking:
+
+* **HTTP Status Code:** `200 OK`
+* **Response Data Payload:** Presence of the `data` property
+* **Field Completeness:** Ensures requested fields are present and unrequested fields are omitted
+* **Data Types:** Validates arrays, objects, and string matches against environment variables
+* **Pagination Contracts:** Verifies page state changes, e.g. `prev != null` on page 2
+
+---
+
+# 🛠️ Environment Configuration
+
+The environment file:
+
+`day 26 rick and morty graphql.postman_environment.json`
+
+is pre-configured with the following variables stored in the **Initial Value** column:
+
+| Variable       | Value                                 | Description                         |
+| :------------- | :------------------------------------ | :---------------------------------- |
+| `baseUrl`      | `https://rickandmortyapi.com/graphql` | Public GraphQL Endpoint             |
+| `characterId1` | `1`                                   | Primary character ID (Rick Sanchez) |
+| `characterId2` | `2`                                   | Secondary character ID              |
+| `characterId3` | `3`                                   | Tertiary character ID               |
+| `episodeId1`   | `1`                                   | Primary episode ID                  |
+| `episodeId2`   | `2`                                   | Secondary episode ID                |
+| `episodeId3`   | `3`                                   | Tertiary episode ID                 |
+| `page`         | `1`                                   | Pagination page number              |
+
+---
+
+# 📁 Project Structure
+
+```text
+day-26/
+│
+├── Collections/
+│   └── day-26-rick-and-morty-graphql.postman_collection.json
+│
+├── Environment/
+│   └── day 26 rick and morty graphql.postman_environment.json
+│
+├── HTML Report/
+│   └── Day-26-Rick-and-Morty-GraphQL-Test-Report.html
+│
+└── README.md
+```
+
+---
+
+# 🎯 Day 26 Outcome
+
+Day 26 completes the **API Testing track** of the 90-day QA challenge.
+
+The API portion progressed from REST API fundamentals through authentication, CRUD operations, negative testing, environment variables, request chaining, Newman/CI execution, HTTP-level testing, response validation, and finally GraphQL testing.
+
+**API Testing Status:** ✅ **COMPLETE**
+
+**Final API Testing Day:** **Day 26**
+
+**API Type Covered:** REST + GraphQL
+
+**Primary Tool:** Postman
+
+**GraphQL API:** Rick and Morty API
+
+**Day 26 Requests:** 10 POST requests
+
+**Day 26 Focus:** GraphQL queries, nested relationships, multiple records, pagination, environment variables, and automated assertions.
+
+---
+
+# 🔜 Module 2 Remaining Work — DevTools
+
+The API Testing portion is now complete.
+
+The remaining Module 2 work is the **Browser DevTools** portion. The earlier days already incorporated HAR/network tracing and performance profiling as part of the API exercises; the remaining DevTools-focused work will be handled separately before Module 2 receives its final completion status.
+
+**Current Module 2 state:**
+
+| Module 2 Area          | Status              |
+| :--------------------- | :------------------ |
+| REST API Testing       | ✅ Complete          |
+| Postman Testing        | ✅ Complete          |
+| Newman / CLI Execution | ✅ Complete          |
+| API Authentication     | ✅ Complete          |
+| API Negative Testing   | ✅ Complete          |
+| API Request Chaining   | ✅ Complete          |
+| Environment Variables  | ✅ Complete          |
+| GraphQL API Testing    | ✅ Complete — Day 26 |
+| DevTools Investigation | 🔄 Remaining        |
+| Module 2 Overall       | 🔄 In Progress      |
+
+---
+
+# 📁 Project Structure
 
 ## Module-1-UI-Automation/
 
@@ -932,7 +1063,6 @@ Day 25 completed with **3 API requests** and **12 total tests**, with all tests 
 Module-1-UI-Automation/
 
 ├── day-01-the-internet/
-
 │   ├── Defects_&_Bugreports/
 │   │   ├── DEFECT-001-basic-auth.md
 │   │   ├── DEFECT-002-broken-image.md
@@ -955,9 +1085,8 @@ Module-1-UI-Automation/
 │   │   ├── frames-and-geolocation.spec.ts
 │   │   └── images.spec.ts
 │   └── README.md
-
+│
 ├── day-02-demoQa/
-
 │   ├── Defects_&_Bugreports/
 │   │   └── DEFECT-001-disabled-button.md
 │   ├── Tests/
@@ -968,9 +1097,8 @@ Module-1-UI-Automation/
 │   │   ├── interactions.spec.ts
 │   │   └── widgets.spec.ts
 │   └── README.md
-
+│
 ├── day-03-sauce-demo/
-
 │   ├── Defects_&_Bugreports/
 │   ├── Tests/
 │   │   ├── auth.spec.ts
@@ -978,9 +1106,8 @@ Module-1-UI-Automation/
 │   │   ├── filter-and-sort.spec.ts
 │   │   └── menu-navigation.spec.ts
 │   └── README.md
-
+│
 ├── day-04-practice-expandtesting/
-
 │   ├── Defects_&_Bugreports/
 │   │   ├── DEFECT-01-failed-to-register.md
 │   │   └── DEFECT-01-failed-to-register.png
@@ -998,9 +1125,8 @@ Module-1-UI-Automation/
 │   │   ├── spies-stubs-clocks.spec.ts
 │   │   └── web-inputs.spec.ts
 │   └── README.md
-
+│
 ├── day-05-ui-testing-playground/
-
 │   ├── Defects_&_Bugreports/
 │   │   ├── Defect-01-load-delay.md
 │   │   └── Defect-02-inaccurate-location.md
@@ -1033,9 +1159,8 @@ Module-1-UI-Automation/
 │   │   ├── verify-text.spec.ts
 │   │   └── visibility.spec.ts
 │   └── README.md
-
+│
 ├── day-06-qa-playground/
-
 │   ├── Defects_&_Bugreports/
 │   │   ├── Defect-01-datepicker-timeout&locator-issue.md
 │   │   └── Defect-02-Server-crash.md
@@ -1059,17 +1184,15 @@ Module-1-UI-Automation/
 │   │   ├── shadow-dom.spec.ts
 │   │   └── tabs-windows.spec.ts
 │   └── README.md
-
+│
 ├── day-07-tricentis-Obstacale/
-
 │   ├── Tests/
 │   │   ├── comprehensive.spec.ts
 │   │   ├── tough-cookie.spec.ts
 │   │   └── wait-a-moment.spec.ts
 │   └── README.md
-
+│
 ├── day-08-testmuai-selenium-playground/
-
 │   ├── Tests/
 │   │   ├── ajax-form-submit.spec.ts
 │   │   ├── auto-healing.spec.ts
@@ -1080,23 +1203,20 @@ Module-1-UI-Automation/
 │   │   ├── todo-app.spec.ts
 │   │   └── window-popup-modal.spec.ts
 │   └── README.md
-
+│
 ├── day-09-locator-game/
-
 │   ├── Tests/
 │   │   ├── level-1.spec.ts
 │   │   ├── level-2.spec.ts
 │   │   ├── level-3.spec.ts
 │   │   └── level-4.spec.ts
 │   └── README.md
-
+│
 ├── day-10-automation-camp/
-
 │   ├── play2-automation.spec.ts
 │   └── README.md
-
+│
 ├── day-11-commitquality/
-
 │   ├── Defects_&_Bugreports/
 │   │   └── Backend Data Transport Failure.md
 │   ├── Tests/
@@ -1109,9 +1229,8 @@ Module-1-UI-Automation/
 │   │   ├── filter-product.spec.ts
 │   │   └── popups.spec.ts
 │   └── README.md
-
+│
 ├── day-12-restful-booker-platform/
-
 │   ├── Defect_&_Bugreports/
 │   │   ├── DEFECT-01-button_visible_but_page_not_loading.md
 │   │   └── DEFECT-02-servercrash.md
@@ -1120,9 +1239,8 @@ Module-1-UI-Automation/
 │   │   ├── check-availability.spec.ts
 │   │   └── contact-message.spec.ts
 │   └── README.md
-
+│
 ├── day-13-orangehrm/
-
 │   ├── Tests/
 │   │   ├── login.spec.ts
 │   │   ├── dashboard.spec.ts
@@ -1137,18 +1255,16 @@ Module-1-UI-Automation/
 │   │   ├── maintenance.spec.ts
 │   │   └── claim.spec.ts
 │   └── README.md
-
+│
 ├── day-14-cymbal-direct/
-
 │   ├── Tests/
 │   │   ├── select-product.spec.ts
 │   │   ├── add-to-cart.spec.ts
 │   │   ├── emty-cart.spec.ts
 │   │   └── place-order.spec.ts
 │   └── README.md
-
+│
 ├── day-15-ui5.sap.demoapps/
-
 │   ├── Defects_&_Bugreports/
 │   │   └── Navbar cart counter fails to update and out of stock.md
 │   ├── Tests/
@@ -1160,9 +1276,8 @@ Module-1-UI-Automation/
 │   │   ├── Tools.spec.ts
 │   │   └── uxc-integration.spec.ts
 │   └── README.md
-
+│
 └── day-16-selectorshub/
-
     ├── Tests/
     │   └── xpath-practice.spec.ts
     └── README.md
@@ -1174,7 +1289,6 @@ Module-1-UI-Automation/
 Module-2-API-Testing_DevTools/
 
 ├── day-17-apichallenges-practice/
-
 │   ├── Collections/
 │   │   └── day-17-apichallenges.postman_collection.json
 │   ├── Environments/
@@ -1186,9 +1300,8 @@ Module-2-API-Testing_DevTools/
 │   │   └── 03_POST_Create_Todo.log
 │   ├── README.md
 │   └── simulation.js
-
+│
 ├── day-18-restfulbooker/
-
 │   ├── Collections/
 │   │   └── day-18-restful-booker.postman_collection.json
 │   ├── Enviroments/
@@ -1199,9 +1312,8 @@ Module-2-API-Testing_DevTools/
 │   │   └── Performance/
 │   │       └── Profile-restful-booker.json
 │   └── README.md
-
+│
 ├── day-19-practice-software-testing/
-
 │   ├── Collections/
 │   │   └── day-19-practice-software-testing.postman_collection.json
 │   ├── Environments/
@@ -1212,9 +1324,8 @@ Module-2-API-Testing_DevTools/
 │   │   └── Performance/
 │   │       └── Trace-20260919T191850.json
 │   └── README.md
-
+│
 ├── day-20-gorest/
-
 │   ├── Collections/
 │   │   └── day-20-gorest.postman_collection.json
 │   ├── Environments/
@@ -1223,9 +1334,8 @@ Module-2-API-Testing_DevTools/
 │   │   └── day-20-gorest-run.png
 │   ├── day-20-gorest.postman_test_run.json
 │   └── README.md
-
+│
 ├── day-21-serverest/
-
 │   ├── Collections/
 │   │   └── day-21-serverest.postman_collection.json
 │   ├── Environment/
@@ -1234,9 +1344,8 @@ Module-2-API-Testing_DevTools/
 │   │   └── Day21_Collection_Runner_Pass.png
 │   ├── day-21-serverest_test_run.json
 │   └── README.md
-
+│
 ├── day-22-jsonplaceholder/
-
 │   ├── Collections/
 │   │   └── day-22-jsonplaceholder.postman_collection.json
 │   ├── Environment/
@@ -1244,9 +1353,8 @@ Module-2-API-Testing_DevTools/
 │   ├── Screenshots/
 │   │   └── Day22_Collection_Runner_Pass.png
 │   └── README.md
-
+│
 ├── day-23-reqres/
-
 │   ├── Collections/
 │   │   ├── Collection-Runner/
 │   │   │   └── day-23-reqres.postman_test_run.json
@@ -1257,9 +1365,8 @@ Module-2-API-Testing_DevTools/
 │   ├── Enviroment/
 │   │   └── day 23 reqres.postman_environment.json
 │   └── README.md
-
+│
 ├── day-24-httpbin/
-
 │   ├── Collections/
 │   │   └── day-24-httpbin.postman_collection.json
 │   ├── Environment/
@@ -1268,14 +1375,62 @@ Module-2-API-Testing_DevTools/
 │   │   ├── Collection-Runner-1.png
 │   │   └── Collection-Runner-2.png
 │   └── README.md
-
-└── day-25-dummyjson/
-
+│
+├── day-25-dummyjson/
+│   ├── Collections/
+│   │   └── day-25-dummyjson.postman_collection.json
+│   ├── Environment/
+│   │   └── Postman day 25 dummyjson.postman_environment.json
+│   ├── Reports/
+│   │   └── Day-25-DummyJSON-API-Testing-Run-Report.html
+│   └── README.md
+│
+└── day-26/
     ├── Collections/
-    │   └── day-25-dummyjson.postman_collection.json
+    │   └── day-26-rick-and-morty-graphql.postman_collection.json
     ├── Environment/
-    │   └── Postman day 25 dummyjson.postman_environment.json
-    ├── Reports/
-    │   └── Day-25-DummyJSON-API-Testing-Run-Report.html
+    │   └── day 26 rick and morty graphql.postman_environment.json
+    ├── HTML Report/
+    │   └── Day-26-Rick-and-Morty-GraphQL-Test-Report.html
     └── README.md
 ```
+
+---
+
+# 🏁 Current Portfolio Milestone
+
+## Module 1 — UI Automation
+
+**Status:** ✅ Complete
+
+**Days:** 01–16
+
+**Primary Technology:** Playwright + TypeScript
+
+---
+
+## Module 2 — API Testing & DevTools
+
+**API Testing:** ✅ Complete through Day 26
+
+**DevTools:** 🔄 Remaining
+
+**Overall Module 2:** 🔄 In Progress
+
+Day 26 represents the final planned API-testing exercise, expanding the portfolio from REST API testing into GraphQL testing with nested data, multiple-record queries, pagination, environment variables, and automated assertions.
+
+The remaining DevTools work will be completed before Module 2 receives its final **✅ Complete** status.
+
+---
+
+# 🚀 Current Progress
+
+**Completed Days:** 01–26
+
+**Completed Modules:** Module 1
+
+**Completed API Track:** Module 2 — API Testing
+
+**Remaining Module 2 Track:** DevTools
+
+**Next Milestone:** Complete the remaining DevTools work and close Module 2.

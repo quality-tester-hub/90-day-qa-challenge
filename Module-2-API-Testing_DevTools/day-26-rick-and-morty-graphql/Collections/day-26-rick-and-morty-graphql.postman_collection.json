@@ -1,0 +1,607 @@
+{
+  "info": {
+    "_postman_id": "157984f5-7a77-4a04-91e2-1c8bae8c7a23",
+    "name": "day-26-rick-and-morty-graphql",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58518994",
+    "_collection_link": "https://go.postman.co/collection/58518994-157984f5-7a77-4a04-91e2-1c8bae8c7a23?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Characters",
+      "item": [
+        {
+          "name": "GET SINGLE CHARACTER",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains data\", function () {",
+                  "    pm.expect(jsonData).to.have.property(\"data\");",
+                  "});",
+                  "",
+                  "pm.test(\"data.character exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"character\");",
+                  "});",
+                  "",
+                  "pm.test(\"Returned ID matches characterId\", function () {",
+                  "    pm.expect(String(jsonData.data.character.id)).to.eql(pm.environment.get(\"characterId\"));",
+                  "});",
+                  "",
+                  "pm.test(\"Requested fields exist\", function () {",
+                  "    const c = jsonData.data.character;",
+                  "    pm.expect(c).to.have.property(\"name\");",
+                  "    pm.expect(c).to.have.property(\"status\");",
+                  "    pm.expect(c).to.have.property(\"species\");",
+                  "    pm.expect(c).to.have.property(\"type\");",
+                  "    pm.expect(c).to.have.property(\"gender\");",
+                  "});",
+                  "",
+                  "pm.test(\"Nested origin.name is returned\", function () {",
+                  "    pm.expect(jsonData.data.character.origin).to.have.property(\"name\");",
+                  "});",
+                  "",
+                  "pm.test(\"Nested location.name is returned\", function () {",
+                  "    pm.expect(jsonData.data.character.location).to.have.property(\"name\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  character(id: {{characterId}}) {\n    id\n    name\n    status\n    species\n    type\n    gender\n    origin {\n      name\n    }\n    location {\n      name\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CHARACTER WITH EPISODES",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains data\", function () {",
+                  "    pm.expect(jsonData).to.have.property(\"data\");",
+                  "});",
+                  "",
+                  "pm.test(\"data.character exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"character\");",
+                  "});",
+                  "",
+                  "pm.test(\"episode is an array\", function () {",
+                  "    pm.expect(jsonData.data.character.episode).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Episode objects contain requested fields\", function () {",
+                  "    const ep = jsonData.data.character.episode[0];",
+                  "    pm.expect(ep).to.have.property(\"id\");",
+                  "    pm.expect(ep).to.have.property(\"name\");",
+                  "    pm.expect(ep).to.have.property(\"episode\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  character(id: {{characterId}}) {\n    id\n    name\n    status\n    species\n    episode {\n      id\n      name\n      episode\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MULTIPLE CHARACTERS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains data\", function () {",
+                  "    pm.expect(jsonData).to.have.property(\"data\");",
+                  "});",
+                  "",
+                  "pm.test(\"Result is an array\", function () {",
+                  "    pm.expect(jsonData.data.charactersByIds).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Three character records are returned\", function () {",
+                  "    pm.expect(jsonData.data.charactersByIds).to.have.lengthOf(3);",
+                  "});",
+                  "",
+                  "pm.test(\"Each record contains requested fields\", function () {",
+                  "    jsonData.data.charactersByIds.forEach(function (c) {",
+                  "        pm.expect(c).to.have.property(\"id\");",
+                  "        pm.expect(c).to.have.property(\"name\");",
+                  "        pm.expect(c).to.have.property(\"status\");",
+                  "        pm.expect(c).to.have.property(\"species\");",
+                  "    });",
+                  "});",
+                  "",
+                  "pm.test(\"IDs correspond to requested IDs\", function () {",
+                  "    const ids = jsonData.data.charactersByIds.map(c => String(c.id));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"characterId\"));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"characterId2\"));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"characterId3\"));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  charactersByIds(ids: [{{characterId}}, {{characterId2}}, {{characterId3}}]) {\n    id\n    name\n    status\n    species\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LIST CHARACTERS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"data.characters exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"characters\");",
+                  "});",
+                  "",
+                  "pm.test(\"info exists\", function () {",
+                  "    pm.expect(jsonData.data.characters).to.have.property(\"info\");",
+                  "});",
+                  "",
+                  "pm.test(\"results is an array\", function () {",
+                  "    pm.expect(jsonData.data.characters.results).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Pagination information is returned\", function () {",
+                  "    const info = jsonData.data.characters.info;",
+                  "    pm.expect(info).to.have.property(\"count\");",
+                  "    pm.expect(info).to.have.property(\"pages\");",
+                  "    pm.expect(info).to.have.property(\"next\");",
+                  "    pm.expect(info).to.have.property(\"prev\");",
+                  "});",
+                  "",
+                  "pm.test(\"Each character contains requested fields\", function () {",
+                  "    jsonData.data.characters.results.forEach(function (c) {",
+                  "        pm.expect(c).to.have.property(\"id\");",
+                  "        pm.expect(c).to.have.property(\"name\");",
+                  "        pm.expect(c).to.have.property(\"status\");",
+                  "        pm.expect(c).to.have.property(\"species\");",
+                  "    });",
+                  "});",
+                  "",
+                  "pm.test(\"Results are not empty\", function () {",
+                  "    pm.expect(jsonData.data.characters.results.length).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  characters(page: {{page}}) {\n    info {\n      count\n      pages\n      next\n      prev\n    }\n    results {\n      id\n      name\n      status\n      species\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CHARACTERS PAGE 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"data.characters exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"characters\");",
+                  "});",
+                  "",
+                  "pm.test(\"Pagination information exists\", function () {",
+                  "    pm.expect(jsonData.data.characters).to.have.property(\"info\");",
+                  "});",
+                  "",
+                  "pm.test(\"Results are returned\", function () {",
+                  "    pm.expect(jsonData.data.characters.results).to.be.an(\"array\");",
+                  "    pm.expect(jsonData.data.characters.results.length).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Response represents page 2 (prev is not null)\", function () {",
+                  "    pm.expect(jsonData.data.characters.info.prev).to.not.be.null;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  characters(page: 2) {\n    info {\n      count\n      pages\n      next\n      prev\n    }\n    results {\n      id\n      name\n      status\n      species\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Episodes",
+      "item": [
+        {
+          "name": "GET SINGLE EPISODE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"data.episode exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"episode\");",
+                  "});",
+                  "",
+                  "pm.test(\"Returned ID matches episodeId\", function () {",
+                  "    pm.expect(String(jsonData.data.episode.id)).to.eql(pm.environment.get(\"episodeId\"));",
+                  "});",
+                  "",
+                  "pm.test(\"Requested episode fields exist\", function () {",
+                  "    const ep = jsonData.data.episode;",
+                  "    pm.expect(ep).to.have.property(\"name\");",
+                  "    pm.expect(ep).to.have.property(\"air_date\");",
+                  "    pm.expect(ep).to.have.property(\"episode\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  episode(id: {{episodeId}}) {\n    id\n    name\n    air_date\n    episode\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EPISODE WITH CHARACTERS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"data.episode exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"episode\");",
+                  "});",
+                  "",
+                  "pm.test(\"characters is an array\", function () {",
+                  "    pm.expect(jsonData.data.episode.characters).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Character objects contain requested fields\", function () {",
+                  "    const c = jsonData.data.episode.characters[0];",
+                  "    pm.expect(c).to.have.property(\"id\");",
+                  "    pm.expect(c).to.have.property(\"name\");",
+                  "    pm.expect(c).to.have.property(\"species\");",
+                  "});",
+                  "",
+                  "pm.test(\"Nested relationship data is present\", function () {",
+                  "    pm.expect(jsonData.data.episode.characters.length).to.be.above(0);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  episode(id: {{episodeId}}) {\n    id\n    name\n    episode\n    air_date\n    characters {\n      id\n      name\n      species\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MULTIPLE EPISODES",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Result is an array\", function () {",
+                  "    pm.expect(jsonData.data.episodesByIds).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Three episode records are returned\", function () {",
+                  "    pm.expect(jsonData.data.episodesByIds).to.have.lengthOf(3);",
+                  "});",
+                  "",
+                  "pm.test(\"Each record contains requested fields\", function () {",
+                  "    jsonData.data.episodesByIds.forEach(function (ep) {",
+                  "        pm.expect(ep).to.have.property(\"id\");",
+                  "        pm.expect(ep).to.have.property(\"name\");",
+                  "        pm.expect(ep).to.have.property(\"episode\");",
+                  "        pm.expect(ep).to.have.property(\"air_date\");",
+                  "    });",
+                  "});",
+                  "",
+                  "pm.test(\"IDs correspond to requested IDs\", function () {",
+                  "    const ids = jsonData.data.episodesByIds.map(ep => String(ep.id));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"episodeId\"));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"episodeId2\"));",
+                  "    pm.expect(ids).to.include(pm.environment.get(\"episodeId3\"));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  episodesByIds(ids: [{{episodeId}}, {{episodeId2}}, {{episodeId3}}]) {\n    id\n    name\n    episode\n    air_date\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LIST EPISODES",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"data.episodes exists\", function () {",
+                  "    pm.expect(jsonData.data).to.have.property(\"episodes\");",
+                  "});",
+                  "",
+                  "pm.test(\"info exists\", function () {",
+                  "    pm.expect(jsonData.data.episodes).to.have.property(\"info\");",
+                  "});",
+                  "",
+                  "pm.test(\"results is an array\", function () {",
+                  "    pm.expect(jsonData.data.episodes.results).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Pagination information is returned\", function () {",
+                  "    const info = jsonData.data.episodes.info;",
+                  "    pm.expect(info).to.have.property(\"count\");",
+                  "    pm.expect(info).to.have.property(\"pages\");",
+                  "    pm.expect(info).to.have.property(\"next\");",
+                  "    pm.expect(info).to.have.property(\"prev\");",
+                  "});",
+                  "",
+                  "pm.test(\"Episode records contain requested fields\", function () {",
+                  "    jsonData.data.episodes.results.forEach(function (ep) {",
+                  "        pm.expect(ep).to.have.property(\"id\");",
+                  "        pm.expect(ep).to.have.property(\"name\");",
+                  "        pm.expect(ep).to.have.property(\"episode\");",
+                  "        pm.expect(ep).to.have.property(\"air_date\");",
+                  "    });",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  episodes(page: {{page}}) {\n    info {\n      count\n      pages\n      next\n      prev\n    }\n    results {\n      id\n      name\n      episode\n      air_date\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EPISODES PAGE 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Response is successful\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Pagination information exists\", function () {",
+                  "    pm.expect(jsonData.data.episodes).to.have.property(\"info\");",
+                  "});",
+                  "",
+                  "pm.test(\"Results are returned\", function () {",
+                  "    pm.expect(jsonData.data.episodes.results).to.be.an(\"array\");",
+                  "    pm.expect(jsonData.data.episodes.results.length).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Request successfully retrieves another page\", function () {",
+                  "    pm.expect(jsonData.data.episodes.info.prev).to.not.be.null;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query {\n  episodes(page: 2) {\n    info {\n      count\n      pages\n      next\n      prev\n    }\n    results {\n      id\n      name\n      episode\n      air_date\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}",
+              "host": [
+                "{{baseUrl}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
