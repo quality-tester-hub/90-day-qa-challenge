@@ -1,0 +1,136 @@
+contentScript.js:201 This page is not reloaded
+VM65 contentScript.js:201 This page is not reloaded
+VM75 contentScript.js:201 This page is not reloaded
+syndication.twitter.com/i/jot/embeds?dnt=1&l=%7B%22widget_origin%22%3A%22https%3A%2F%2Fswapi.dev%2F%22%2C%22widget_frame%22%3Afalse%2C%22language%22%3A%22en%22%2C%22message%22%3A%22m%3Awithcount%3A%22%2C%22_category_%22%3A%22tfw_client_event%22%2C%22triggered_on%22%3A1790503446615%2C%22dnt%22%3Atrue%2C%22client_version%22%3A%226a3ad42b224df%3A1778106238597%22%2C%22format_version%22%3A1%2C%22event_namespace%22%3A%7B%22client%22%3A%22tfw%22%2C%22page%22%3A%22button%22%2C%22section%22%3A%22follow%22%2C%22action%22%3A%22impression%22%7D%7D&session_id=1436ceb0ace588c67123ccd291c3fca7534d76f7:1  GET https://syndication.twitter.com/i/jot/embeds?dnt=1&l=%7B%22widget_origin%22%3A%22https%3A%2F%2Fswapi.dev%2F%22%2C%22widget_frame%22%3Afalse%2C%22language%22%3A%22en%22%2C%22message%22%3A%22m%3Awithcount%3A%22%2C%22_category_%22%3A%22tfw_client_event%22%2C%22triggered_on%22%3A1790503446615%2C%22dnt%22%3Atrue%2C%22client_version%22%3A%226a3ad42b224df%3A1778106238597%22%2C%22format_version%22%3A1%2C%22event_namespace%22%3A%7B%22client%22%3A%22tfw%22%2C%22page%22%3A%22button%22%2C%22section%22%3A%22follow%22%2C%22action%22%3A%22impression%22%7D%7D&session_id=1436ceb0ace588c67123ccd291c3fca7534d76f7 net::ERR_BLOCKED_BY_CLIENT
+Image
+w @ widgets.js:8
+v @ widgets.js:8
+m @ widgets.js:8
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+Promise.then
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:1
+Promise.then
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+Promise.then
+(anonymous) @ widgets.js:8
+i @ widgets.js:1
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:1
+h @ widgets.js:8
+characterData
+w @ widgets.js:8
+o @ widgets.js:8
+(anonymous) @ widgets.js:8
+addWidget @ widgets.js:8
+(anonymous) @ widgets.js:8
+g @ widgets.js:8
+(anonymous) @ widgets.js:8
+Promise.then
+w @ widgets.js:8
+loadPage @ widgets.js:8
+(anonymous) @ widgets.js:8
+f @ widgets.js:8
+i @ widgets.js:8
+syndication.twitter.com/i/jot/embeds?dnt=1&l=%7B%22widget_origin%22%3A%22https%3A%2F%2Fswapi.dev%2F%22%2C%22widget_frame%22%3Afalse%2C%22language%22%3A%22en%22%2C%22message%22%3A%22m%3Anocount%3A%22%2C%22_category_%22%3A%22tfw_client_event%22%2C%22triggered_on%22%3A1790503446615%2C%22dnt%22%3Atrue%2C%22client_version%22%3A%226a3ad42b224df%3A1778106238597%22%2C%22format_version%22%3A1%2C%22event_namespace%22%3A%7B%22client%22%3A%22tfw%22%2C%22page%22%3A%22button%22%2C%22section%22%3A%22share%22%2C%22action%22%3A%22impression%22%7D%7D&session_id=1436ceb0ace588c67123ccd291c3fca7534d76f7:1  GET https://syndication.twitter.com/i/jot/embeds?dnt=1&l=%7B%22widget_origin%22%3A%22https%3A%2F%2Fswapi.dev%2F%22%2C%22widget_frame%22%3Afalse%2C%22language%22%3A%22en%22%2C%22message%22%3A%22m%3Anocount%3A%22%2C%22_category_%22%3A%22tfw_client_event%22%2C%22triggered_on%22%3A1790503446615%2C%22dnt%22%3Atrue%2C%22client_version%22%3A%226a3ad42b224df%3A1778106238597%22%2C%22format_version%22%3A1%2C%22event_namespace%22%3A%7B%22client%22%3A%22tfw%22%2C%22page%22%3A%22button%22%2C%22section%22%3A%22share%22%2C%22action%22%3A%22impression%22%7D%7D&session_id=1436ceb0ace588c67123ccd291c3fca7534d76f7 net::ERR_BLOCKED_BY_CLIENT
+Image
+w @ widgets.js:8
+v @ widgets.js:8
+m @ widgets.js:8
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+Promise.then
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ button.2276a045429f6681b56da5eb1dcfa53c.js:1
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:1
+Promise.then
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+Promise.then
+(anonymous) @ widgets.js:8
+i @ widgets.js:1
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:8
+(anonymous) @ widgets.js:1
+h @ widgets.js:8
+characterData
+w @ widgets.js:8
+o @ widgets.js:8
+(anonymous) @ widgets.js:8
+addWidget @ widgets.js:8
+(anonymous) @ widgets.js:8
+g @ widgets.js:8
+(anonymous) @ widgets.js:8
+Promise.then
+w @ widgets.js:8
+loadPage @ widgets.js:8
+(anonymous) @ widgets.js:8
+f @ widgets.js:8
+i @ widgets.js:8
+contentScript.js:201 This page is not reloaded
+contentScript.js:201 This page is not reloaded
+widgets.js:8 This page is not reloaded
+contentScript.js:201 This page is not reloaded
+jquery-2.1.0.min.js:4  GET https://swapi.dev/api/vader 404 (Not Found)
+send @ jquery-2.1.0.min.js:4
+ajax @ jquery-2.1.0.min.js:4
+interactive_call @ (index):162
+onclick @ (index):81
+(index):1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+(index):1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+widget_iframe.1227a5…3A%2F%2Fswapi.dev:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+platform.twitter.com…wapi.co&via=juriy:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+platform.twitter.com…ime=1790503446614:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+about:blank:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+(index):1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+(index):1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+github-btn.html?user=juriy&type=follow:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+fetch('https://swapi.dev/api/people/1/')
+  .then(res => res.json())
+  .then(data => console.log(data));
+Promise {<pending>}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: undefined
+VM116:3 {name: 'Luke Skywalker', height: '172', mass: '77', hair_color: 'blond', skin_color: 'fair', …}
+async function getPlanet(id) {
+  const response = await fetch(`https://swapi.dev/api/planets/${id}/`);
+  const planet = await response.json();
+  console.table(planet); // Uses console.table for clean formatting
+}
+getPlanet(1);
+Promise {<pending>}
+VM120:4 (index)Value0123456789(index)Value0123456789name'Tatooine'rotation_period'23'orbital_period'304'diameter'10465'climate'arid'gravity'1 standard'terrain'desert'surface_water'1'population'200000'residents'https://swapi.dev/api/people/1/''https://swapi.dev/api/people/2/''https://swapi.dev/api/people/4/''https://swapi.dev/api/people/6/''https://swapi.dev/api/people/7/''https://swapi.dev/api/people/8/''https://swapi.dev/api/people/9/''https://swapi.dev/api/people/11/''https://swapi.dev/api/people/43/''https://swapi.dev/api/people/62/'films'https://swapi.dev/api/films/1/''https://swapi.dev/api/films/3/''https://swapi.dev/api/films/4/''https://swapi.dev/api/films/5/''https://swapi.dev/api/films/6/'created'2014-12-09T13:50:49.641000Z'edited'2014-12-20T20:58:18.411000Z'url'https://swapi.dev/api/planets/1/'Object
+curl --url 'https://swapi.dev/api/people/1/' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-GB,en;q=0.5' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://swapi.dev/' \
+  -H 'sec-ch-ua: "Brave";v="153", "Not_A Brand";v="8", "Chromium";v="153"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-gpc: 1' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36'
+VM124:1 Uncaught SyntaxError: Unexpected identifier 'url' (at VM124:1:8)
+curl --url 'https://swapi.dev/api/planets/1/' \
+  -H 'accept: */*' \
+  -H 'accept-language: en-GB,en;q=0.5' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://swapi.dev/' \
+  -H 'sec-ch-ua: "Brave";v="153", "Not_A Brand";v="8", "Chromium";v="153"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-gpc: 1' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36'
+VM128:1 Uncaught SyntaxError: Unexpected identifier 'url' (at VM128:1:8)
