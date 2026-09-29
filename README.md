@@ -1,226 +1,271 @@
+# 90-day-qa-challenge
 
-
-
-90-day-qa-challenge
 QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance & Advanced Target Envs
-🚀 Module 1: UI Automation Mastery with Playwright
+
+---
+
+# 🚀 Module 1: UI Automation Mastery with Playwright
+
 Welcome to the central repository for Module 1 - UI Automation. This project tracks hands-on practice covering modern Web QA Automation patterns, end-to-end workflows, resilient locators, session management, dynamic element handling, and test execution using Playwright and TypeScript.
 
-📌 Progress Dashboard
-Date	Day	Target Site	Core Focus Areas	Status
-September 1, 2026	Day 01	The Internet (herokuapp)	Basic Elements, Inputs, Checkboxes, Alerts	✅ Completed
-September 2, 2026	Day 02	DemoQA	Complex UI Widgets, Form Handling, Defect Reports	✅ Completed
-September 3, 2026	Day 03	SauceDemo (Swag Labs)	Auth, Storage State, Cart/Checkout, Sorting & Navigation	✅ Completed
-September 4, 2026	Day 04	Practice ExpandTesting	Dynamic Workflows, OTP, Autocomplete, Clock Mocks & Infinite Scroll	✅ Completed
-September 5, 2026	Day 05	UI Testing Playground	Edge Cases, Dynamic IDs, Hidden Layers, Load Delays	✅ Completed
-September 6, 2026	Day 06	QA Playground	Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling	✅ Completed
-September 7, 2026	Day 07	Tricentis Obstacle Course	Complex Logic, String Extraction, Dynamic Timers, Cookies	✅ Completed
-September 8, 2026	Day 08	TestMu AI Selenium Playground	AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App	✅ Completed
-September 9, 2026	Day 09	Testsmith Locator Game	Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience	✅ Completed
-September 10, 2026	Day 10	Automation Camp (Play 2)	Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling	✅ Completed
-September 11, 2026	Day 11	CommitQuality	Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock	✅ Completed
-September 12, 2026	Day 12	Restful-Booker-Platform	Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency	✅ Completed
-September 13, 2026	Day 13	OrangeHRM Open Source	Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs	✅ Completed
-September 14, 2026	Day 14	Cymbal Direct (cymbal-shops)	Microservices E-Commerce Platform, Catalog Iteration, Cart Operations & E2E Checkout	✅ Completed
-September 15, 2026	Day 15	SAP UI5 Demo Apps (ui5.sap.com)	Enterprise Framework Controls, Dynamic Popups, Theme Switching, Data Tables & UX Integrations	✅ Completed
-September 16, 2026	Day 16	SelectorsHub (selectorshub.com/xpath-practice-page)	Form Inputs, Boundary Values, Submit Handlers & Async Popup Window Events	✅ Completed
-🎉 Module 1: UI Automation Mastery with Playwright — Complete!
+## 📌 Progress Dashboard
 
-📅 Daily Execution Log
-🗓️ September 1, 2026 — Day 01: Fundamentals (/day-01-the-internet)
-Core Focus: Establishing resilient locator strategy (getByRole, getByText), basic user interactions, and page state assertions.
+| Date               | Day    | Target Site                                         | Core Focus Areas                                                                              | Status      |
+| ------------------ | ------ | --------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------- |
+| September 1, 2026  | Day 01 | The Internet (herokuapp)                            | Basic Elements, Inputs, Checkboxes, Alerts                                                    | ✅ Completed |
+| September 2, 2026  | Day 02 | DemoQA                                              | Complex UI Widgets, Form Handling, Defect Reports                                             | ✅ Completed |
+| September 3, 2026  | Day 03 | SauceDemo (Swag Labs)                               | Auth, Storage State, Cart/Checkout, Sorting & Navigation                                      | ✅ Completed |
+| September 4, 2026  | Day 04 | Practice ExpandTesting                              | Dynamic Workflows, OTP, Autocomplete, Clock Mocks & Infinite Scroll                           | ✅ Completed |
+| September 5, 2026  | Day 05 | UI Testing Playground                               | Edge Cases, Dynamic IDs, Hidden Layers, Load Delays                                           | ✅ Completed |
+| September 6, 2026  | Day 06 | QA Playground                                       | Advanced UI Widgets, Portals, Multi-Tab Workflows & AI Tooling                                | ✅ Completed |
+| September 7, 2026  | Day 07 | Tricentis Obstacle Course                           | Complex Logic, String Extraction, Dynamic Timers, Cookies                                     | ✅ Completed |
+| September 8, 2026  | Day 08 | TestMu AI Selenium Playground                       | AJAX Forms, Dual List Box, Modals, Progress Bars, Hovers, Window Popups & Todo App            | ✅ Completed |
+| September 9, 2026  | Day 09 | Testsmith Locator Game                              | Dynamic SPA State Synchronization, Overlay Interception & Locator Resilience                  | ✅ Completed |
+| September 10, 2026 | Day 10 | Automation Camp (Play 2)                            | Pure UI Automation, Native Input Controls, Multi-Window Popups & Alert Handling               | ✅ Completed |
+| September 11, 2026 | Day 11 | CommitQuality                                       | Dynamic Tables, Forms, Accordions, Popups, API Mocking, Contact Form & Dynamic Clock          | ✅ Completed |
+| September 12, 2026 | Day 12 | Restful-Booker-Platform                             | Date Pickers, Room Booking Forms, Contact Messaging, SPA Routing & Backend Concurrency        | ✅ Completed |
+| September 13, 2026 | Day 13 | OrangeHRM Open Source                               | Enterprise HR Suite, Dynamic Tables, Dropdowns, Re-Auth Popups & Single-File Test Specs       | ✅ Completed |
+| September 14, 2026 | Day 14 | Cymbal Direct (cymbal-shops)                        | Microservices E-Commerce Platform, Catalog Iteration, Cart Operations & E2E Checkout          | ✅ Completed |
+| September 15, 2026 | Day 15 | SAP UI5 Demo Apps (ui5.sap.com)                     | Enterprise Framework Controls, Dynamic Popups, Theme Switching, Data Tables & UX Integrations | ✅ Completed |
+| September 16, 2026 | Day 16 | SelectorsHub (selectorshub.com/xpath-practice-page) | Form Inputs, Boundary Values, Submit Handlers & Async Popup Window Events                     | ✅ Completed |
 
-Key Workflows: Automated dynamic control handling, checkbox toggles, input field filling, and basic navigation checks.
+🎉 **Module 1: UI Automation Mastery with Playwright — Complete!**
 
-🗓️ September 2, 2026 — Day 02: Complex UI & Bug Logging (/day-2-demoQa)
-Core Focus: Handling complex UI components, dynamic waits, frames, modal dialogs, and documenting bugs.
+---
 
-Key Workflows: Form edge-case testing, element visibility validations, and writing structured bug reports under /Defects_&_Bugreports. Learned how to cut out dynamic ad network frames and layout-shifting elements using custom beforeEach fixtures (page.route() and page.evaluate()) for flake-free execution.
+# 📅 Daily Execution Log
 
-🗓️ September 3, 2026 — Day 03: E-Commerce Workflows (/day-03-sauce-demo)
-Core Focus: Session state preservation (storageState), full E2E purchase flows, catalog sorting algorithms, and side drawer navigation.
+## 🗓️ September 1, 2026 — Day 01: Fundamentals (/day-01-the-internet)
 
-Test Suite Breakdown:
+**Core Focus:** Establishing resilient locator strategy (getByRole, getByText), basic user interactions, and page state assertions.
 
-auth.spec.ts: Validates login, tests locked-out user handling, and exports session state to user.json.
+**Key Workflows:** Automated dynamic control handling, checkbox toggles, input field filling, and basic navigation checks.
 
-cart_&_checkout.spec.ts: Complete purchase flow—adding items from catalog, reviewing cart, entering shipping details, and confirming order completion.
+---
 
-filter-and-sort.spec.ts: Validates catalog sorting dropdown options (Name A-Z, Name Z-A, Price Low-High, Price High-Low).
+## 🗓️ September 2, 2026 — Day 02: Complex UI & Bug Logging (/day-2-demoQa)
 
-menu-navigation.spec.ts: Validates hamburger menu drawer actions, Reset App State triggers, and user logout redirection.
+**Core Focus:** Handling complex UI components, dynamic waits, frames, modal dialogs, and documenting bugs.
 
-🗓️ September 4, 2026 — Day 04: Dynamic Web Applications (/day-04-practice-expandtesting)
-Core Focus: Advanced dynamic element handling, execution visibility via console logs, time-travel clocks, dynamic DOM infinite scrolling, and form validation flows.
+**Key Workflows:** Form edge-case testing, element visibility validations, and writing structured bug reports under /Defects_&_Bugreports. Learned how to cut out dynamic ad network frames and layout-shifting elements using custom beforeEach fixtures (page.route() and page.evaluate()) for flake-free execution.
 
-Test Suite Breakdown:
+---
 
-web-inputs.spec.ts: Validates specialized input type entries (Number, Text, Password, Date).
+## 🗓️ September 3, 2026 — Day 03: E-Commerce Workflows (/day-03-sauce-demo)
 
-dynamic-table.spec.ts: Dynamic data extraction and locator matching across table rows.
+**Core Focus:** Session state preservation (storageState), full E2E purchase flows, catalog sorting algorithms, and side drawer navigation.
 
-login.spec.ts & register.spec.ts: User authentication and registration form workflows.
+### Test Suite Breakdown:
 
-password-reset.spec.ts: Forgot password submission and confirmation banner checks.
+**auth.spec.ts:** Validates login, tests locked-out user handling, and exports session state to user.json.
 
-otp.spec.ts: One-time password submission and verification flows.
+**cart_&_checkout.spec.ts:** Complete purchase flow—adding items from catalog, reviewing cart, entering shipping details, and confirming order completion.
 
-my-browser.spec.ts: User-agent and browser information detection assertions.
+**filter-and-sort.spec.ts:** Validates catalog sorting dropdown options (Name A-Z, Name Z-A, Price Low-High, Price High-Low).
 
-form-validation.spec.ts: Form field criteria, picker validations, and submission state checks.
+**menu-navigation.spec.ts:** Validates hamburger menu drawer actions, Reset App State triggers, and user logout redirection.
 
-notification-message.spec.ts: Dynamic flash banner alerts and pattern-matched text validation.
+---
 
-autocomplete.spec.ts: Search input interaction, dynamic dropdown selection, and result assertions.
+## 🗓️ September 4, 2026 — Day 04: Dynamic Web Applications (/day-04-practice-expandtesting)
 
-spies-stubs-clocks.spec.ts: Time-travel test assertions utilizing page.clock manipulation.
+**Core Focus:** Advanced dynamic element handling, execution visibility via console logs, time-travel clocks, dynamic DOM infinite scrolling, and form validation flows.
 
-infinite-scroll.spec.ts: Page scrolling and asynchronous DOM element appending checks.
+### Test Suite Breakdown:
 
-contact.spec.ts: End-to-end contact form submission and success banner assertions.
+**web-inputs.spec.ts:** Validates specialized input type entries (Number, Text, Password, Date).
 
-🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (/day-05-uitestingplayground)
-Core Focus: Navigating technical UI automation challenges—dynamic IDs, volatile CSS classes, Z-index layer stacks, long-running AJAX requests, and server load delays.
+**dynamic-table.spec.ts:** Dynamic data extraction and locator matching across table rows.
 
-Test Suite Breakdown:
+**login.spec.ts & register.spec.ts:** User authentication and registration form workflows.
 
-class-attribute.spec.ts: Primary/secondary button matching using dynamic class strings.
+**password-reset.spec.ts:** Forgot password submission and confirmation banner checks.
 
-dynamic-id.spec.ts: Locating elements without relying on dynamic runtime IDs.
+**otp.spec.ts:** One-time password submission and verification flows.
 
-hidden-layer.spec.ts: Managing Z-index overlays and verifying non-clickable dynamic states.
+**my-browser.spec.ts:** User-agent and browser information detection assertions.
 
-load-delay.spec.ts: Auto-waiting navigation handling under artificial server load.
+**form-validation.spec.ts:** Form field criteria, picker validations, and submission state checks.
 
-ajax-data.spec.ts: Handling 15-second dynamic DOM insertions using explicit assertion timeouts.
+**notification-message.spec.ts:** Dynamic flash banner alerts and pattern-matched text validation.
 
-Bug Reports Tracked:
+**autocomplete.spec.ts:** Search input interaction, dynamic dropdown selection, and result assertions.
 
-BUG-001-load-delay-performance-threshold.md: SLA performance violation on /loaddelay.
+**spies-stubs-clocks.spec.ts:** Time-travel test assertions utilizing page.clock manipulation.
 
-BUG-002-inaccurate-geolocation-picker.md: Inaccurate coordinate resolution and picker failure.
+**infinite-scroll.spec.ts:** Page scrolling and asynchronous DOM element appending checks.
 
-🗓️ September 6, 2026 — Day 06: QA Playground & Dev Environment Integrations (/day-06-qa-playground)
-Core Focus: Automating complex UI widgets, managing multi-window contexts, resolving pointer event interception bugs, integrating VS Code Live Server, and using GitHub Copilot for code acceleration.
+**contact.spec.ts:** End-to-end contact form submission and success banner assertions.
 
-Test Suite Breakdown:
+---
 
-date-picker.spec.ts: Date picker widget interactions and input validations.
+## 🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (/day-05-uitestingplayground)
 
-links.spec.ts: Navigation triggers, status code checks, and target URL routing.
+**Core Focus:** Navigating technical UI automation challenges—dynamic IDs, volatile CSS classes, Z-index layer stacks, long-running AJAX requests, and server load delays.
 
-tabs-windows.spec.ts: Intercepting and switching between new browser tab contexts using context.waitForEvent('page').
+### Test Suite Breakdown:
 
-multi-select.spec.ts: Selecting multiple option items and validating container tags.
+**class-attribute.spec.ts:** Primary/secondary button matching using dynamic class strings.
 
-modals.spec.ts: Managing overlay dialog visibility, focus traps, and dismissal actions.
+**dynamic-id.spec.ts:** Locating elements without relying on dynamic runtime IDs.
 
-banking-app.spec.ts: Multi-step banking workflow, form options, and loan calculations.
+**hidden-layer.spec.ts:** Managing Z-index overlays and verifying non-clickable dynamic states.
 
-Bug Reports Tracked:
+**load-delay.spec.ts:** Auto-waiting navigation handling under artificial server load.
 
-BUG-003-date-picker-element-timeout.md: Element timeout on invalid container input target fill.
+**ajax-data.spec.ts:** Handling 15-second dynamic DOM insertions using explicit assertion timeouts.
 
-BUG-004-banking-app-multitab-server-crash.md: Portal overlay pointer interception and multi-tab state failure.
+### Bug Reports Tracked:
 
-🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (/day-07-tricentis-Obstacale)
-Core Focus: Solving complex algorithmic web obstacles including dynamic string extraction, regex processing, asynchronous calculating state timers, and cookie manipulation.
+**BUG-001-load-delay-performance-threshold.md:** SLA performance violation on /loaddelay.
 
-Test Suite Breakdown:
+**BUG-002-inaccurate-geolocation-picker.md:** Inaccurate coordinate resolution and picker failure.
 
-obstacle-45618-tough-cookie.spec.ts: Regex-based number extraction from random string payloads and input field populating.
+---
 
-obstacle-33678-wait-a-moment.spec.ts: Managing asynchronous dynamic wait states, button state transitions, and state triggers.
+## 🗓️ September 6, 2026 — Day 06: QA Playground & Dev Environment Integrations (/day-06-qa-playground)
 
-obstacle-73590-comprehensive.spec.ts: Multi-step form flows, structural page assertions, and state verification.
+**Core Focus:** Automating complex UI widgets, managing multi-window contexts, resolving pointer event interception bugs, integrating VS Code Live Server, and using GitHub Copilot for code acceleration.
 
-🗓️ September 8, 2026 — Day 08: TestMu AI Selenium Playground (/day-08-testmuai-selenium-playground)
-Core Focus: Automating dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management.
+### Test Suite Breakdown:
 
-Test Suite Breakdown:
+**date-picker.spec.ts:** Date picker widget interactions and input validations.
 
-ajax-form-submit.spec.ts: Form input, submit action, and dynamic response verification.
+**links.spec.ts:** Navigation triggers, status code checks, and target URL routing.
 
-bootstrap-dual-list-box.spec.ts: Item movement (single/all), cross-box transfer, and real-time list filtering.
+**tabs-windows.spec.ts:** Intercepting and switching between new browser tab contexts using context.waitForEvent('page').
 
-bootstrap-modal.spec.ts: Single modal launch/save and multi-layered nested modal interactions.
+**multi-select.spec.ts:** Selecting multiple option items and validating container tags.
 
-bootstrap-download-progress.spec.ts: Start trigger, percentage tracking, and 100% completion state assertions.
+**modals.spec.ts:** Managing overlay dialog visibility, focus traps, and dismissal actions.
 
-hover-demo.spec.ts: Dynamic element hover state triggers and overlay visibility checks.
+**banking-app.spec.ts:** Multi-step banking workflow, form options, and loan calculations.
 
-window-popup-modal.spec.ts: Single popup intercept, multi-window generation, and URL path assertions.
+### Bug Reports Tracked:
 
-todo-app.spec.ts: Item creation, checkbox toggle state management, and dynamic element verification.
+**BUG-003-date-picker-element-timeout.md:** Element timeout on invalid container input target fill.
 
-auto-healing.spec.ts: Resilient selector behavior during dynamic DOM ID mutation.
+**BUG-004-banking-app-multitab-server-crash.md:** Portal overlay pointer interception and multi-tab state failure.
 
-🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (/day-09-locator-game)
-Core Focus: Automating sequential SPA level progression, handling dynamic tour overlays (tour-step-backdrop), resolving React state input desynchronization, and analyzing framework compatibility boundaries.
+---
 
-Test Suite Breakdown:
+## 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (/day-07-tricentis-Obstacale)
 
-level-1.spec.ts: Tag selector execution (h3) and page heading validation.
+**Core Focus:** Solving complex algorithmic web obstacles including dynamic string extraction, regex processing, asynchronous calculating state timers, and cookie manipulation.
 
-level-2.spec.ts: ID selector extraction (#description) and transition handling.
+### Test Suite Breakdown:
 
-level-3.spec.ts: Class selector matching (li.active) and level increment verification.
+**obstacle-45618-tough-cookie.spec.ts:** Regex-based number extraction from random string payloads and input field populating.
 
-level-4.spec.ts: Direct container hierarchy locator (#toolbar button) and DOM state assertion.
+**obstacle-33678-wait-a-moment.spec.ts:** Managing asynchronous dynamic wait states, button state transitions, and state triggers.
 
-🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (/day-10-automation-camp)
-Core Focus: Automating native browser form controls, custom color/range pickers, popup window contexts, and alert dialog triggers inside a clean single-file execution suite.
+**obstacle-73590-comprehensive.spec.ts:** Multi-step form flows, structural page assertions, and state verification.
 
-Test Suite Breakdown:
+---
 
-play2-automation.spec.ts: Single-file test suite validating native inputs, radio toggles, multi-select dropdowns, popup interception (waitForEvent('popup')), and alert handling (page.once('dialog')).
+## 🗓️ September 8, 2026 — Day 08: TestMu AI Selenium Playground (/day-08-testmuai-selenium-playground)
 
-🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (/day-11-commitquality)
-Core Focus: Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality.
+**Core Focus:** Automating dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management.
 
-Test Suite Breakdown:
+### Test Suite Breakdown:
 
-filter-product.spec.ts: Validates product table search queries, exact name matching, non-existent item queries, and search resets.
+**ajax-form-submit.spec.ts:** Form input, submit action, and dynamic response verification.
 
-add-product.spec.ts: Validates new product creation flows, unique item additions, and mandatory field validation errors.
+**bootstrap-dual-list-box.spec.ts:** Item movement (single/all), cross-box transfer, and real-time list filtering.
 
-components.spec.ts: Automates standard navigation, click types (single/double/right), radio buttons, checkboxes, and select dropdowns.
+**bootstrap-modal.spec.ts:** Single modal launch/save and multi-layered nested modal interactions.
 
-accordion.spec.ts: Tests expand/collapse states and conditional text element visibility.
+**bootstrap-download-progress.spec.ts:** Start trigger, percentage tracking, and 100% completion state assertions.
 
-popups.spec.ts: Intercepts native browser alert dialogs (page.once('dialog')) and verifies modal overlay triggers.
+**hover-demo.spec.ts:** Dynamic element hover state triggers and overlay visibility checks.
 
-api-mocking.spec.ts: Validates real network responses and mocks API payloads using Playwright's page.route() handler.
+**window-popup-modal.spec.ts:** Single popup intercept, multi-window generation, and URL path assertions.
 
-contact-us.spec.ts: Validates contact form submission workflows and edge cases.
+**todo-app.spec.ts:** Item creation, checkbox toggle state management, and dynamic element verification.
 
-clock.spec.ts: Verifies dynamic clock timer assertions over time delays.
+**auto-healing.spec.ts:** Resilient selector behavior during dynamic DOM ID mutation.
 
-Bug Reports Tracked:
+---
 
-BUG-CQ-011: Contact Form payload mismatch & backend API silent drop (Tested across macOS, Windows, Linux, Android).
+## 🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (/day-09-locator-game)
 
-🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (/day-12-restful-booker-platform)
-Core Focus: Automating hotel reservation workflows, date pickers, contact query submissions, SPA routing issues, and backend concurrency performance logging.
+**Core Focus:** Automating sequential SPA level progression, handling dynamic tour overlays (tour-step-backdrop), resolving React state input desynchronization, and analyzing framework compatibility boundaries.
 
-Test Suite Breakdown:
+### Test Suite Breakdown:
 
-check-availability.spec.ts: Validates date input fields, manual check-in/check-out pickers, and availability search triggers.
+**level-1.spec.ts:** Tag selector execution (h3) and page heading validation.
 
-booking.spec.ts: Automates room selection, guest personal details entry, date selection drag, and booking confirmation modal verification.
+**level-2.spec.ts:** ID selector extraction (#description) and transition handling.
 
-contact-message.spec.ts: Validates customer inquiry form submissions and required input field validation error states.
+**level-3.spec.ts:** Class selector matching (li.active) and level increment verification.
 
-Bug Reports Tracked:
+**level-4.spec.ts:** Direct container hierarchy locator (#toolbar button) and DOM state assertion.
 
-BUG-RBP-001: Navigation route updates URL but target page content fails to load (/amenities).
+---
 
-BUG-RBP-002: Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load.
+## 🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (/day-10-automation-camp)
 
-🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (/day-13-orangehrm)
-Core Focus: Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs.
+**Core Focus:** Automating native browser form controls, custom color/range pickers, popup window contexts, and alert dialog triggers inside a clean single-file execution suite.
 
-Test Suite Breakdown:
+### Test Suite Breakdown:
+
+**play2-automation.spec.ts:** Single-file test suite validating native inputs, radio toggles, multi-select dropdowns, popup interception (waitForEvent('popup')), and alert handling (page.once('dialog')).
+
+---
+
+## 🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (/day-11-commitquality)
+
+**Core Focus:** Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality.
+
+### Test Suite Breakdown:
+
+**filter-product.spec.ts:** Validates product table search queries, exact name matching, non-existent item queries, and search resets.
+
+**add-product.spec.ts:** Validates new product creation flows, unique item additions, and mandatory field validation errors.
+
+**components.spec.ts:** Automates standard navigation, click types (single/double/right), radio buttons, checkboxes, and select dropdowns.
+
+**accordion.spec.ts:** Tests expand/collapse states and conditional text element visibility.
+
+**popups.spec.ts:** Intercepts native browser alert dialogs (page.once('dialog')) and verifies modal overlay triggers.
+
+**api-mocking.spec.ts:** Validates real network responses and mocks API payloads using Playwright's page.route() handler.
+
+**contact-us.spec.ts:** Validates contact form submission workflows and edge cases.
+
+**clock.spec.ts:** Verifies dynamic clock timer assertions over time delays.
+
+### Bug Reports Tracked:
+
+**BUG-CQ-011:** Contact Form payload mismatch & backend API silent drop (Tested across macOS, Windows, Linux, Android).
+
+---
+
+## 🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (/day-12-restful-booker-platform)
+
+**Core Focus:** Automating hotel reservation workflows, date pickers, contact query submissions, SPA routing issues, and backend concurrency performance logging.
+
+### Test Suite Breakdown:
+
+**check-availability.spec.ts:** Validates date input fields, manual check-in/check-out pickers, and availability search triggers.
+
+**booking.spec.ts:** Automates room selection, guest personal details entry, date selection drag, and booking confirmation modal verification.
+
+**contact-message.spec.ts:** Validates customer inquiry form submissions and required input field validation error states.
+
+### Bug Reports Tracked:
+
+**BUG-RBP-001:** Navigation route updates URL but target page content fails to load (/amenities).
+
+**BUG-RBP-002:** Multi-account login concurrency causes backend failure, elevated latency, and application crashes under session load.
+
+---
+
+## 🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (/day-13-orangehrm)
+
+**Core Focus:** Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs.
+
+### Test Suite Breakdown:
 
 login.spec.ts
 
@@ -246,10 +291,13 @@ maintenance.spec.ts
 
 claim.spec.ts
 
-🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (/day-14-cymbal-direct)
-Core Focus: Automating end-to-end user journeys for the Cymbal Direct microservices platform, product catalog iterations, dynamic cart drawer management, and order completions.
+---
 
-Test Suite Breakdown:
+## 🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (/day-14-cymbal-direct)
+
+**Core Focus:** Automating end-to-end user journeys for the Cymbal Direct microservices platform, product catalog iterations, dynamic cart drawer management, and order completions.
+
+### Test Suite Breakdown:
 
 select-product.spec.ts
 
@@ -259,10 +307,13 @@ emty-cart.spec.ts
 
 place-order.spec.ts
 
-🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (/day-15-ui5.sap.demoapps)
-Core Focus: Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (sap_horizon_dark), database view grids, and AI integrations.
+---
 
-Test Suite Breakdown:
+## 🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (/day-15-ui5.sap.demoapps)
+
+**Core Focus:** Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (sap_horizon_dark), database view grids, and AI integrations.
+
+### Test Suite Breakdown:
 
 brose.list.spec.ts
 
@@ -278,183 +329,227 @@ Tools.spec.ts
 
 uxc-integration.spec.ts
 
-Bug Reports Tracked:
+### Bug Reports Tracked:
 
 Navbar cart counter fails to update and out of stock.md: Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
 
-🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (/day-16-selectorshub)
-Core Focus: Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers.
+---
 
-Test Suite Breakdown:
+## 🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (/day-16-selectorshub)
 
-xpath-practice.spec.ts: Validates input form entries (email, password, company, location), tests negative and large boundary value inputs for mobile spin buttons, executes form submissions, and intercepts external YouTube channel popup events (page.waitForEvent('popup')).
+**Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers.
 
-🌐 Module 2: API Testing & Browser DevTools Integration
+### Test Suite Breakdown:
+
+**xpath-practice.spec.ts:** Validates input form entries (email, password, company, location), tests negative and large boundary value inputs for mobile spin buttons, executes form submissions, and intercepts external YouTube channel popup events (page.waitForEvent('popup')).
+
+---
+
+# 🌐 Module 2: API Testing & Browser DevTools Integration
+
 Welcome to Module 2 - API Testing & DevTools. This section focuses on RESTful API validation, browser network traffic inspection, and programmatic execution logging across API challenge endpoints.
 
-📌 Progress Dashboard
-Date	Day	Target Site	Core Focus Areas	Status
-September 17, 2026	Day 17	EvilTester API Challenges (apichallenges.eviltester.com)	Multi-Layered API Testing: Postman Collections, DevTools HAR Traces & Node.js Execution Simulation	✅ Completed
-September 18, 2026	Day 18	Restful Booker (restful-booker.herokuapp.com)	End-to-End Restful Booker API Workflows, Environment State Binding, DevTools Tracing & Performance Profiling	✅ Completed
-September 19, 2026	Day 19	Practice Software Testing (api.practicesoftwaretesting.com)	AI-Assisted Postman Automation, Bearer Token Auth, Cart/Invoice Workflows & DevTools Tracing	✅ Completed
-September 20, 2026	Day 20	GoREST API (gorest.co.in)	API Bearer Token Negative Auth Testing, Newman/Postman CLI Execution & GitHub Actions CI/CD Integration	✅ Completed
-September 21, 2026	Day 21	ServeRest API (serverest.dev)	End-to-End E-Commerce Auth & User Management, Dynamic Password Mutation, Server Crash Edge-Cases & English Log Assertions	✅ Completed
-September 22, 2026	Day 22	JSONPlaceholder (jsonplaceholder.typicode.com)	E2E REST Workflows, Comment Moderation (DELETE), Photo PATCHing, Identity PUT Replacement & Scale Edge Cases	✅ Completed
-September 23, 2026	Day 23	ReqRes API (reqres.in)	Functional API Testing, Postman/Newman CI Integration, Collection-Level Authentication, Dynamic Variables & Request Chaining	✅ Completed
-September 24, 2026	Day 24	HTTPBin API (httpbin.org)	HTTP Methods, Status Codes, Headers, Query Parameters, Cookies, Redirects, Delays, Streaming, Bytes, UUIDs & Response Inspection	✅ Completed
-September 25, 2026	Day 25	DummyJSON	GET Requests, HTTP Status Validation, JSON Response Validation & Basic Response-Structure Checks	✅ Completed
-September 26, 2026	Day 26	Rick and Morty GraphQL API	GraphQL Queries, Nested Relationships, Multiple Records, Pagination & Automated Response Assertions	✅ Completed
-September 27, 2026	Day 27	SWAPI DevTools (swapi.dev)	Browser Console Logs, Network Traffic, HAR Analysis, XHR Breakpoints, Storage & Performance Evidence	✅ Completed
-API Testing Status: ✅ Complete through Day 26
+## 📌 Progress Dashboard
 
-Module 2 Status: 🔄 DevTools work remains to be completed before Module 2 is fully closed.
+| Date               | Day    | Target Site                                                 | Core Focus Areas                                                                                                                 | Status      |
+| ------------------ | ------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| September 17, 2026 | Day 17 | EvilTester API Challenges (apichallenges.eviltester.com)    | Multi-Layered API Testing: Postman Collections, DevTools HAR Traces & Node.js Execution Simulation                               | ✅ Completed |
+| September 18, 2026 | Day 18 | Restful Booker (restful-booker.herokuapp.com)               | End-to-End Restful Booker API Workflows, Environment State Binding, DevTools Tracing & Performance Profiling                     | ✅ Completed |
+| September 19, 2026 | Day 19 | Practice Software Testing (api.practicesoftwaretesting.com) | AI-Assisted Postman Automation, Bearer Token Auth, Cart/Invoice Workflows & DevTools Tracing                                     | ✅ Completed |
+| September 20, 2026 | Day 20 | GoREST API (gorest.co.in)                                   | API Bearer Token Negative Auth Testing, Newman/Postman CLI Execution & GitHub Actions CI/CD Integration                          | ✅ Completed |
+| September 21, 2026 | Day 21 | ServeRest API (serverest.dev)                               | End-to-End E-Commerce Auth & User Management, Dynamic Password Mutation, Server Crash Edge-Cases & English Log Assertions        | ✅ Completed |
+| September 22, 2026 | Day 22 | JSONPlaceholder (jsonplaceholder.typicode.com)              | E2E REST Workflows, Comment Moderation (DELETE), Photo PATCHing, Identity PUT Replacement & Scale Edge Cases                     | ✅ Completed |
+| September 23, 2026 | Day 23 | ReqRes API (reqres.in)                                      | Functional API Testing, Postman/Newman CI Integration, Collection-Level Authentication, Dynamic Variables & Request Chaining     | ✅ Completed |
+| September 24, 2026 | Day 24 | HTTPBin API (httpbin.org)                                   | HTTP Methods, Status Codes, Headers, Query Parameters, Cookies, Redirects, Delays, Streaming, Bytes, UUIDs & Response Inspection | ✅ Completed |
+| September 25, 2026 | Day 25 | DummyJSON                                                   | GET Requests, HTTP Status Validation, JSON Response Validation & Basic Response-Structure Checks                                 | ✅ Completed |
+| September 26, 2026 | Day 26 | Rick and Morty GraphQL API                                  | GraphQL Queries, Nested Relationships, Multiple Records, Pagination & Automated Response Assertions                              | ✅ Completed |
+| September 27, 2026 | Day 27 | SWAPI DevTools (swapi.dev)                                  | Browser Console Logs, Network Traffic, HAR Analysis, XHR Breakpoints, Storage & Performance Evidence                             | ✅ Completed |
+| September 29, 2026 | Day 29 | ParaBank Administration (admin.htm)                         | DOM Inspection, Network Investigation, HAR Evidence & Web Performance Analysis                                                   | ✅ Completed |
 
-📅 Daily Execution Log
-🗓️ September 17, 2026 — Day 17: Multi-Layered API Testing & Audit Logging (/day-17-apichallenges-practice)
-Core Focus: Establishing a 3-layer QA verification process across Postman, Chrome DevTools, and automated Node.js simulation scripts while persisting session audit logs.
+**API Testing Status: ✅ Complete through Day 26**
 
-Multi-Tool Architecture Breakdown:
+**Module 2 Status: 🔄 DevTools work remains to be completed before Module 2 is fully closed.**
 
-Postman Integration: Configured session token retrieval (POST /challenger), stored dynamic X-Challenger header parameters inside environment variables (day-17-apichallenges-env.postman_environment.json), and verified GET /todos / POST /todos end-to-end endpoints.
+---
 
-Browser DevTools HAR Trace: Monitored HTTP request/response lifecycles during live web interactions and exported raw network activity as a HAR log (apichallenges.com.har) to Logs/.
+# 📅 Daily Execution Log
 
-Node.js Simulation Script (simulation.js): Developed an asynchronous script using native fetch to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk.
+## 🗓️ September 17, 2026 — Day 17: Multi-Layered API Testing & Audit Logging (/day-17-apichallenges-practice)
 
-🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (/day-18-restfulbooker)
-Core Focus: Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions while generating DevTools trace profiles.
+**Core Focus:** Establishing a 3-layer QA verification process across Postman, Chrome DevTools, and automated Node.js simulation scripts while persisting session audit logs.
 
-Multi-Tool Architecture Breakdown:
+### Multi-Tool Architecture Breakdown:
 
-Postman Integration: Dynamic token extraction (POST /auth), environment binding (baseUrl, token, bookingId), Cookie header authentication (Cookie: token={{token}}), and complete CRUD request validations (POST, GET, PUT, PATCH, DELETE).
+**Postman Integration:** Configured session token retrieval (POST /challenger), stored dynamic X-Challenger header parameters inside environment variables (day-17-apichallenges-env.postman_environment.json), and verified GET /todos / POST /todos end-to-end endpoints.
 
-DevTools Network & Performance Profiling: Exported raw network request HAR traces (restful-booker_network_trace.har) and recorded performance profiles (Profile-restful-booker.json) capturing DOM shifts, network latency, and rendering benchmarks.
+**Browser DevTools HAR Trace:** Monitored HTTP request/response lifecycles during live web interactions and exported raw network activity as a HAR log (apichallenges.com.har) to Logs/.
 
-🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (/day-19-practice-software-testing)
-Core Focus: Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts.
+**Node.js Simulation Script (simulation.js):** Developed an asynchronous script using native fetch to programmatically execute session creation, query item lists, create new TODO entities, and automatically write execution audit logs to disk.
 
-Multi-Tool Architecture Breakdown:
+---
 
-Postman AI Integration: Prompt-engineered Postman AI Agent to create day-19-practice-software-testing collection and Day 19 - Practice Software Testing Environment. Managed dynamic variable extraction for bearerToken, productId, cartId, cart item insertion, and final checkout invoice creation.
+## 🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (/day-18-restfulbooker)
 
-DevTools Tracing & Performance: Intercepted browser request/response cascades as api.practicesoftwaretesting.com.har and recorded CPU main-thread rendering performance profiles as Trace-20260919T191850.json.
+**Core Focus:** Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions while generating DevTools trace profiles.
 
-🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (/day-20-gorest)
-Core Focus: Comprehensive negative authentication testing for Bearer Token APIs, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
+### Multi-Tool Architecture Breakdown:
 
-Postman Collection & Environment:
+**Postman Integration:** Dynamic token extraction (POST /auth), environment binding (baseUrl, token, bookingId), Cookie header authentication (Cookie: token={{token}}), and complete CRUD request validations (POST, GET, PUT, PATCH, DELETE).
+
+**DevTools Network & Performance Profiling:** Exported raw network request HAR traces (restful-booker_network_trace.har) and recorded performance profiles (Profile-restful-booker.json) capturing DOM shifts, network latency, and rendering benchmarks.
+
+---
+
+## 🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (/day-19-practice-software-testing)
+
+**Core Focus:** Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts.
+
+### Multi-Tool Architecture Breakdown:
+
+**Postman AI Integration:** Prompt-engineered Postman AI Agent to create day-19-practice-software-testing collection and Day 19 - Practice Software Testing Environment. Managed dynamic variable extraction for bearerToken, productId, cartId, cart item insertion, and final checkout invoice creation.
+
+**DevTools Tracing & Performance:** Intercepted browser request/response cascades as api.practicesoftwaretesting.com.har and recorded CPU main-thread rendering performance profiles as Trace-20260919T191850.json.
+
+---
+
+## 🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (/day-20-gorest)
+
+**Core Focus:** Comprehensive negative authentication testing for Bearer Token APIs, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
+
+### Postman Collection & Environment:
 
 Built test suites for invalid, missing, malformed, empty, and expired tokens across GET, POST, PATCH, and DELETE methods.
 
 Bound authentication state inside Day 20 - GoRest Environment.postman_environment.json.
 
-CI/CD Automation (GitHub Actions):
+### CI/CD Automation (GitHub Actions):
 
 Automated collection execution on push triggers using Postman CLI inside .github/workflows/postman.yml with secure secret variable injections (POSTMAN_API_KEY).
 
-Run Artifacts:
+### Run Artifacts:
 
 Exported local execution test summaries and terminal output screenshots.
 
-🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (/day-21-serverest)
-Core Focus: Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping.
+---
 
-Postman Collection (day-21-serverest.postman_collection.json):
+## 🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (/day-21-serverest)
+
+**Core Focus:** Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping.
+
+### Postman Collection (day-21-serverest.postman_collection.json):
 
 Built a complete 15-request API testing collection covering authentication (POST /login), catalog queries (GET /usuarios), user registration (POST /usuarios), negative validation (400 Bad Request), deliberate server crashes (500 Internal Server Error), upsert updates (PUT /usuarios/{_id}), and total data cleanup (DELETE /usuarios/{_id}).
 
-Environment Configuration (Day 21 - ServeRest Environment.postman_environment.json):
+### Environment Configuration (Day 21 - ServeRest Environment.postman_environment.json):
 
 Managed dynamic variables for baseUrl, loginEmail, loginPassword, authToken, johnWickId, and johnWickEmail.
 
-CI/CD Pipeline Integration:
+### CI/CD Pipeline Integration:
 
 Exported test run summaries and execution screenshots under Screenshots/, triggering GitHub Actions workflow execution automatically via root .github/workflows/postman.yml.
 
-🗓️ September 22, 2026 — Day 22: JSONPlaceholder Integration & Edge Testing (/day-22-jsonplaceholder)
-Core Focus: End-to-end integration and edge-case testing against JSONPlaceholder. Executed full CRUD cycles, dynamic variable chaining, comment moderation, partial updates, full record replacement, and high-volume boundary stress testing.
+---
 
-Test Suite Breakdown & Assertion Results (28/28 Passed):
+## 🗓️ September 22, 2026 — Day 22: JSONPlaceholder Integration & Edge Testing (/day-22-jsonplaceholder)
 
-01_GET_Posts_Catalog: Asserts 200 OK and verifies the post catalog contains 100 items.
+**Core Focus:** End-to-end integration and edge-case testing against JSONPlaceholder. Executed full CRUD cycles, dynamic variable chaining, comment moderation, partial updates, full record replacement, and high-volume boundary stress testing.
 
-02_POST_Create_New_Post: Asserts 201 Created, creates a new post, and dynamically captures postId (ID 101).
+### Test Suite Breakdown & Assertion Results (28/28 Passed):
 
-03_POST_Volume_Stress_Simulation: Asserts 201 Created for volume item creation scaling bounds (#501).
+**01_GET_Posts_Catalog:** Asserts 200 OK and verifies the post catalog contains 100 items.
 
-04_GET_Post_Comments_Moderation: Fetches post comments, asserts 200 OK, and extracts target commentId.
+**02_POST_Create_New_Post:** Asserts 201 Created, creates a new post, and dynamically captures postId (ID 101).
 
-05_DELETE_Inappropriate_Comment: Asserts 200 OK on deleting flagged comment resource.
+**03_POST_Volume_Stress_Simulation:** Asserts 201 Created for volume item creation scaling bounds (#501).
 
-06_PATCH_Update_Photo_Title: Asserts 200 OK and validates partial title update on target photo.
+**04_GET_Post_Comments_Moderation:** Fetches post comments, asserts 200 OK, and extracts target commentId.
 
-07_PUT_Replace_User_Identity: Asserts 200 OK and verifies total user record payload replacement.
+**05_DELETE_Inappropriate_Comment:** Asserts 200 OK on deleting flagged comment resource.
 
-08_GET_Baseline_Users_Check: Asserts 200 OK and confirms default 10-user record array.
+**06_PATCH_Update_Photo_Title:** Asserts 200 OK and validates partial title update on target photo.
 
-09_GET_Over_1k_Users_Scale_EdgeCase: Tests out-of-bounds query (/users/1001), asserting 404 Not Found without server crash (500).
+**07_PUT_Replace_User_Identity:** Asserts 200 OK and verifies total user record payload replacement.
 
-Root Cause Analysis (RCA) & Troubleshooting:
+**08_GET_Baseline_Users_Check:** Asserts 200 OK and confirms default 10-user record array.
 
-Initial Failure: 6 tests failed across Requests 06 and 07 due to missing initial values for photoId and userId in the environment scope, causing URLs to send unparsed template strings (%7B%7BphotoId%7D%7D).
+**09_GET_Over_1k_Users_Scale_EdgeCase:** Tests out-of-bounds query (/users/1001), asserting 404 Not Found without server crash (500).
 
-Resolution: Added default variable definitions to day 22 JSONPlaceholder environment context, driving test execution to a clean 28/28 passing state (100%).
+### Root Cause Analysis (RCA) & Troubleshooting:
 
-🗓️ September 23, 2026 — Day 23: ReqRes API Functional Testing with Postman (/day-23-reqres)
-📌 Overview
+**Initial Failure:** 6 tests failed across Requests 06 and 07 due to missing initial values for photoId and userId in the environment scope, causing URLs to send unparsed template strings (%7B%7BphotoId%7D%7D).
+
+**Resolution:** Added default variable definitions to day 22 JSONPlaceholder environment context, driving test execution to a clean 28/28 passing state (100%).
+
+---
+
+## 🗓️ September 23, 2026 — Day 23: ReqRes API Functional Testing with Postman (/day-23-reqres)
+
+### 📌 Overview
+
 This module covers automated functional API testing against the ReqRes API using Postman and Newman CI integration. It includes end-to-end test assertions, collection-level authentication headers, dynamic variable extraction, and request chaining.
 
-🔑 Environment Setup (day 23 reqres)
-Variable Key	Scope / Type	Description
-baseUrl	String	Target API host address (https://reqres.in)
-api_key	Secret / Header	Authorization key passed via collection header
-userId	Number	Target user ID for endpoint checks
-createdUserId	Dynamic Variable	Extracted post POST /api/users execution
-page	Number	Pagination query variable
-🚀 Detailed Request & Test Assertions Breakdown
-Global Collection Setup
-Header: x-api-key: {{api_key}} applied automatically across all endpoints.
+### 🔑 Environment Setup (day 23 reqres)
 
-1. Users Folder
-1.1 GET /api/users?page={{page}} — List Users
-Goal: Verify user pagination data.
+| Variable Key  | Scope / Type     | Description                                    |
+| ------------- | ---------------- | ---------------------------------------------- |
+| baseUrl       | String           | Target API host address (https://reqres.in)    |
+| api_key       | Secret / Header  | Authorization key passed via collection header |
+| userId        | Number           | Target user ID for endpoint checks             |
+| createdUserId | Dynamic Variable | Extracted post POST /api/users execution       |
+| page          | Number           | Pagination query variable                      |
 
-Test Assertions:
+### 🚀 Detailed Request & Test Assertions Breakdown
 
-Status code is 200 OK.
+### Global Collection Setup
 
-Response time is less than 1000ms.
+**Header:** x-api-key: {{api_key}} applied automatically across all endpoints.
 
-page in response body equals 2.
+### 1. Users Folder
 
-data array contains items and verifies data[0].id exists.
+#### 1.1 GET /api/users?page={{page}} — List Users
 
-1.2 GET /api/users/{{userId}} — Single User
-Goal: Verify retrieval of a specific user.
+**Goal:** Verify user pagination data.
 
-Test Assertions:
+**Test Assertions:**
 
-Status code is 200 OK.
+* Status code is 200 OK.
+* Response time is less than 1000ms.
+* page in response body equals 2.
+* data array contains items and verifies data[0].id exists.
 
-Response contains data.id matching variable userId.
+#### 1.2 GET /api/users/{{userId}} — Single User
 
-Response contains data.email, data.first_name, and data.last_name.
+**Goal:** Verify retrieval of a specific user.
 
-1.3 POST /api/users — Create User
-Goal: Create a new user resource and extract its ID dynamically.
+**Test Assertions:**
 
-Payload:
+* Status code is 200 OK.
+* Response contains data.id matching variable userId.
+* Response contains data.email, data.first_name, and data.last_name.
 
+#### 1.3 POST /api/users — Create User
+
+**Goal:** Create a new user resource and extract its ID dynamically.
+
+**Payload:**
+
+```json
 {
   "name": "morpheus",
   "job": "leader"
 }
-Dynamic Variable: The created user's ID is extracted from the response and stored as createdUserId for subsequent request chaining.
+```
 
-🗓️ September 24, 2026 — Day 24: HTTPBin API Testing with Postman
+**Dynamic Variable:** The created user's ID is extracted from the response and stored as createdUserId for subsequent request chaining.
+
+---
+
+## 🗓️ September 24, 2026 — Day 24: HTTPBin API Testing with Postman
+
 API functional testing with Postman using HTTPBin, covering HTTP status codes, methods, request/response inspection, query params, custom headers, JSON/form-data, cookies, redirects, delays, streaming, bytes, UUIDs, response headers, image/content-type, user-agent/IP, and environment variables.
 
-🎯 Objectives
+### 🎯 Objectives
+
 Validate different HTTP status codes.
 
 Test common HTTP methods.
@@ -473,97 +568,119 @@ Inspect response headers and response characteristics.
 
 Use Postman environment variables for dynamic test data.
 
-🔧 Environment
-API: HTTPBin
+### 🔧 Environment
 
-Base URL: https://httpbin.org
+**API:** HTTPBin
 
-Tool: Postman
+**Base URL:** https://httpbin.org
 
-Collection: day-24-httpbin
+**Tool:** Postman
 
-Schema: Postman Collection v2.1
+**Collection:** day-24-httpbin
 
-Base variable: {{baseUrl}}
+**Schema:** Postman Collection v2.1
 
-Environment: day 24 httpbin
-Variable	Value
-baseUrl	https://httpbin.org
-statusCode	200
-etag	abc123
-delay	1
-redirectTarget	https://httpbin.org/get
-numRedirects	3
-cookieName	testCookie
-cookieValue	hello123
-byteCount	100
-chunkSize	10
-chunkDelay	0.5
-streamCount	5
-encodedValue	SFRUUEJJTiBpcyBhd2Vzb21l
-contentType	application/json
-userAgent	PostmanRuntime/7.0
-lastUUID	empty initially
-📋 Collection Coverage
-1. Status Codes
+**Base variable:** {{baseUrl}}
+
+### Environment: day 24 httpbin
+
+| Variable       | Value                    |
+| -------------- | ------------------------ |
+| baseUrl        | https://httpbin.org      |
+| statusCode     | 200                      |
+| etag           | abc123                   |
+| delay          | 1                        |
+| redirectTarget | https://httpbin.org/get  |
+| numRedirects   | 3                        |
+| cookieName     | testCookie               |
+| cookieValue    | hello123                 |
+| byteCount      | 100                      |
+| chunkSize      | 10                       |
+| chunkDelay     | 0.5                      |
+| streamCount    | 5                        |
+| encodedValue   | SFRUUEJJTiBpcyBhd2Vzb21l |
+| contentType    | application/json         |
+| userAgent      | PostmanRuntime/7.0       |
+| lastUUID       | empty initially          |
+
+### 📋 Collection Coverage
+
+**1. Status Codes**
+
 GET/POST/PUT /status/{{statusCode}}
 
 Tests expected status and response time <3000ms.
 
-2. Cookies
+**2. Cookies**
+
 Set/get/delete/multiple cookies, with accepted 200/302 responses.
 
-3. Redirects
+**3. Redirects**
+
 Absolute/relative/redirect-to GET and 307 scenario, redirect n times, no follow, HTTPS, and history.
 
-4. Anything
+**4. Anything**
+
 GET/POST/PUT/PATCH/DELETE/HEAD/OPTIONS using the corresponding /anything endpoints, request bodies, and assertions.
 
-5. Query Params
+**5. Query Params**
+
 /anything?foo=bar&baz=qux
 
-6. Custom Headers
+**6. Custom Headers**
+
 X-Custom-Header: PostmanTest
 
 X-Day: 24
 
-7. Form Data
+**7. Form Data**
+
 URL encoded:
 
 name=Postman
 
 day=24
 
-8. Delay
+**8. Delay**
+
 /delay/{{delay}}
 
 Parses delay using parseInt and validates response-time behavior.
 
-9. Drip
+**9. Drip**
+
 /drip?numbytes={{byteCount}}&duration={{delay}}&delay={{chunkDelay}}&code=200
 
-10. Streaming
+**10. Streaming**
+
 /stream/{{streamCount}}
 
 /stream-bytes/{{byteCount}}
 
-11. UUID
+**11. UUID**
+
 /uuid
 
 Uses regex validation and stores the UUID using:
 
+```javascript
 pm.environment.set("lastUUID", pm.response.json().uuid)
-12. Range
+```
+
+**12. Range**
+
 /range/{{byteCount}}
 
 Checks Accept-Ranges or Content-Range.
 
-13. Links
+**13. Links**
+
 /links/5/0
 
 Checks for <a href.
 
-14. Images
+**14. Images**
+
 /image/png
 
 /image/svg
@@ -572,19 +689,28 @@ Checks for <a href.
 
 Validates expected content types.
 
-15. IP and User Agent
+**15. IP and User Agent**
+
 /ip
 
 /user-agent
 
-16. Response Inspection
+**16. Response Inspection**
+
 Validates cache control and Last-Modified response headers.
 
-🧪 Assertion Strategy
+### 🧪 Assertion Strategy
+
+```javascript
 pm.response.to.have.status(200);
+```
+
 Environment status code validation.
 
+```javascript
 pm.expect(pm.response.responseTime).to.be.below(3000);
+```
+
 JSON property validation.
 
 Exact JSON value validation.
@@ -595,31 +721,39 @@ Response size validation.
 
 Regex validation.
 
-🔄 Dynamic Variable Handling
+### 🔄 Dynamic Variable Handling
+
 Dynamic response values are captured from responses and stored in Postman environment variables for subsequent requests.
 
 Example:
 
+```javascript
 pm.environment.set("lastUUID", pm.response.json().uuid);
-📊 Main Test Coverage
-Area	Coverage
-Status Codes	GET, POST, PUT
-Cookies	Set, Get, Delete, Multiple
-Redirects	Absolute, Relative, Redirect-To, 307, N Redirects, No Follow, HTTPS, History
-HTTP Methods	GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
-Query Parameters	Query parameter validation
-Headers	Custom header validation
-Form Data	URL encoded form validation
-Delay	Delayed responses
-Drip	Streaming byte delivery
-Streaming	Stream and stream-bytes
-UUID	UUID generation and regex validation
-Range	Byte range headers
-Links	Link generation
-Images	PNG, SVG, WebP
-IP/User Agent	Request environment inspection
-Response Inspection	Cache-Control, Last-Modified
-📚 Key QA Concepts
+```
+
+### 📊 Main Test Coverage
+
+| Area                | Coverage                                                                     |
+| ------------------- | ---------------------------------------------------------------------------- |
+| Status Codes        | GET, POST, PUT                                                               |
+| Cookies             | Set, Get, Delete, Multiple                                                   |
+| Redirects           | Absolute, Relative, Redirect-To, 307, N Redirects, No Follow, HTTPS, History |
+| HTTP Methods        | GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS                                 |
+| Query Parameters    | Query parameter validation                                                   |
+| Headers             | Custom header validation                                                     |
+| Form Data           | URL encoded form validation                                                  |
+| Delay               | Delayed responses                                                            |
+| Drip                | Streaming byte delivery                                                      |
+| Streaming           | Stream and stream-bytes                                                      |
+| UUID                | UUID generation and regex validation                                         |
+| Range               | Byte range headers                                                           |
+| Links               | Link generation                                                              |
+| Images              | PNG, SVG, WebP                                                               |
+| IP/User Agent       | Request environment inspection                                               |
+| Response Inspection | Cache-Control, Last-Modified                                                 |
+
+### 📚 Key QA Concepts
+
 HTTP status-code validation
 
 Request and response inspection
@@ -630,7 +764,9 @@ Dynamic variable chaining
 
 Response header and payload validation
 
-📁 Suggested Project Structure
+### 📁 Suggested Project Structure
+
+```text
 day-24-httpbin/
 
 ├── Collections/
@@ -641,128 +777,139 @@ day-24-httpbin/
 │   ├── Collection-Runner-1.png
 │   └── Collection-Runner-2.png
 └── README.md
-🎯 Day 24 Outcome
+```
+
+### 🎯 Day 24 Outcome
+
 HTTPBin was used to practice broad HTTP-level API testing through Postman, including status codes, HTTP methods, cookies, redirects, headers, delays, streaming, bytes, UUIDs, response headers, content types, and request environment inspection.
 
-Collection: day-24-httpbin
+**Collection:** day-24-httpbin
 
-Base URL: https://httpbin.org
+**Base URL:** https://httpbin.org
 
-Environment: day 24 httpbin
+**Environment:** day 24 httpbin
 
-Day 25: DummyJSON API Testing with Postman
+---
+
+## 🗓️ September 25, 2026 — Day 25: DummyJSON API Testing with Postman
+
 API testing practice using Postman and the DummyJSON API, focusing on GET requests, HTTP status validation, JSON response validation, and basic response-structure checks.
 
-🎯 Objective
+### 🎯 Objective
+
 The objective of Day 25 was to practice basic API testing with Postman by validating multiple GET requests against the DummyJSON API.
 
 The tests focused on:
 
-Verifying successful HTTP responses
+* Verifying successful HTTP responses
+* Confirming that responses are returned as JSON
+* Validating the presence of expected response arrays
+* Confirming that returned arrays contain at least one record
+* Running multiple API requests together as a collection
 
-Confirming that responses are returned as JSON
+### 🔖 Day 25 Summary
 
-Validating the presence of expected response arrays
+**Focus:** API Testing with Postman
 
-Confirming that returned arrays contain at least one record
+**API:** DummyJSON
 
-Running multiple API requests together as a collection
+**Method:** GET
 
-🔖 Day 25 Summary
-Focus: API Testing with Postman
+**Requests:** 3
 
-API: DummyJSON
+**Tests:** 12
 
-Method: GET
+**Passed:** 12
 
-Requests: 3
+**Failed:** 0
 
-Tests: 12
+**Pass Rate:** 100%
 
-Passed: 12
+**Execution Time:** 1363 ms
 
-Failed: 0
+**Status:** ✅ ALL PASSED
 
-Pass Rate: 100%
+### 🔧 API Under Test
 
-Execution Time: 1363 ms
+**API:** DummyJSON
 
-Status: ✅ ALL PASSED
+**Base URL:** https://dummyjson.com
 
-🔧 API Under Test
-API: DummyJSON
+**Environment:** Postman day 25 dummyjson
 
-Base URL: https://dummyjson.com
+### 📋 Requests
 
-Environment: Postman day 25 dummyjson
+#### 1 Get Products
 
-📋 Requests
-1 Get Products
-Method: GET
+**Method:** GET
 
-Validation:
+**Validation:**
 
-Status 200
+* Status 200
+* Response is JSON
+* products is an array
+* Array contains at least one record
 
-Response is JSON
+#### 2 Get Carts
 
-products is an array
+**Method:** GET
 
-Array contains at least one record
+**Validation:**
 
-2 Get Carts
-Method: GET
+* Status 200
+* Response is JSON
+* carts is an array
+* Array contains at least one record
 
-Validation:
+#### 3 Get Comments
 
-Status 200
+**Method:** GET
 
-Response is JSON
+**Validation:**
 
-carts is an array
+* Status 200
+* Response is JSON
+* comments is an array
+* Array contains at least one record
 
-Array contains at least one record
+### 🧪 Test Strategy
 
-3 Get Comments
-Method: GET
+| Validation Area          | Products            | Carts               | Comments            |
+| ------------------------ | ------------------- | ------------------- | ------------------- |
+| HTTP 200                 | ✅                   | ✅                   | ✅                   |
+| JSON Format              | ✅                   | ✅                   | ✅                   |
+| Expected Top-Level Array | products            | carts               | comments            |
+| Data Presence            | At least one record | At least one record | At least one record |
 
-Validation:
+### 📊 Test Execution Results
 
-Status 200
+**Run Date:** 25 Sep 2026
 
-Response is JSON
+**Run Time:** 10:50 UTC
 
-comments is an array
+**Run Status:** ALL PASSED
 
-Array contains at least one record
+| Metric         | Result                               |
+| -------------- | ------------------------------------ |
+| Requests       | 3                                    |
+| Tests Passed   | 12                                   |
+| Tests Failed   | 0                                    |
+| Total Time     | 1363 ms                              |
+| Test Pass Rate | 100%                                 |
+| Run ID         | 6a1c5cae-604d-4dd3-999b-75a830672763 |
 
-🧪 Test Strategy
-Validation Area	Products	Carts	Comments
-HTTP 200	✅	✅	✅
-JSON Format	✅	✅	✅
-Expected Top-Level Array	products	carts	comments
-Data Presence	At least one record	At least one record	At least one record
-📊 Test Execution Results
-Run Date: 25 Sep 2026
+### 📋 Request Results
 
-Run Time: 10:50 UTC
+| Request      | Method | Status | Response Time | Tests      |
+| ------------ | ------ | ------ | ------------- | ---------- |
+| Get Products | GET    | 200 OK | ~450 ms       | 4/4 passed |
+| Get Carts    | GET    | 200 OK | ~460 ms       | 4/4 passed |
+| Get Comments | GET    | 200 OK | ~453 ms       | 4/4 passed |
 
-Run Status: ALL PASSED
+### 🔍 Detailed Results
 
-Metric	Result
-Requests	3
-Tests Passed	12
-Tests Failed	0
-Total Time	1363 ms
-Test Pass Rate	100%
-Run ID	6a1c5cae-604d-4dd3-999b-75a830672763
-📋 Request Results
-Request	Method	Status	Response Time	Tests
-Get Products	GET	200 OK	~450 ms	4/4 passed
-Get Carts	GET	200 OK	~460 ms	4/4 passed
-Get Comments	GET	200 OK	~453 ms	4/4 passed
-🔍 Detailed Results
-Get Products
+**Get Products**
+
 4/4 tests passed
 
 HTTP status validation passed.
@@ -773,7 +920,8 @@ products array validation passed.
 
 Data presence validation passed.
 
-Get Carts
+**Get Carts**
+
 4/4 tests passed
 
 HTTP status validation passed.
@@ -784,7 +932,8 @@ carts array validation passed.
 
 Data presence validation passed.
 
-Get Comments
+**Get Comments**
+
 4/4 tests passed
 
 HTTP status validation passed.
@@ -795,7 +944,8 @@ comments array validation passed.
 
 Data presence validation passed.
 
-📚 QA Learning Outcomes
+### 📚 QA Learning Outcomes
+
 HTTP status validation
 
 Response format validation
@@ -806,8 +956,9 @@ Basic data validation
 
 Collection-level execution
 
-📸 Run Evidence
-Day-25-DummyJSON-API-Testing-Run-Report.html
+### 📸 Run Evidence
+
+**Day-25-DummyJSON-API-Testing-Run-Report.html**
 
 The run evidence records:
 
@@ -825,74 +976,88 @@ Run ID
 
 Environment information
 
-🎯 Outcome
+### 🎯 Outcome
+
 Day 25 completed with 3 API requests and 12 total tests, with all tests passing.
 
-Pass Rate: 100%
+**Pass Rate:** 100%
 
-🗓️ September 26, 2026 — Day 26: Rick and Morty GraphQL API Testing (/day-26)
-🎯 Objective
+---
+
+## 🗓️ September 26, 2026 — Day 26: Rick and Morty GraphQL API Testing (/day-26)
+
+### 🎯 Objective
+
 Day 26 focused on GraphQL API testing using Postman against the Rick and Morty GraphQL API.
 
 The goal was to move beyond basic REST GET validation and test GraphQL-specific response structures, nested relationships, multiple-record queries, and pagination while using environment-driven test data and automated JavaScript assertions.
 
 This completes the API Testing portion of Module 2.
 
-🚀 Collection Overview
+### 🚀 Collection Overview
+
 The collection contains 10 POST requests structured into two core folders:
 
-📁 Characters
-GET SINGLE CHARACTER: Validates scalar fields (id, name, status, species, type, gender) and single nested objects (origin, location).
+### 📁 Characters
 
-CHARACTER WITH EPISODES: Tests nested array relationships (character → episode).
+**GET SINGLE CHARACTER:** Validates scalar fields (id, name, status, species, type, gender) and single nested objects (origin, location).
 
-MULTIPLE CHARACTERS: Validates array queries using charactersByIds(ids: [...]).
+**CHARACTER WITH EPISODES:** Tests nested array relationships (character → episode).
 
-LIST CHARACTERS: Tests paginated character queries along with metadata (info & results).
+**MULTIPLE CHARACTERS:** Validates array queries using charactersByIds(ids: [...]).
 
-CHARACTERS PAGE 2: Validates page parameter arguments directly within GraphQL queries (page: 2).
+**LIST CHARACTERS:** Tests paginated character queries along with metadata (info & results).
 
-📁 Episodes
-GET SINGLE EPISODE: Validates single episode fetching and scalar assertions.
+**CHARACTERS PAGE 2:** Validates page parameter arguments directly within GraphQL queries (page: 2).
 
-EPISODE WITH CHARACTERS: Tests reverse nested array relationships (episode → characters).
+### 📁 Episodes
 
-MULTIPLE EPISODES: Validates multi-record fetching using episodesByIds(ids: [...]).
+**GET SINGLE EPISODE:** Validates single episode fetching and scalar assertions.
 
-LIST EPISODES: Tests listing episodes with pagination details (count, pages, next, prev).
+**EPISODE WITH CHARACTERS:** Tests reverse nested array relationships (episode → characters).
 
-EPISODES PAGE 2: Verifies pagination transitions on page 2.
+**MULTIPLE EPISODES:** Tests multi-record fetching using episodesByIds(ids: [...])
 
-📊 Automated Assertions & Quality Checks
+**LIST EPISODES:** Tests listing episodes with pagination details (count, pages, next, prev).
+
+**EPISODES PAGE 2:** Verifies pagination transitions on page 2.
+
+### 📊 Automated Assertions & Quality Checks
+
 Every request includes JavaScript tests checking:
 
-HTTP Status Code: 200 OK
+**HTTP Status Code:** 200 OK
 
-Response Data Payload: Presence of the data property
+**Response Data Payload:** Presence of the data property
 
-Field Completeness: Ensures requested fields are present and unrequested fields are omitted
+**Field Completeness:** Ensures requested fields are present and unrequested fields are omitted
 
-Data Types: Validates arrays, objects, and string matches against environment variables
+**Data Types:** Validates arrays, objects, and string matches against environment variables
 
-Pagination Contracts: Verifies page state changes, e.g. prev != null on page 2
+**Pagination Contracts:** Verifies page state changes, e.g. prev != null on page 2
 
-🛠️ Environment Configuration
+### 🛠️ Environment Configuration
+
 The environment file:
 
-day 26 rick and morty graphql.postman_environment.json
+**day 26 rick and morty graphql.postman_environment.json**
 
 is pre-configured with the following variables stored in the Initial Value column:
 
-Variable	Value	Description
-baseUrl	https://rickandmortyapi.com/graphql	Public GraphQL Endpoint
-characterId1	1	Primary character ID (Rick Sanchez)
-characterId2	2	Secondary character ID
-characterId3	3	Tertiary character ID
-episodeId1	1	Primary episode ID
-episodeId2	2	Secondary episode ID
-episodeId3	3	Tertiary episode ID
-page	1	Pagination page number
-📁 Project Structure
+| Variable     | Value                               | Description                         |
+| ------------ | ----------------------------------- | ----------------------------------- |
+| baseUrl      | https://rickandmortyapi.com/graphql | Public GraphQL Endpoint             |
+| characterId1 | 1                                   | Primary character ID (Rick Sanchez) |
+| characterId2 | 2                                   | Secondary character ID              |
+| characterId3 | 3                                   | Tertiary character ID               |
+| episodeId1   | 1                                   | Primary episode ID                  |
+| episodeId2   | 2                                   | Secondary episode ID                |
+| episodeId3   | 3                                   | Tertiary episode ID                 |
+| page         | 1                                   | Pagination page number              |
+
+### 📁 Project Structure
+
+```text
 day-26/
 │
 ├── Collections/
@@ -905,47 +1070,60 @@ day-26/
 │   └── Day-26-Rick-and-Morty-GraphQL-Test-Report.html
 │
 └── README.md
-🎯 Day 26 Outcome
+```
+
+### 🎯 Day 26 Outcome
+
 Day 26 completes the API Testing track of the 90-day QA challenge.
 
 The API portion progressed from REST API fundamentals through authentication, CRUD operations, negative testing, environment variables, request chaining, Newman/CI execution, HTTP-level testing, response validation, and finally GraphQL testing.
 
-API Testing Status: ✅ COMPLETE
+**API Testing Status: ✅ COMPLETE**
 
-Final API Testing Day: Day 26
+**Final API Testing Day: Day 26**
 
-API Type Covered: REST + GraphQL
+**API Type Covered:** REST + GraphQL
 
-Primary Tool: Postman
+**Primary Tool:** Postman
 
-GraphQL API: Rick and Morty API
+**GraphQL API:** Rick and Morty API
 
-Day 26 Requests: 10 POST requests
+**Day 26 Requests:** 10 POST requests
 
-Day 26 Focus: GraphQL queries, nested relationships, multiple records, pagination, environment variables, and automated assertions.
+**Day 26 Focus:** GraphQL queries, nested relationships, multiple records, pagination, environment variables, and automated assertions.
 
-🗓️ September 27, 2026 — Day 27: SWAPI DevTools (/day-27-swapi-devtools)
-Browser Console Log & HTTP Archive Analysis
+---
+
+## 🗓️ September 27, 2026 — Day 27: SWAPI DevTools (/day-27-swapi-devtools)
+
+### Browser Console Log & HTTP Archive Analysis
+
 This day focuses on using browser DevTools to inspect JavaScript execution, console messages, API requests, network traffic, and HTTP Archive (HAR) data while working with the Star Wars API (SWAPI).
 
-1. Browser Console Log (swapi.dev-1790504306524.log)
+### 1. Browser Console Log (swapi.dev-1790504306524.log)
+
 This file records interactive session logs, JavaScript execution, API requests, and browser console warnings.
 
-Extension & Content Script Warnings
+### Extension & Content Script Warnings
+
 Repeated messages: contentScript.js:201 This page is not reloaded.
 
-Network Blocking Errors (net::ERR_BLOCKED_BY_CLIENT)
+### Network Blocking Errors (net::ERR_BLOCKED_BY_CLIENT)
+
 Failed GET requests to Twitter syndication endpoints: https://syndication.twitter.com/i/jot/embeds...
 
 These requests were blocked by ad blockers or privacy extensions blocking embedded Twitter widgets.
 
-Failed API Call (404 Not Found)
+### Failed API Call (404 Not Found)
+
 An interactive call made via jquery-2.1.0.min.js:
+
 GET https://swapi.dev/api/vader
 
 Result: 404 Not Found.
 
-Asynchronous Message Channel Errors
+### Asynchronous Message Channel Errors
+
 Multiple uncaught errors were recorded:
 
 Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
@@ -958,11 +1136,16 @@ platform.twitter.com
 
 Other embedded scripts
 
-JavaScript Fetch Requests & Executed Results
-1. Luke Skywalker Query
+### JavaScript Fetch Requests & Executed Results
+
+#### 1. Luke Skywalker Query
+
+```javascript
 fetch('https://swapi.dev/api/people/1/')
   .then(res => res.json())
   .then(data => console.log(data));
+```
+
 Result: The response returned Luke Skywalker's data, including:
 
 name: 'Luke Skywalker'
@@ -975,7 +1158,8 @@ hair_color: 'blond'
 
 skin_color: 'fair'
 
-2. Tatooine Planet Query (getPlanet(1))
+#### 2. Tatooine Planet Query (getPlanet(1))
+
 An async function was executed and the result was logged using console.table().
 
 Output Data:
@@ -1002,18 +1186,24 @@ residents such as people/1/, people/2/, etc.
 
 films such as films/1/, films/3/, etc.
 
-CLI Command Copy-Paste Attempts
+### CLI Command Copy-Paste Attempts
+
 curl commands were attempted directly inside the browser JavaScript console.
 
 This produced:
+
 Uncaught SyntaxError: Unexpected identifier 'url'
 
 The error occurred because curl is a shell/CLI command and its Bash syntax is not valid JavaScript syntax in the browser console.
 
-2. HTTP Archive Log (chromewebdata.har)
+---
+
+### 2. HTTP Archive Log (chromewebdata.har)
+
 This .har file records network traffic, page navigation, static assets, and header/response details.
 
-Page Navigation Timeline (pages)
+### Page Navigation Timeline (pages)
+
 Multiple page views were recorded while navigating between:
 
 https://swapi.dev/
@@ -1032,15 +1222,18 @@ swapi-elixir
 
 StarWarsAPI
 
-Network Entries & Responses (entries)
-Main Page Request
+### Network Entries & Responses (entries)
+
+**Main Page Request**
+
 GET https://swapi.dev/
 
 Response: 304 Not Modified
 
 The response was cached through Amazon CloudFront / S3.
 
-HTML Content Structure
+### HTML Content Structure
+
 The captured HTML included the full SWAPI landing-page structure, including:
 
 SWAPI title and description: "The Star Wars API"
@@ -1065,7 +1258,8 @@ FAQ sections:
 
 Details regarding the transition from the legacy swapi.co domain
 
-Static Resources Loaded
+### Static Resources Loaded
+
 The HAR also captured static resources including:
 
 Bootstrap CSS:
@@ -1092,16 +1286,21 @@ GitHub follow widget: ghbtns.com/github-btn.html
 
 favicon.ico
 
-3. Evidence Collected
+### 3. Evidence Collected
+
 The DevTools session produced the following evidence artifacts:
 
-Artifact	Evidence
-Browser Console Log	JavaScript execution, API requests, warnings, blocked requests, and errors
-HTTP Archive (.har)	Network requests, navigation timeline, responses, headers, and static resources
-Performance Evaluation	Performance-related DevTools observations
-XHR Breakpoint Screenshot	Evidence of XHR breakpoint/pause behavior
-Storage Screenshot	Browser storage inspection evidence
-4. Project Structure
+| Artifact                  | Evidence                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| Browser Console Log       | JavaScript execution, API requests, warnings, blocked requests, and errors      |
+| HTTP Archive (.har)       | Network requests, navigation timeline, responses, headers, and static resources |
+| Performance Evaluation    | Performance-related DevTools observations                                       |
+| XHR Breakpoint Screenshot | Evidence of XHR breakpoint/pause behavior                                       |
+| Storage Screenshot        | Browser storage inspection evidence                                             |
+
+### 4. Project Structure
+
+```text
 day-27-swapi-devtools/
 ├── console-logs/
 │   └── swapi.dev-1790504306524.log
@@ -1116,7 +1315,10 @@ day-27-swapi-devtools/
 ├── storage/
 │   └── Storage.png
 └── README.md
-5. DevTools Coverage
+```
+
+### 5. DevTools Coverage
+
 The collected evidence covers:
 
 Browser Console inspection
@@ -1145,7 +1347,8 @@ XHR breakpoint evidence
 
 Performance evaluation evidence
 
-6. Outcome
+### 6. Outcome
+
 Day 27 documents a practical DevTools investigation of SWAPI using browser Console and Network tooling, supported by captured logs, HAR data, screenshots, storage evidence, and performance evidence.
 
 The work demonstrates how browser DevTools can be used to distinguish between:
@@ -1164,25 +1367,333 @@ Static resource loading
 
 Client-side execution issues
 
-🔜 Module 2 Remaining Work — DevTools
+---
+
+# 🗓️ September 29, 2026 — Day 29: ParaBank DevTools — DOM, Network, HAR & Web Performance
+
+## Objective
+
+Investigate the ParaBank Administration page using Chrome DevTools to understand the page structure, network activity, captured HAR evidence, and browser-side web performance characteristics.
+
+The day combines DOM inspection, Network investigation, HAR evidence capture, and Web Performance analysis into one DevTools-focused QA exercise.
+
+## Application Under Test
+
+**Application:** ParaBank
+
+**Target Page:** Administration (admin.htm)
+
+**Primary Tool:** Google Chrome DevTools
+
+**DevTools Areas:** Elements / DOM, Network, Performance
+
+## Scope
+
+This exercise focused on observable browser-side evidence rather than application-source changes or assumptions.
+
+## DOM / Elements Inspection
+
+### Reviewed:
+
+Overall HTML / DOM hierarchy
+
+Main page containers and navigation structure
+
+Administration, database, JMS, and login forms
+
+Form controls and their attributes
+
+IDs, names, classes, and other visible locator attributes
+
+DOM structure relevant to UI automation
+
+Accessibility-relevant markup
+
+Hidden or unexpected DOM elements
+
+## Network Investigation
+
+### Reviewed:
+
+Requests generated by the ParaBank Admin page
+
+HTTP methods and status codes
+
+Resource types
+
+Request duration and timing data where available
+
+Request initiators
+
+Redirects
+
+Errors and failed requests
+
+API / XHR / Fetch activity
+
+Caching and selected response headers
+
+Request-chain / waterfall relationships visible in Network
+
+## HAR Evidence
+
+Captured the Network evidence in HAR 1.2 format so that the browser-level request data can be retained as a machine-readable artifact.
+
+## Web Performance Investigation
+
+Used Chrome DevTools Performance to inspect browser execution and rendering behavior.
+
+Performance evidence is retained separately from the Network evidence so that Network findings and Performance findings are not mixed together.
+
+## Key Network Findings
+
+The captured Network investigation recorded 19 requests:
+
+| Resource Type | Count |
+| ------------- | ----: |
+| Document      |     1 |
+| Stylesheets   |     2 |
+| Scripts       |     1 |
+| Images        |    15 |
+| Total         |    19 |
+
+All observed requests returned HTTP 200 OK.
+
+No 4xx responses, 5xx responses, failed requests, blocked requests, or redirects were observed in the captured trace.
+
+No API, XHR, or Fetch requests were visible in the captured network trace; the page relied on traditional document and static-resource loading for the observed page load.
+
+## Main Document Timing
+
+The main document request for /parabank/admin.htm had:
+
+**Total duration:** 419 ms
+
+**Waiting for server response:** 327 ms
+
+**Waiting portion:** 78% of the total document duration
+
+## Network Header Evidence
+
+Observed response/request-related evidence included:
+
+**cache-control:** no-store on admin.htm
+
+**content-encoding:** br (Brotli)
+
+**content-type:** text/html;charset=ISO-8859-1
+
+**server:** cloudflare
+
+**x-content-type-options:** nosniff
+
+Caching behavior for the individual CSS, JavaScript, and image sub-resources was not determinable from the provided selected-header evidence.
+
+## Network Findings
+
+The main document spent a significant portion of its request time waiting for the server response.
+
+template.css participates in an initiator chain that subsequently triggers multiple image requests.
+
+Two separate CSS files (template.css and style.css) are loaded for the page.
+
+## Key DOM Findings
+
+The ParaBank Administration page uses a traditional table-based layout with major sections organized under containers such as:
+
+#mainPanel
+
+#topPanel
+
+#headerPanel
+
+#bodyPanel
+
+#leftPanel
+
+#rightPanel
+
+#footermainPanel
+
+The DOM contains multiple forms and controls relevant to administration and login workflows.
+
+## Important Automation Locators
+
+Stable IDs identified during inspection include:
+
+#soapEndpoint
+
+#restEndpoint
+
+#initialBalance
+
+#minimumBalance
+
+#loanProcessorThreshold
+
+#loanProvider
+
+#loanProcessor
+
+#accessMode1
+
+#accessMode2
+
+#accessMode3
+
+#accessMode4
+
+### Relevant form names observed include:
+
+initializeDB
+
+toggleJms
+
+login
+
+## DOM / Accessibility Findings
+
+Observed DOM-level findings included:
+
+Form descriptions use bold table-cell text in places where explicit <label> elements could be used.
+
+The interface relies heavily on tables for layout.
+
+Inline styles are used for some presentation-related properties.
+
+Many generic div and a elements do not have unique IDs.
+
+The inspected controls did not show duplicate IDs in the critical form controls reviewed.
+
+A div#fs_div_all element was present near the bottom of the body and was identified in the report as likely being injected by a browser extension or tool rather than being part of the core application logic.
+
+The inspected images/clear.gif element had alt=null, while the ParaBank logo image had alt="ParaBank".
+
+The page lacks modern semantic landmarks such as <header>, <main>, <nav>, and <footer> in the inspected structure.
+
+## Web Performance Investigation
+
+The ParaBank Admin page was also investigated with Chrome DevTools → Performance.
+
+The Performance investigation was kept separate from Network analysis so that:
+
+Network timings remain Network evidence.
+
+Browser execution/rendering observations remain Performance evidence.
+
+HAR data remains raw Network evidence.
+
+## Performance Artifact Format
+
+**Format used for Day 29: JSON**
+
+This is a deliberate change from the earlier workflow in which performance-related output was packaged/generated in ZIP format. For Day 29, the performance evidence/output is retained as JSON so that the captured data remains directly machine-readable and easier to inspect or process.
+
+**Artifact-format note:** Previous ZIP-based packaging has not been rewritten or replaced in earlier days. The JSON format applies to today's Day 29 performance artifact.
+
+## Evidence Strategy
+
+The evidence is separated by purpose:
+
+| Evidence                     | Purpose                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| DOM / Elements findings      | Page structure, forms, controls, attributes, automation and accessibility observations       |
+| Network findings             | Request behavior, status codes, timings, initiators, redirects, headers and caching evidence |
+| HAR 1.2                      | Machine-readable Network capture                                                             |
+| Performance recording / JSON | Browser execution, rendering and Performance-panel evidence                                  |
+
+## Suggested Day 29 Project Structure
+
+```text
+Day-29-Parabank-DevTools/
+
+├── dom-inspection
+├── network/
+│   └── parabank-admin-network.har
+├── performance/
+│   └── parabank-performance.json
+
+├── README.md
+```
+
+## Investigation Output
+
+### DOM
+
+A standalone HTML report was created from the DOM investigation summary so the findings can be reviewed as a browser-readable document.
+
+### Network
+
+The captured ParaBank Admin Network data was preserved as a HAR 1.2 artifact.
+
+### Performance
+
+The Day 29 Performance evidence is retained in JSON format, replacing the ZIP packaging approach used in the earlier workflow for this day's artifact.
+
+## QA / Automation Relevance
+
+Day 29 connects browser DevTools investigation with practical QA work:
+
+DOM inspection helps identify reliable automation locators and structural issues.
+
+Network investigation helps verify request behavior and detect HTTP-level problems.
+
+HAR capture provides reusable, machine-readable evidence for debugging and documentation.
+
+Performance analysis helps separate browser execution/rendering issues from pure network behavior.
+
+Evidence-based reporting reinforces the project rule: **No evidence → No assumption.**
+
+## Recommendations Identified From the Investigation
+
+Based on the captured findings:
+
+Investigate the server-side processing contributing to the main document's 327 ms waiting time.
+
+Review whether the two CSS files can be consolidated where appropriate.
+
+Review the CSS-to-image initiator chain and whether critical assets can be loaded without unnecessary dependency on CSS parsing.
+
+Replace table-based layout patterns with more appropriate CSS layout techniques when modernization is feasible.
+
+Add explicit <label> associations for form controls.
+
+Adopt semantic HTML landmarks where appropriate.
+
+Review the caching policy for the administration document and determine whether any portion can safely use caching.
+
+---
+
+# 🔜 Module 2 Remaining Work — DevTools
+
 The API Testing portion is now complete.
 
 The remaining Module 2 work is the Browser DevTools portion. The earlier days already incorporated HAR/network tracing and performance profiling as part of the API exercises; the remaining DevTools-focused work will be handled separately before Module 2 receives its final completion status.
 
 Current Module 2 state:
 
-Module 2 Area	Status
-REST API Testing	✅ Complete
-Postman Testing	✅ Complete
-Newman / CLI Execution	✅ Complete
-API Authentication	✅ Complete
-API Negative Testing	✅ Complete
-API Request Chaining	✅ Complete
-Environment Variables	✅ Complete
-GraphQL API Testing	✅ Complete — Day 26
-DevTools Investigation	🔄 Remaining
-Module 2 Overall	🔄 In Progress
-📁 Project Structure
+| Module 2 Area          | Status              |
+| ---------------------- | ------------------- |
+| REST API Testing       | ✅ Complete          |
+| Postman Testing        | ✅ Complete          |
+| Newman / CLI Execution | ✅ Complete          |
+| API Authentication     | ✅ Complete          |
+| API Negative Testing   | ✅ Complete          |
+| API Request Chaining   | ✅ Complete          |
+| Environment Variables  | ✅ Complete          |
+| GraphQL API Testing    | ✅ Complete — Day 26 |
+| DevTools Investigation | 🔄 Remaining        |
+| Module 2 Overall       | 🔄 In Progress      |
+
+Day 29 adds a dedicated DevTools investigation covering DOM / Elements, Network, HAR 1.2, and Web Performance while preserving the separation between raw network evidence and browser-side performance evidence.
+
+---
+
+# 📁 Project Structure
+
+## Module-1-UI-Automation/
+
+```text
 Module-1-UI-Automation/
 Module-1-UI-Automation/
 
@@ -1405,6 +1916,11 @@ Module-1-UI-Automation/
     ├── Tests/
     │   └── xpath-practice.spec.ts
     └── README.md
+```
+
+## Module-2-API-Testing_DevTools/
+
+```text
 Module-2-API-Testing_DevTools/
 Module-2-API-Testing_DevTools/
 
@@ -1505,42 +2021,66 @@ Module-2-API-Testing_DevTools/
 │   │   └── Day-25-DummyJSON-API-Testing-Run-Report.html
 │   └── README.md
 │
-└── day-26/
-    ├── Collections/
-    │   └── day-26-rick-and-morty-graphql.postman_collection.json
-    ├── Environment/
-    │   └── day 26 rick and morty graphql.postman_environment.json
-    ├── HTML Report/
-    │   └── Day-26-Rick-and-Morty-GraphQL-Test-Report.html
+├── day-26/
+│   ├── Collections/
+│   │   └── day-26-rick-and-morty-graphql.postman_collection.json
+│   ├── Environment/
+│   │   └── day 26 rick and morty graphql.postman_environment.json
+│   ├── HTML Report/
+│   │   └── Day-26-Rick-and-Morty-GraphQL-Test-Report.html
+│   └── README.md
+│
+└── day-29-parabank-devtools/
+    ├── dom-inspection
+    ├── network/
+    │   └── parabank-admin-network.har
+    ├── performance/
+    │   └── parabank-performance.json
     └── README.md
-🏁 Current Portfolio Milestone
-Module 1 — UI Automation
-Status: ✅ Complete
+```
 
-Days: 01–16
+---
 
-Primary Technology: Playwright + TypeScript
+# 🏁 Current Portfolio Milestone
 
-Module 2 — API Testing & DevTools
-API Testing: ✅ Complete through Day 26
+## Module 1 — UI Automation
 
-DevTools: 🔄 Remaining
+**Status:** ✅ Complete
 
-Overall Module 2: 🔄 In Progress
+**Days:** 01–16
+
+**Primary Technology:** Playwright + TypeScript
+
+## Module 2 — API Testing & DevTools
+
+**API Testing:** ✅ Complete through Day 26
+
+**DevTools:** 🔄 In Progress
+
+**Latest DevTools Milestone:** Day 29 — ParaBank DevTools
+
+**Overall Module 2:** 🔄 In Progress
 
 Day 26 represents the final planned API-testing exercise, expanding the portfolio from REST API testing into GraphQL testing with nested data, multiple-record queries, pagination, environment variables, and automated assertions.
 
+Day 27 expanded the DevTools track through SWAPI browser Console inspection, Network/HAR analysis, XHR breakpoint investigation, storage inspection, and Performance evidence.
+
+Day 29 expands the dedicated DevTools track through ParaBank DOM / Elements inspection, Network investigation, HAR 1.2 capture, and Web Performance analysis, while keeping DOM, Network, HAR, and Performance evidence separated by purpose.
+
 The remaining DevTools work will be completed before Module 2 receives its final ✅ Complete status.
 
-🚀 Current Progress
-Completed Days: 01–27
+---
 
-Completed Modules: Module 1
+# 🚀 Current Progress
 
-Completed API Track: Module 2 — API Testing
+**Completed Days:** 01–27, Day 29
 
-Remaining Module 2 Track: DevTools
+**Completed Modules:** Module 1
 
-Latest DevTools Milestone: Day 27 — SWAPI DevTools
+**Completed API Track:** Module 2 — API Testing
 
-Next Milestone: Complete the remaining DevTools work and close Module 2.
+**Remaining Module 2 Track:** DevTools
+
+**Latest DevTools Milestone:** Day 29 — ParaBank DevTools
+
+**Next Milestone:** Tomorrow I'm going to wrap up DevTools work and close Module 2.

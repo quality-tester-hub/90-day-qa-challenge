@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ParaBank DOM Investigation Summary</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    color: #222;
+    background: #fff;
+  }
+  h1 { margin-bottom: 24px; }
+  h2 { margin-top: 32px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+  ul { margin-top: 8px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #f3f3f3; }
+  code {
+    background: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+  .note {
+    margin-top: 28px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+  }
+</style>
+</head>
+<body>
+<h1>DOM Investigation Summary</h1>
+
+<ul>
+  <li><strong>Application:</strong> ParaBank</li>
+  <li><strong>Page:</strong> Administration (admin.htm)</li>
+  <li><strong>Investigation type:</strong> DOM / Elements Inspection</li>
+  <li><strong>Overall DOM observations:</strong> The page uses a traditional table-based layout for forms and structure, encapsulated within a main container (<code>#mainPanel</code>). It lacks modern semantic HTML tags (like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>) and instead relies heavily on <code>&lt;div&gt;</code> and <code>&lt;table&gt;</code> elements with specific IDs for layout. Form controls are generally well-identified by <code>id</code> and <code>name</code> attributes, which is positive for automation.</li>
+</ul>
+
+<h2>2. DOM Structure</h2>
+<ul>
+  <li><code>&lt;html&gt;</code>: Root element.</li>
+  <li><code>&lt;head&gt;</code>: Contains metadata, page title ("ParaBank | Administration"), CSS links (<code>template.css</code>, <code>style.css</code>), and a script reference to jQuery.</li>
+  <li><code>&lt;body&gt;</code>: Has an <code>onload</code> attribute that focuses the username field.
+    <ul>
+      <li><code>div#mainPanel</code>: The primary container for page content.
+        <ul>
+          <li><code>div#topPanel</code>: Header branding area (logo, link to home/admin).</li>
+          <li><code>div#headerPanel</code>: Main navigation menu (Solutions, About Us, etc.) and top-right links (home, about, contact).</li>
+          <li><code>div#bodyPanel</code>: Layout container for columns.
+            <ul>
+              <li><code>div#leftPanel</code>: Sidebar containing the "Customer Login" form and auxiliary links.</li>
+              <li><code>div#rightPanel</code>: The main content area for administration settings.</li>
+            </ul>
+          </li>
+          <li><code>div#footermainPanel</code>: Contains the site footer links and copyright info.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2>3. Important Elements</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Element</th><th>Tag</th><th>ID</th><th>Class</th><th>Important Attributes</th><th>Purpose / Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Main Panel</td><td><code>div</code></td><td><code>mainPanel</code></td><td></td><td></td><td>Root container for the UI</td></tr>
+    <tr><td>Admin Form</td><td><code>form</code></td><td><code>adminForm</code></td><td></td><td><code>action="admin.htm"</code>, <code>method="post"</code></td><td>Configuration settings form</td></tr>
+    <tr><td>Login Form</td><td><code>form</code></td><td></td><td></td><td><code>name="login"</code>, <code>action="login.htm"</code></td><td>sidebar login</td></tr>
+    <tr><td>DB Init Form</td><td><code>form</code></td><td></td><td></td><td><code>name="initializeDB"</code></td><td>DB maintenance form</td></tr>
+    <tr><td>Submit Button</td><td><code>input</code></td><td></td><td><code>button</code></td><td><code>type="submit"</code>, <code>value="Submit"</code></td><td>Saves admin settings</td></tr>
+    <tr><td>Logo Link</td><td><code>a</code></td><td></td><td></td><td><code>href="index.htm"</code></td><td>Navigation to home</td></tr>
+    <tr><td>Home Icon</td><td><code>li</code></td><td></td><td><code>home</code></td><td></td><td>Top navigation link</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Forms &amp; Controls</h2>
+<ul>
+  <li><strong>Administration Settings Form (<code>#adminForm</code>):</strong>
+    <ul>
+      <li><strong>Radio Buttons (Data Access Mode):</strong> <code>accessMode</code> (IDs: <code>accessMode1</code> to <code>accessMode4</code>) for SOAP, REST (XML), REST (JSON), and JDBC.</li>
+      <li><strong>Text Inputs:</strong> <code>soapEndpoint</code>, <code>restEndpoint</code>, <code>endpoint</code>, <code>initialBalance</code>, <code>minimumBalance</code>, <code>loanProcessorThreshold</code>.</li>
+      <li><strong>Select Dropdowns:</strong> <code>loanProvider</code> (options: JMS, Web Service, Local) and <code>loanProcessor</code> (options: Available Funds, Down Payment, Combined).</li>
+    </ul>
+  </li>
+  <li><strong>Database Maintenance Form (<code>name="initializeDB"</code>):</strong>
+    <ul>
+      <li><strong>Buttons:</strong> <code>Initialize</code> (value="INIT"), <code>Clean</code> (value="CLEAN").</li>
+    </ul>
+  </li>
+  <li><strong>JMS Service Form (<code>name="toggleJms"</code>):</strong>
+    <ul><li><strong>Button:</strong> <code>Startup</code> (type="submit").</li></ul>
+  </li>
+  <li><strong>Login Form (Sidebar):</strong>
+    <ul>
+      <li><strong>Inputs:</strong> <code>username</code> (text), <code>password</code> (password).</li>
+      <li><strong>Button:</strong> <code>Log In</code> (type="submit").</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>5. DOM / Structural Findings</h2>
+<ul>
+  <li><strong>Missing &lt;label&gt; Elements:</strong> The Admin form uses <code>&lt;td&gt;</code> elements with bold text (e.g., <code>&lt;b&gt;SOAP Endpoint:&lt;/b&gt;</code>) to describe inputs instead of proper <code>&lt;label&gt;</code> tags with a <code>for</code> attribute. This reduces accessibility.</li>
+  <li><strong>Table-based Layout:</strong> The admin form and database controls are nested inside multiple tables (<code>class="form"</code>, <code>class="form2"</code>) for visual alignment, which complicates the DOM hierarchy.</li>
+  <li><strong>Inline Styles:</strong> Frequent use of inline styles for widths (<code>width: 50%</code>) and background images (<code>background: url(images/header-main.jpg)</code>).</li>
+  <li><strong>Duplicate/Empty IDs:</strong> No duplicate IDs were found in the critical form controls, which is good for stability. However, many <code>div</code> and <code>a</code> elements lack unique IDs.</li>
+  <li><strong>Hidden Elements:</strong> A <code>div#fs_div_all</code> exists at the bottom of the body with <code>all:initial</code>, likely injected by a browser extension or specific tool, not part of the core app logic.</li>
+</ul>
+
+<h2>6. Automation / Locator Findings</h2>
+<ul>
+  <li><strong>Stable IDs:</strong> Excellent coverage for form fields: <code>#soapEndpoint</code>, <code>#restEndpoint</code>, <code>#initialBalance</code>, <code>#loanProvider</code>, <code>#loanProcessor</code>, <code>#accessMode1</code> through <code>#accessMode4</code>.</li>
+  <li><strong>Unique Names:</strong> Forms have unique names like <code>initializeDB</code>, <code>toggleJms</code>, and <code>login</code>.</li>
+  <li><strong>Class Selectors:</strong> Navigation links can be targeted via parent classes like <code>.leftmenu</code>, <code>.button</code>, or <code>.home</code>.</li>
+</ul>
+
+<h2>7. Accessibility-Relevant DOM Findings</h2>
+<ul>
+  <li><strong>Missing Alt Text:</strong> The logo image in the <code>topPanel</code> has <code>alt="ParaBank"</code>, but the admin-specific clear gif (<code>images/clear.gif</code>) has <code>alt=null</code>.</li>
+  <li><strong>Form Accessibility:</strong> As noted, the absence of <code>&lt;label&gt;</code> tags makes the form harder for screen readers to associate text with inputs.</li>
+  <li><strong>Semantic HTML:</strong> The page lacks modern semantic landmarks, making it harder for assistive technologies to navigate the page sections efficiently.</li>
+</ul>
+
+<h2>8. Evidence</h2>
+<ul>
+  <li><strong>Admin Form Snippet:</strong> <code>&lt;form id="adminForm" action="admin.htm" method="post"&gt;</code></li>
+  <li><strong>Radio Button Evidence:</strong> <code>&lt;input id="accessMode1" name="accessMode" class="input\" type="radio" value="soap"&gt;</code></li>
+  <li><strong>Table Structure:</strong> <code>&lt;tr&gt;&lt;td align="right" width="30%"&gt;&lt;b&gt;SOAP Endpoint:&lt;/b&gt;&lt;/td&gt;&lt;td width="70%"&gt;&lt;input id="soapEndpoint" ...&gt;&lt;/td&gt;&lt;/tr&gt;</code></li>
+</ul>
+
+<h2>9. Recommendations</h2>
+<ul>
+  <li><strong>Replace &lt;table&gt; layouts</strong> with CSS Flexbox or Grid for a cleaner DOM.</li>
+  <li><strong>Implement &lt;label&gt; elements</strong> for all form inputs using the <code>for</code> attribute pointing to the input IDs.</li>
+  <li><strong>Adopt Semantic HTML tags</strong> like <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> to replace generic <code>&lt;div&gt;</code> containers.</li>
+</ul>
+
+<div class="note">
+  <strong>Copy to coding agent</strong><br>
+  <strong>Analyze the Customer Login formIdentify all table classes usedCheck for any script-generated elements</strong><br>
+  body<br>
+  Relevant data is sent to Google
+</div>
+</body>
+</html>
