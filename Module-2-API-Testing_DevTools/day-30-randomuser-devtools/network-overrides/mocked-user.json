@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "name": {
+        "title": "Ms",
+        "first": "Roy",
+        "last": "Anderson"
+      },
+      "login": {
+        "uuid": "randomuser-devtools-001",
+        "username": "roy.anderson",
+        "password": "securepassword123",
+        "salt": "x7q9",
+        "md5": "random-md5",
+        "sha1": "random-sha1",
+        "sha256": "random-sha256"
+      },
+      "email": "roy.anderson@example.com",
+      "phone": "(555) 123-4567",
+      "cell": "(555) 987-6543",
+      "dob": {
+        "date": "1993-05-15T08:23:46.319Z",
+        "age": 31
+      },
+      "registered": {
+        "date": "1985-07-20T12:34:56.789Z",
+        "age": 28
+      },
+      "id": {
+        "name": "SSN",
+        "value": "123-45-6789"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/31.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/31.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/31.jpg"
+      },
+      "nat": "US"
+    }
+  ],
+  "info": {
+    "seed": "RandomUser-DevTools",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
