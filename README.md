@@ -1754,6 +1754,7 @@ Welcome to Module 3 - Deliberately Buggy Sites. This section tracks charter-base
 | Date | Day | Target Site | Core Focus Areas | Status |
 | --- | --- | --- | --- | --- |
 | October 1, 2026 | Day 31 | AcademyBugs E-Commerce (AcademyBugs.com) | Exploratory Charters, Duplicate Actions, Modal Defects, Responsive Layout & Offline Error Handling | ✅ Completed |
+| October 2, 2026 | Day 32 | TestSheepNZ Basic Calculator (testsheepnz.github.io) | Session-Based Exploratory Testing, Type Coercion, Input Validation, Concatenation Mode, Integer Rounding & Differential Build Checks | ✅ Completed |
 
 ---
 
@@ -1957,6 +1958,87 @@ The responsive defect came from Charter 5, while the offline/error-handling defe
 BUG-02 was an additional defect discovered independently during exploration.
 
 This day demonstrates exploratory QA skills including charter-based testing, unexpected user behavior analysis, defect discovery, severity/priority classification, responsive testing, state validation, and error-handling investigation.
+
+---
+
+## 🗓️ October 2, 2026 — Day 32: Exploratory Testing on TestSheepNZ Basic Calculator (/Day-32-Basic-calculator)
+
+### Executive Summary
+
+This session continues **Module 3: Deliberately Buggy Sites & Exploratory Testing** using **Session-Based Test Management (SBTM)** on the [TestSheepNZ Basic Calculator](https://testsheepnz.github.io/BasicCalculator.html). The primary goal is to apply heuristic exploratory testing across multiple application builds (Prototype vs. Builds 1–8) to expose type-coercion bugs, state boundary failures, input validation flaws, and integer rounding defects.
+
+Unlike static test suites, testing was executed via session charters targeting mathematical operations, string concatenation modes, and differential build checks.
+
+### Target Site & Architecture Overview
+
+- **Target URL:** `https://testsheepnz.github.io/BasicCalculator.html`
+- **Baseline Target (Prototype):** Serves as ground truth (operates cleanly according to spec).
+- **Defect Targets (Builds 1–8):** Contain deliberate logic, arithmetic, and validation defects.
+- **Supported Operations:** `Add`, `Subtract`, `Multiply`, `Divide`, and `Concatenate`.
+- **Special Controls:** `Integers only` checkbox (rounds/truncates decimal outputs).
+
+### Exploratory Session Charters
+
+#### Charter 1: Type & Input Boundaries (Mathematical Operations)
+
+- **Heuristic:** Input stress & data types.
+- **Scope:** Test string inputs, negative numbers, decimals, zero denominators ($x / 0$), extremely large numbers, and empty inputs across Builds 1–8 to verify numerical validation triggers.
+
+#### Charter 2: String Concatenation Mode
+
+- **Heuristic:** Mode switching & state disabling.
+- **Scope:** Select "Concatenate", verify that inputs are treated strictly as strings, check that non-numeric characters are preserved, and confirm that the integer checkbox is disabled/ignored.
+
+#### Charter 3: Integer Toggle & Rounding Precision
+
+- **Heuristic:** Data truncation & rounding algorithms.
+- **Scope:** Perform operations resulting in floating-point values (e.g., $5 / 2 = 2.5$) with the `Integers only` checkbox enabled and disabled to evaluate truncation/rounding mechanics.
+
+#### Charter 4: Build Comparison (Builds 1–8 vs. Prototype Baseline)
+
+- **Heuristic:** Differential build testing.
+- **Scope:** Execute identical calculation sets against the Prototype baseline versus Builds 1–8 to uncover build-specific regressions and logic bugs.
+
+### Defect Inventory & Key Findings
+
+| Bug ID | Title | Build | Category | Severity | Priority | File |
+| --- | --- | --- | --- | --- | --- | --- |
+| **BUG-01** | Addition performs string concatenation ($16 + 4 = 164$) | Build 2 | Calculation / Type Coercion | High | P1 | `01-Outputting Incorrect Calculation...md` |
+| **BUG-02** | Incomplete field validation & spurious error during Concatenate | Build 3 | Validation / UX Logic | Medium | P2 | `02-Incomplete Field Validation.md` |
+
+### Detailed Bug Reports
+
+#### 1. [Calculation / Logic Defect] Addition Operation Performs String Concatenation
+
+- **Build:** Build 2
+- **File:** `Defects_&_Bugreports/01-Outputting Incorrect Calculation...md`
+- **Severity / Priority:** High / P1
+- **User Perspective:** As a user running functional arithmetic tests, selecting `Add` for inputs `16` and `4` should yield `20`. Outputting `164` demonstrates a fundamental type-coercion defect where strings are concatenated instead of added numerically.
+- **Actual Result:** The `Answer` field displays `164` ("16" + "4").
+- **Expected Result:** Inputs should be parsed as numbers (`parseFloat()`) to output `20`.
+- **Evidence:** Screenshot in `Defects_&_Bugreports/Screenshots/01-Outputting Incorrect Calculation...png`
+
+#### 2. [Validation / Logic Defect] Spurious Error & Incomplete Field Validation During Concatenate
+
+- **Build:** Build 3
+- **File:** `Defects_&_Bugreports/02-Incomplete Field Validation.md`
+- **Severity / Priority:** Medium / P2
+- **User Perspective:** Entering special characters into both fields under `Concatenate` should either suppress numerical checks or validate both fields properly. Instead, Build 3 flags `Number 1 is not a number` while evaluating `4` as the answer and ignoring field 2 (`+$@`).
+- **Actual Result:** Inline red error `Number 1 is not a number` appears, suppressing field 2 validation while simultaneously printing `4` into the `Answer` field.
+- **Expected Result:** `Concatenate` should bypass numeric validation entirely, OR validate both fields without printing partial calculation results alongside active error states.
+
+### Project Structure
+
+```text
+Module-3-Deliberately-Buggy Sites_Exploratory-Testing
+Day-32-Basic-calculator/
+├── README.md
+└── Defects_&_Bugreports/
+    ├── 01-Outputting Incorrect Calculation...md
+    ├── 02-Incomplete Field Validation.md
+    └── Screenshots/
+        └── 01-Outputting Incorrect Calculation...png
+```
 
 ---
 
@@ -2317,10 +2399,10 @@ Module-2-API-Testing_DevTools/
     └── README.md
 ```
 
-## Module-3-Buggy-Sites/
+## Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 
 ```text
-Module-3-Buggy-Sites/
+Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 
 └── Day-31-AcademyBugs-e-commerce/
     ├── Defects_&_Bugreports/
@@ -2330,6 +2412,15 @@ Module-3-Buggy-Sites/
     │   ├── 02-Intrusive-Pop-Up-Modal-Un-dismissable-via-Close-Icon-or-Form-Submission.md
     │   ├── 03-responsive-375px.md
     │   └── 04-Error-Handling-&-User-Feedback.md
+    └── README.md
+│
+└── Day-32-Basic-calculator/
+    ├── Defects_&_Bugreports/
+    │   ├── 01-Outputting Incorrect Calculation...md
+    │   ├── 02-Incomplete Field Validation.md
+    │   └── Screenshots/
+    │       └── 01-Outputting Incorrect Calculation...
+             02-Incomplete Field Validation
     └── README.md
 ```
 
@@ -2367,17 +2458,19 @@ Day 30 closed the DevTools track and Module 2 through Random User Console fetch 
 
 **Status:** 🔄 In Progress
 
-**Latest Milestone:** Day 31 — AcademyBugs E-Commerce Exploratory Testing
+**Latest Milestone:** Day 32 — TestSheepNZ Basic Calculator Exploratory Testing
 
-**Primary Approach:** Charter-based exploratory testing
+**Primary Approach:** Charter-based and Session-Based Test Management (SBTM) exploratory testing
 
 Day 31 started Module 3 with four documented defects (BUG-01 to BUG-04) and three planned exploratory charters recorded as passed.
+
+Day 32 continued Module 3 with SBTM on the TestSheepNZ Basic Calculator, documenting two defects (BUG-01 and BUG-02) across Builds 2 and 3.
 
 ---
 
 # 🚀 Current Progress
 
-**Completed Days:** 01–27, Day 29, Day 30, Day 31
+**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32
 
 **Completed Modules:** Module 1, Module 2
 
@@ -2387,6 +2480,6 @@ Day 31 started Module 3 with four documented defects (BUG-01 to BUG-04) and thre
 
 **Latest DevTools Milestone:** Day 30 — Random User DevTools
 
-**Latest Milestone:** Day 31 — AcademyBugs E-Commerce Exploratory Testing
+**Latest Milestone:** Day 32 — TestSheepNZ Basic Calculator Exploratory Testing
 
 **Next Milestone:** Module 3 — Buggy Sites/ Exploratory Testing
