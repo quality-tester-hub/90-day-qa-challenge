@@ -1755,6 +1755,7 @@ Welcome to Module 3 - Deliberately Buggy Sites. This section tracks charter-base
 | --- | --- | --- | --- | --- |
 | October 1, 2026 | Day 31 | AcademyBugs E-Commerce (AcademyBugs.com) | Exploratory Charters, Duplicate Actions, Modal Defects, Responsive Layout & Offline Error Handling | ✅ Completed |
 | October 2, 2026 | Day 32 | TestSheepNZ Basic Calculator (testsheepnz.github.io) | Session-Based Exploratory Testing, Type Coercion, Input Validation, Concatenation Mode, Integer Rounding & Differential Build Checks | ✅ Completed |
+| October 3, 2026 | Day 33 | Parking Cost Calculator (shino.de/parkcalc) | Parking Rate Boundaries, Date/Time Validation, Form State & Empty-Input Handling | ✅ Completed |
 
 ---
 
@@ -2039,6 +2040,96 @@ Day-32-Basic-calculator/
     └── Screenshots/
         └── 01-Outputting Incorrect Calculation...png
 ```
+
+---
+
+## 🗓️ October 3, 2026 — Day 33: Exploratory Testing on Parking Cost Calculator (/Day-33-Parking-Tax)
+
+### Executive Summary
+
+Day 33 continues **Module 3: Deliberately Buggy Sites & Exploratory Testing** with exploratory testing of the [Parking Cost Calculator](https://www.shino.de/parkcalc/). The session focused on parking-rate boundaries, entry/exit chronology, form state after calculation, and incomplete input handling.
+
+Four reproducible defects were documented. The checks used the rates displayed on the page as the expected behavior and ordinary date/time values unless the charter specifically tested invalid input.
+
+### Target Site & Rates
+
+- **Target URL:** https://www.shino.de/parkcalc/
+- **Application:** Parking Cost Calculator
+- **Lots tested:** Valet, Short-Term, Economy, Long-Term Garage, and Long-Term Surface.
+- **Relevant published rates:** Economy Parking is $2.00 per hour with a $9.00 daily maximum; other lots also publish daily caps. The page states that entry and leaving dates and times are required.
+
+### Exploratory Session Charters
+
+| Charter | Focus | Result |
+| --- | --- | --- |
+| Rate Cap Boundary | Compare accrued hourly charges against the Economy daily maximum | 🐛 BUG-01 |
+| Entry/Exit Chronology | Submit an exit timestamp earlier than the entry timestamp | 🐛 BUG-02 |
+| Post-Calculation State | Check whether the selected lot remains visible with its quote | 🐛 BUG-03 |
+| Required Date Inputs | Submit the calculator with its default date values unchanged | 🐛 BUG-04 |
+| Rate and Duration Sampling | Check listed lots at short, daily, and weekly durations | Findings recorded above |
+
+### Defect Inventory
+
+| Bug ID | Title | Category | Severity | Priority | Report |
+| --- | --- | --- | --- | --- | --- |
+| **BUG-01** | Economy hourly charge exceeds the published daily maximum | Pricing / Calculation | High | P1 | [01-Economy-Lot-Exceeds-Daily-Maximum.md](Defects_&_Bugreports/01-Economy-Lot-Exceeds-Daily-Maximum.md) |
+| **BUG-02** | Departure before entry produces a zero-cost negative-duration quote | Input Validation / Calculation | Medium | P2 | [02-Departure-Before-Entry-Accepted.md](Defects_&_Bugreports/02-Departure-Before-Entry-Accepted.md) |
+| **BUG-03** | Selected parking lot reverts to Valet after calculation | UI State / Usability | Medium | P2 | [03-Parking-Lot-Selection-Resets-After-Calculation.md](Defects_&_Bugreports/03-Parking-Lot-Selection-Resets-After-Calculation.md) |
+| **BUG-04** | Submitting default dates returns a blank page without validation | Input Validation / Error Handling | Medium | P2 | [04-Blank-Dates-Return-Empty-Page.md](Defects_&_Bugreports/04-Blank-Dates-Return-Empty-Page.md) |
+
+### Detailed Findings
+
+#### BUG-01 — Economy Lot Exceeds Published Daily Maximum
+
+- **Severity / Priority:** High / P1
+- **Steps:** Select Economy Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 12:30 PM as exit; calculate.
+- **Actual:** The calculator reports $10.00 for 4 hours and 30 minutes.
+- **Expected:** Economy is listed at $2.00 per hour with a $9.00 daily maximum. Since the hourly charge reaches $10.00 at five billable hours, the quote should be capped at $9.00.
+- **Report:** [BUG-01 full report](Defects_&_Bugreports/01-Economy-Lot-Exceeds-Daily-Maximum.md)
+
+#### BUG-02 — Departure Before Entry Is Accepted
+
+- **Severity / Priority:** Medium / P2
+- **Steps:** Select Valet Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 07:00 AM as exit; calculate.
+- **Actual:** The calculator returns $0.00 and displays a duration of -1 day, 23 hours.
+- **Expected:** Reject the invalid interval with a clear validation message; do not present a fare for negative parking duration.
+- **Report:** [BUG-02 full report](Defects_&_Bugreports/02-Departure-Before-Entry-Accepted.md)
+
+#### BUG-03 — Parking Lot Selection Resets After Calculation
+
+- **Severity / Priority:** Medium / P2
+- **Steps:** Select Economy Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 08:00 PM as exit; calculate.
+- **Actual:** The result is $9.00 for Economy Parking, but the dropdown resets to Valet Parking.
+- **Expected:** Preserve the selected lot after calculation, or clearly identify the lot used for the quote.
+- **Report:** [BUG-03 full report](Defects_&_Bugreports/03-Parking-Lot-Selection-Resets-After-Calculation.md)
+
+#### BUG-04 — Default Dates Return a Blank Page
+
+- **Severity / Priority:** Medium / P2
+- **Steps:** Open the calculator and click Calculate without replacing the default MM/DD/YYYY date values.
+- **Actual:** The submit request returns HTTP 200 with an empty document; no form or validation message is displayed.
+- **Expected:** Keep the form available and explain that valid entry and leaving dates and times are required.
+- **Report:** [BUG-04 full report](Defects_&_Bugreports/04-Blank-Dates-Return-Empty-Page.md)
+
+### Testing Approach
+
+The session used charter-based exploratory testing and boundary analysis. Each finding was reproduced in the live calculator using its visible controls, and the resulting fare, duration, selected lot, or response state was compared with the page's rate information and the expected form behavior.
+
+### Project Structure
+
+```text
+Day-33-Parking-Tax/
+├── README.md
+└── Defects_&_Bugreports/
+    ├── 01-Economy-Lot-Exceeds-Daily-Maximum.md
+    ├── 02-Departure-Before-Entry-Accepted.md
+    ├── 03-Parking-Lot-Selection-Resets-After-Calculation.md
+    └── 04-Blank-Dates-Return-Empty-Page.md
+```
+
+### Day 33 Outcome
+
+Day 33 resulted in four documented defects covering fare calculation, chronology validation, post-submit selection state, and empty-input handling. This session applies exploratory QA techniques to financial calculations and the user-visible consistency of form results.
 
 ---
 
@@ -2404,23 +2495,31 @@ Module-2-API-Testing_DevTools/
 ```text
 Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 
-└── Day-31-AcademyBugs-e-commerce/
-    ├── Defects_&_Bugreports/
-    │   ├── Screenshots/
-    │   │   └── 03-responsive-375px.png
-    │   ├── 01-Duplicate-items.md
-    │   ├── 02-Intrusive-Pop-Up-Modal-Un-dismissable-via-Close-Icon-or-Form-Submission.md
-    │   ├── 03-responsive-375px.md
-    │   └── 04-Error-Handling-&-User-Feedback.md
-    └── README.md
+├── Day-31-AcademyBugs-e-commerce/
+│   ├── Defects_&_Bugreports/
+│   │   ├── Screenshots/
+│   │   │   └── 03-responsive-375px.png
+│   │   ├── 01-Duplicate-items.md
+│   │   ├── 02-Intrusive-Pop-Up-Modal-Un-dismissable-via-Close-Icon-or-Form-Submission.md
+│   │   ├── 03-responsive-375px.md
+│   │   └── 04-Error-Handling-&-User-Feedback.md
+│   └── README.md
 │
-└── Day-32-Basic-calculator/
+├── Day-32-Basic-calculator/
+│   ├── Defects_&_Bugreports/
+│   │   ├── 01-Outputting Incorrect Calculation...md
+│   │   ├── 02-Incomplete Field Validation.md
+│   │   └── Screenshots/
+│   │       ├── 01-Outputting Incorrect Calculation...
+│   │       └── 02-Incomplete Field Validation
+│   └── README.md
+│
+└── Day-33-Parking-Tax/
     ├── Defects_&_Bugreports/
-    │   ├── 01-Outputting Incorrect Calculation...md
-    │   ├── 02-Incomplete Field Validation.md
-    │   └── Screenshots/
-    │       └── 01-Outputting Incorrect Calculation...
-             02-Incomplete Field Validation
+    │   ├── 01-Economy-Lot-Exceeds-Daily-Maximum.md
+    │   ├── 02-Departure-Before-Entry-Accepted.md
+    │   ├── 03-Parking-Lot-Selection-Resets-After-Calculation.md
+    │   └── 04-Blank-Dates-Return-Empty-Page.md
     └── README.md
 ```
 
@@ -2458,7 +2557,7 @@ Day 30 closed the DevTools track and Module 2 through Random User Console fetch 
 
 **Status:** 🔄 In Progress
 
-**Latest Milestone:** Day 32 — TestSheepNZ Basic Calculator Exploratory Testing
+**Latest Milestone:** Day 33 — Parking Cost Calculator Exploratory Testing
 
 **Primary Approach:** Charter-based and Session-Based Test Management (SBTM) exploratory testing
 
@@ -2466,11 +2565,13 @@ Day 31 started Module 3 with four documented defects (BUG-01 to BUG-04) and thre
 
 Day 32 continued Module 3 with SBTM on the TestSheepNZ Basic Calculator, documenting two defects (BUG-01 and BUG-02) across Builds 2 and 3.
 
+Day 33 continued Module 3 with exploratory testing of the Parking Cost Calculator, documenting four defects across rate-cap behavior, date/time validation, post-calculation state, and empty-input handling.
+
 ---
 
 # 🚀 Current Progress
 
-**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32
+**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33
 
 **Completed Modules:** Module 1, Module 2
 
@@ -2480,6 +2581,6 @@ Day 32 continued Module 3 with SBTM on the TestSheepNZ Basic Calculator, documen
 
 **Latest DevTools Milestone:** Day 30 — Random User DevTools
 
-**Latest Milestone:** Day 32 — TestSheepNZ Basic Calculator Exploratory Testing
+**Latest Milestone:** Day 33 — Parking Cost Calculator Exploratory Testing
 
 **Next Milestone:** Module 3 — Buggy Sites/ Exploratory Testing
