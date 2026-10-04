@@ -1,0 +1,11 @@
+User Perspective: As a user navigating to the e-commerce shopping cart interface, attempting to view cart items yields an inline red error stating "Failed to load products. Please try again later.". Testing across multiple independent networks confirms the issue is not caused by local connection drops or client-side Wi-Fi issues, indicating a backend API endpoint failure, database connection drop, or cross-origin resource sharing (CORS) block on the server.   Bug Report: Persistent Backend Request Failure Prevents Shopping Cart Product Loading
+1. Title: [API / Integration Defect] Shopping cart fails to load products with error "Failed to load products. Please try again later" across stable network environments   
+
+2. Environment:OS: macOS / Windows / Linux / Android   Browser/App: Google Chrome / Modern Web Browser   Device: Desktop / Mobile   Build/URL: QA Practice E-Commerce Module (Ecommerce - Login, Add to Cart, Submit order, Logout)
+   3. Steps to Reproduce:Navigate to the QA Practice e-commerce module.   Access the SHOPPING CART section.   Ensure active internet connectivity (verify across multiple distinct network environments if necessary).Observe the content area beneath the ITEM, PRICE, and QUANTITY headers. 
+     4. Actual Result:The shopping cart fails to fetch product data from the server, displaying the red error banner "Failed to load products. Please try again later." while leaving the cart empty (Total $0).
+     
+        5. Expected Result:The shopping cart should successfully issue a GET request to the backend items/cart API endpoint, parse the JSON response payload, and render the populated line items and total price.  
+         6. Severity: High (Blocks the core checkout pipeline, preventing users from reviewing cart items or clicking PURCHASE). 
+           7. Priority: P1 - Urgent (Requires immediate investigation of backend server logs, database query errors, and API network response status codes). 
+             8. Evidence: Screenshot capturing SHOPPING CART displaying red inline error message "Failed to load products. Please try again later." alongside an unpopulated cart state.   
