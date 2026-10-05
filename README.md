@@ -1,4 +1,4 @@
-# # 90-day-qa-challenge
+# 90-day-qa-challenge
 
 QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance & Advanced Target Envs
 
@@ -33,9 +33,9 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-# 📅 Daily Execution Log
+## 📅 Daily Execution Log
 
-## 🗓️ September 1, 2026 — Day 01: Fundamentals (/day-01-the-internet)
+### 🗓️ September 1, 2026 — Day 01: Fundamentals (/day-01-the-internet)
 
 **Core Focus:** Establishing resilient locator strategy (getByRole, getByText), basic user interactions, and page state assertions.
 
@@ -43,7 +43,7 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 2, 2026 — Day 02: Complex UI & Bug Logging (/day-2-demoQa)
+### 🗓️ September 2, 2026 — Day 02: Complex UI & Bug Logging (/day-2-demoQa)
 
 **Core Focus:** Handling complex UI components, dynamic waits, frames, modal dialogs, and documenting bugs.
 
@@ -51,11 +51,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 3, 2026 — Day 03: E-Commerce Workflows (/day-03-sauce-demo)
+### 🗓️ September 3, 2026 — Day 03: E-Commerce Workflows (/day-03-sauce-demo)
 
 **Core Focus:** Session state preservation (storageState), full E2E purchase flows, catalog sorting algorithms, and side drawer navigation.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **auth.spec.ts:** Validates login, tests locked-out user handling, and exports session state to user.json.
 
@@ -67,11 +67,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 4, 2026 — Day 04: Dynamic Web Applications (/day-04-practice-expandtesting)
+### 🗓️ September 4, 2026 — Day 04: Dynamic Web Applications (/day-04-practice-expandtesting)
 
 **Core Focus:** Advanced dynamic element handling, execution visibility via console logs, time-travel clocks, dynamic DOM infinite scrolling, and form validation flows.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **web-inputs.spec.ts:** Validates specialized input type entries (Number, Text, Password, Date).
 
@@ -99,11 +99,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (/day-05-uitestingplayground)
+### 🗓️ September 5, 2026 — Day 05: Sandbox Edge Cases & Delays (/day-05-uitestingplayground)
 
 **Core Focus:** Navigating technical UI automation challenges—dynamic IDs, volatile CSS classes, Z-index layer stacks, long-running AJAX requests, and server load delays.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **class-attribute.spec.ts:** Primary/secondary button matching using dynamic class strings.
 
@@ -115,7 +115,7 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 **ajax-data.spec.ts:** Handling 15-second dynamic DOM insertions using explicit assertion timeouts.
 
-### Bug Reports Tracked:
+#### Bug Reports Tracked
 
 **BUG-001-load-delay-performance-threshold.md:** SLA performance violation on /loaddelay.
 
@@ -123,11 +123,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 6, 2026 — Day 06: QA Playground & Dev Environment Integrations (/day-06-qa-playground)
+### 🗓️ September 6, 2026 — Day 06: QA Playground & Dev Environment Integrations (/day-06-qa-playground)
 
 **Core Focus:** Automating complex UI widgets, managing multi-window contexts, resolving pointer event interception bugs, integrating VS Code Live Server, and using GitHub Copilot for code acceleration.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **date-picker.spec.ts:** Date picker widget interactions and input validations.
 
@@ -141,7 +141,7 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 **banking-app.spec.ts:** Multi-step banking workflow, form options, and loan calculations.
 
-### Bug Reports Tracked:
+#### Bug Reports Tracked
 
 **BUG-003-date-picker-element-timeout.md:** Element timeout on invalid container input target fill.
 
@@ -149,11 +149,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (/day-07-tricentis-Obstacale)
+### 🗓️ September 7, 2026 — Day 07: Advanced Tricentis Obstacles (/day-07-tricentis-Obstacale)
 
 **Core Focus:** Solving complex algorithmic web obstacles including dynamic string extraction, regex processing, asynchronous calculating state timers, and cookie manipulation.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **obstacle-45618-tough-cookie.spec.ts:** Regex-based number extraction from random string payloads and input field populating.
 
@@ -163,11 +163,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 8, 2026 — Day 08: TestMu AI Selenium Playground (/day-08-testmuai-selenium-playground)
+### 🗓️ September 8, 2026 — Day 08: TestMu AI Selenium Playground (/day-08-testmuai-selenium-playground)
 
 **Core Focus:** Automating dynamic AJAX form submissions, multi-select dual list boxes, multi-layered Bootstrap modals, asynchronous progress bar state tracking, hover overlays, multi-window popups, and dynamic To-Do app state management.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **ajax-form-submit.spec.ts:** Form input, submit action, and dynamic response verification.
 
@@ -187,11 +187,11 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (/day-09-locator-game)
+### 🗓️ September 9, 2026 — Day 09: Testsmith Locator Game (/day-09-locator-game)
 
 **Core Focus:** Automating sequential SPA level progression, handling dynamic tour overlays (tour-step-backdrop), resolving React state input desynchronization, and analyzing framework compatibility boundaries.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **level-1.spec.ts:** Tag selector execution (h3) and page heading validation.
 
@@ -203,21 +203,21 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (/day-10-automation-camp)
+### 🗓️ September 10, 2026 — Day 10: Pure Automation Sandbox (/day-10-automation-camp)
 
 **Core Focus:** Automating native browser form controls, custom color/range pickers, popup window contexts, and alert dialog triggers inside a clean single-file execution suite.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **play2-automation.spec.ts:** Single-file test suite validating native inputs, radio toggles, multi-select dropdowns, popup interception (waitForEvent('popup')), and alert handling (page.once('dialog')).
 
 ---
 
-## 🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (/day-11-commitquality)
+### 🗓️ September 11, 2026 — Day 11: CommitQuality Sandbox (/day-11-commitquality)
 
 **Core Focus:** Automating end-to-end user workflows, interactive UI components, network API mocking, bug reporting, and dynamic timer assertions on CommitQuality.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **filter-product.spec.ts:** Validates product table search queries, exact name matching, non-existent item queries, and search resets.
 
@@ -235,17 +235,17 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 **clock.spec.ts:** Verifies dynamic clock timer assertions over time delays.
 
-### Bug Reports Tracked:
+#### Bug Reports Tracked
 
 **BUG-CQ-011:** Contact Form payload mismatch & backend API silent drop (Tested across macOS, Windows, Linux, Android).
 
 ---
 
-## 🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (/day-12-restful-booker-platform)
+### 🗓️ September 12, 2026 — Day 12: Restful-Booker-Platform (/day-12-restful-booker-platform)
 
 **Core Focus:** Automating hotel reservation workflows, date pickers, contact query submissions, SPA routing issues, and backend concurrency performance logging.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **check-availability.spec.ts:** Validates date input fields, manual check-in/check-out pickers, and availability search triggers.
 
@@ -253,7 +253,7 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 **contact-message.spec.ts:** Validates customer inquiry form submissions and required input field validation error states.
 
-### Bug Reports Tracked:
+#### Bug Reports Tracked
 
 **BUG-RBP-001:** Navigation route updates URL but target page content fails to load (/amenities).
 
@@ -261,85 +261,65 @@ Welcome to the central repository for Module 1 - UI Automation. This project tra
 
 ---
 
-## 🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (/day-13-orangehrm)
+### 🗓️ September 13, 2026 — Day 13: OrangeHRM Automated Test Suite (/day-13-orangehrm)
 
 **Core Focus:** Automating enterprise HR management workflows, dynamic grid searches, sub-tab dropdown navigation, re-authentication security modals, and structured single-file test specs.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
-login.spec.ts
-
-dashboard.spec.ts
-
-admin.spec.ts
-
-pim.spec.ts
-
-leave.spec.ts
-
-apply-leave.spec.ts
-
-leave-requirements.spec.ts
-
-recruitment.spec.ts
-
-performance.spec.ts
-
-directory.spec.ts
-
-maintenance.spec.ts
-
-claim.spec.ts
+- `login.spec.ts`
+- `dashboard.spec.ts`
+- `admin.spec.ts`
+- `pim.spec.ts`
+- `leave.spec.ts`
+- `apply-leave.spec.ts`
+- `leave-requirements.spec.ts`
+- `recruitment.spec.ts`
+- `performance.spec.ts`
+- `directory.spec.ts`
+- `maintenance.spec.ts`
+- `claim.spec.ts`
 
 ---
 
-## 🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (/day-14-cymbal-direct)
+### 🗓️ September 14, 2026 — Day 14: Cymbal Direct E-Commerce Automation (/day-14-cymbal-direct)
 
 **Core Focus:** Automating end-to-end user journeys for the Cymbal Direct microservices platform, product catalog iterations, dynamic cart drawer management, and order completions.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
-select-product.spec.ts
-
-add-to-cart.spec.ts
-
-emty-cart.spec.ts
-
-place-order.spec.ts
+- `select-product.spec.ts`
+- `add-to-cart.spec.ts`
+- `emty-cart.spec.ts`
+- `place-order.spec.ts`
 
 ---
 
-## 🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (/day-15-ui5.sap.demoapps)
+### 🗓️ September 15, 2026 — Day 15: SAP UI5 Demo Applications (/day-15-ui5.sap.demoapps)
 
 **Core Focus:** Automating enterprise UI controls, dynamic tab view switches, custom calendar team planning widgets, popup promises, custom themes (sap_horizon_dark), database view grids, and AI integrations.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
-brose.list.spec.ts
+- `brose.list.spec.ts`
+- `calender.spec.ts`
+- `shoping-cart.spec.ts`
+- `SQL.spec.ts`
+- `testin-ai.spec.ts`
+- `Tools.spec.ts`
+- `uxc-integration.spec.ts`
 
-calender.spec.ts
+#### Bug Reports Tracked
 
-shoping-cart.spec.ts
-
-SQL.spec.ts
-
-testin-ai.spec.ts
-
-Tools.spec.ts
-
-uxc-integration.spec.ts
-
-### Bug Reports Tracked:
-
-Navbar cart counter fails to update and out of stock.md: Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
+**Navbar cart counter fails to update and out of stock.md:** Dynamic cart badge failing to increment upon adding items and missing out-of-stock inventory validations.
 
 ---
 
-## 🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (/day-16-selectorshub)
+### 🗓️ September 16, 2026 — Day 16: SelectorsHub XPath Practice (/day-16-selectorshub)
 
 **Core Focus:** Automating form validation workflows, boundary value testing on numerical spin buttons, element interaction, and handling asynchronous popup window triggers.
 
-### Test Suite Breakdown:
+#### Test Suite Breakdown
 
 **xpath-practice.spec.ts:** Validates input form entries (email, password, company, location), tests negative and large boundary value inputs for mobile spin buttons, executes form submissions, and intercepts external YouTube channel popup events (page.waitForEvent('popup')).
 
@@ -375,13 +355,13 @@ Welcome to Module 2 - API Testing & DevTools. This section focuses on RESTful AP
 
 ---
 
-# 📅 Daily Execution Log
+## 📅 Daily Execution Log
 
-## 🗓️ September 17, 2026 — Day 17: Multi-Layered API Testing & Audit Logging (/day-17-apichallenges-practice)
+### 🗓️ September 17, 2026 — Day 17: Multi-Layered API Testing & Audit Logging (/day-17-apichallenges-practice)
 
 **Core Focus:** Establishing a 3-layer QA verification process across Postman, Chrome DevTools, and automated Node.js simulation scripts while persisting session audit logs.
 
-### Multi-Tool Architecture Breakdown:
+#### Multi-Tool Architecture Breakdown
 
 **Postman Integration:** Configured session token retrieval (POST /challenger), stored dynamic X-Challenger header parameters inside environment variables (day-17-apichallenges-env.postman_environment.json), and verified GET /todos / POST /todos end-to-end endpoints.
 
@@ -391,11 +371,11 @@ Welcome to Module 2 - API Testing & DevTools. This section focuses on RESTful AP
 
 ---
 
-## 🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (/day-18-restfulbooker)
+### 🗓️ September 18, 2026 — Day 18: Restful Booker API Testing & Performance Analysis (/day-18-restfulbooker)
 
 **Core Focus:** Automating dynamic REST workflows across authentication, booking retrieval, full/partial updates, and deletions while generating DevTools trace profiles.
 
-### Multi-Tool Architecture Breakdown:
+#### Multi-Tool Architecture Breakdown
 
 **Postman Integration:** Dynamic token extraction (POST /auth), environment binding (baseUrl, token, bookingId), Cookie header authentication (Cookie: token={{token}}), and complete CRUD request validations (POST, GET, PUT, PATCH, DELETE).
 
@@ -403,11 +383,11 @@ Welcome to Module 2 - API Testing & DevTools. This section focuses on RESTful AP
 
 ---
 
-## 🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (/day-19-practice-software-testing)
+### 🗓️ September 19, 2026 — Day 19: Practice Software Testing API Workflows & DevTools (/day-19-practice-software-testing)
 
 **Core Focus:** Building an end-to-end e-commerce REST API workflow using Postman AI, handling dynamic Bearer tokens, state preservation across cart/order requests, and capturing network/performance trace artifacts.
 
-### Multi-Tool Architecture Breakdown:
+#### Multi-Tool Architecture Breakdown
 
 **Postman AI Integration:** Prompt-engineered Postman AI Agent to create day-19-practice-software-testing collection and Day 19 - Practice Software Testing Environment. Managed dynamic variable extraction for bearerToken, productId, cartId, cart item insertion, and final checkout invoice creation.
 
@@ -415,49 +395,49 @@ Welcome to Module 2 - API Testing & DevTools. This section focuses on RESTful AP
 
 ---
 
-## 🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (/day-20-gorest)
+### 🗓️ September 20, 2026 — Day 20: GoREST Authentication Negative Testing & CI/CD Pipeline (/day-20-gorest)
 
 **Core Focus:** Comprehensive negative authentication testing for Bearer Token APIs, collection run execution, and automated execution via GitHub Actions Postman CLI workflows.
 
-### Postman Collection & Environment:
+#### Postman Collection & Environment
 
 Built test suites for invalid, missing, malformed, empty, and expired tokens across GET, POST, PATCH, and DELETE methods.
 
 Bound authentication state inside Day 20 - GoRest Environment.postman_environment.json.
 
-### CI/CD Automation (GitHub Actions):
+#### CI/CD Automation (GitHub Actions)
 
 Automated collection execution on push triggers using Postman CLI inside .github/workflows/postman.yml with secure secret variable injections (POSTMAN_API_KEY).
 
-### Run Artifacts:
+#### Run Artifacts
 
 Exported local execution test summaries and terminal output screenshots.
 
 ---
 
-## 🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (/day-21-serverest)
+### 🗓️ September 21, 2026 — Day 21: ServeRest End-to-End API Workflows & User Management (/day-21-serverest)
 
 **Core Focus:** Automated user administration lifecycle, Bearer token extraction, dynamic password mutation, edge-case server failure assertions, and full Portuguese-to-English translation mapping.
 
-### Postman Collection (day-21-serverest.postman_collection.json):
+#### Postman Collection (day-21-serverest.postman_collection.json)
 
 Built a complete 15-request API testing collection covering authentication (POST /login), catalog queries (GET /usuarios), user registration (POST /usuarios), negative validation (400 Bad Request), deliberate server crashes (500 Internal Server Error), upsert updates (PUT /usuarios/{\_id}), and total data cleanup (DELETE /usuarios/{\_id}).
 
-### Environment Configuration (Day 21 - ServeRest Environment.postman_environment.json):
+#### Environment Configuration (Day 21 - ServeRest Environment.postman_environment.json)
 
 Managed dynamic variables for baseUrl, loginEmail, loginPassword, authToken, johnWickId, and johnWickEmail.
 
-### CI/CD Pipeline Integration:
+#### CI/CD Pipeline Integration
 
 Exported test run summaries and execution screenshots under Screenshots/, triggering GitHub Actions workflow execution automatically via root .github/workflows/postman.yml.
 
 ---
 
-## 🗓️ September 22, 2026 — Day 22: JSONPlaceholder Integration & Edge Testing (/day-22-jsonplaceholder)
+### 🗓️ September 22, 2026 — Day 22: JSONPlaceholder Integration & Edge Testing (/day-22-jsonplaceholder)
 
 **Core Focus:** End-to-end integration and edge-case testing against JSONPlaceholder. Executed full CRUD cycles, dynamic variable chaining, comment moderation, partial updates, full record replacement, and high-volume boundary stress testing.
 
-### Test Suite Breakdown & Assertion Results (28/28 Passed):
+#### Test Suite Breakdown & Assertion Results (28/28 Passed)
 
 **01_GET_Posts_Catalog:** Asserts 200 OK and verifies the post catalog contains 100 items.
 
@@ -477,7 +457,7 @@ Exported test run summaries and execution screenshots under Screenshots/, trigge
 
 **09_GET_Over_1k_Users_Scale_EdgeCase:** Tests out-of-bounds query (/users/1001), asserting 404 Not Found without server crash (500).
 
-### Root Cause Analysis (RCA) & Troubleshooting:
+#### Root Cause Analysis (RCA) & Troubleshooting
 
 **Initial Failure:** 6 tests failed across Requests 06 and 07 due to missing initial values for photoId and userId in the environment scope, causing URLs to send unparsed template strings (%7B%7BphotoId%7D%7D).
 
@@ -485,13 +465,13 @@ Exported test run summaries and execution screenshots under Screenshots/, trigge
 
 ---
 
-## 🗓️ September 23, 2026 — Day 23: ReqRes API Functional Testing with Postman (/day-23-reqres)
+### 🗓️ September 23, 2026 — Day 23: ReqRes API Functional Testing with Postman (/day-23-reqres)
 
-### 📌 Overview
+#### 📌 Overview
 
 This module covers automated functional API testing against the ReqRes API using Postman and Newman CI integration. It includes end-to-end test assertions, collection-level authentication headers, dynamic variable extraction, and request chaining.
 
-### 🔑 Environment Setup (day 23 reqres)
+#### 🔑 Environment Setup (day 23 reqres)
 
 | Variable Key | Scope / Type | Description |
 | --- | --- | --- |
@@ -501,15 +481,15 @@ This module covers automated functional API testing against the ReqRes API using
 | createdUserId | Dynamic Variable | Extracted post POST /api/users execution |
 | page | Number | Pagination query variable |
 
-### 🚀 Detailed Request & Test Assertions Breakdown
+#### 🚀 Detailed Request & Test Assertions Breakdown
 
-### Global Collection Setup
+**Global Collection Setup**
 
 **Header:** x-api-key: {{api_key}} applied automatically across all endpoints.
 
-### 1. Users Folder
+**1. Users Folder**
 
-#### 1.1 GET /api/users?page={{page}} — List Users
+**1.1 GET /api/users?page={{page}} — List Users**
 
 **Goal:** Verify user pagination data.
 
@@ -520,7 +500,7 @@ This module covers automated functional API testing against the ReqRes API using
 - page in response body equals 2.
 - data array contains items and verifies data[0].id exists.
 
-#### 1.2 GET /api/users/{{userId}} — Single User
+**1.2 GET /api/users/{{userId}} — Single User**
 
 **Goal:** Verify retrieval of a specific user.
 
@@ -530,7 +510,7 @@ This module covers automated functional API testing against the ReqRes API using
 - Response contains data.id matching variable userId.
 - Response contains data.email, data.first_name, and data.last_name.
 
-#### 1.3 POST /api/users — Create User
+**1.3 POST /api/users — Create User**
 
 **Goal:** Create a new user resource and extract its ID dynamically.
 
@@ -547,31 +527,23 @@ This module covers automated functional API testing against the ReqRes API using
 
 ---
 
-## 🗓️ September 24, 2026 — Day 24: HTTPBin API Testing with Postman
+### 🗓️ September 24, 2026 — Day 24: HTTPBin API Testing with Postman (/day-24-httpbin)
 
 API functional testing with Postman using HTTPBin, covering HTTP status codes, methods, request/response inspection, query params, custom headers, JSON/form-data, cookies, redirects, delays, streaming, bytes, UUIDs, response headers, image/content-type, user-agent/IP, and environment variables.
 
-### 🎯 Objectives
+#### 🎯 Objectives
 
-Validate different HTTP status codes.
+- Validate different HTTP status codes.
+- Test common HTTP methods.
+- Validate cookies and redirects.
+- Test query parameters and custom headers.
+- Validate form-data requests.
+- Test delayed and streaming responses.
+- Validate UUID, range, link, image, IP, and user-agent endpoints.
+- Inspect response headers and response characteristics.
+- Use Postman environment variables for dynamic test data.
 
-Test common HTTP methods.
-
-Validate cookies and redirects.
-
-Test query parameters and custom headers.
-
-Validate form-data requests.
-
-Test delayed and streaming responses.
-
-Validate UUID, range, link, image, IP, and user-agent endpoints.
-
-Inspect response headers and response characteristics.
-
-Use Postman environment variables for dynamic test data.
-
-### 🔧 Environment
+#### 🔧 Environment
 
 **API:** HTTPBin
 
@@ -585,7 +557,7 @@ Use Postman environment variables for dynamic test data.
 
 **Base variable:** {{baseUrl}}
 
-### Environment: day 24 httpbin
+**Environment: day 24 httpbin**
 
 | Variable | Value |
 | --- | --- |
@@ -606,7 +578,7 @@ Use Postman environment variables for dynamic test data.
 | userAgent | PostmanRuntime/7.0 |
 | lastUUID | empty initially |
 
-### 📋 Collection Coverage
+#### 📋 Collection Coverage
 
 **1. Status Codes**
 
@@ -680,7 +652,7 @@ Checks Accept-Ranges or Content-Range.
 
 /links/5/0
 
-Checks for \<a href.
+Checks for `<a href`.
 
 **14. Images**
 
@@ -702,7 +674,7 @@ Validates expected content types.
 
 Validates cache control and Last-Modified response headers.
 
-### 🧪 Assertion Strategy
+#### 🧪 Assertion Strategy
 
 ```javascript
 pm.response.to.have.status(200);
@@ -724,7 +696,7 @@ Response size validation.
 
 Regex validation.
 
-### 🔄 Dynamic Variable Handling
+#### 🔄 Dynamic Variable Handling
 
 Dynamic response values are captured from responses and stored in Postman environment variables for subsequent requests.
 
@@ -734,7 +706,7 @@ Example:
 pm.environment.set("lastUUID", pm.response.json().uuid);
 ```
 
-### 📊 Main Test Coverage
+#### 📊 Main Test Coverage
 
 | Area | Coverage |
 | --- | --- |
@@ -755,19 +727,15 @@ pm.environment.set("lastUUID", pm.response.json().uuid);
 | IP/User Agent | Request environment inspection |
 | Response Inspection | Cache-Control, Last-Modified |
 
-### 📚 Key QA Concepts
+#### 📚 Key QA Concepts
 
-HTTP status-code validation
+- HTTP status-code validation
+- Request and response inspection
+- Environment-driven test data
+- Dynamic variable chaining
+- Response header and payload validation
 
-Request and response inspection
-
-Environment-driven test data
-
-Dynamic variable chaining
-
-Response header and payload validation
-
-### 📁 Suggested Project Structure
+#### 📁 Suggested Project Structure
 
 ```text
 day-24-httpbin/
@@ -785,7 +753,7 @@ day-24-httpbin/
 └── README.md
 ```
 
-### 🎯 Day 24 Outcome
+#### 🎯 Day 24 Outcome
 
 HTTPBin was used to practice broad HTTP-level API testing through Postman, including status codes, HTTP methods, cookies, redirects, headers, delays, streaming, bytes, UUIDs, response headers, content types, and request environment inspection.
 
@@ -797,11 +765,11 @@ HTTPBin was used to practice broad HTTP-level API testing through Postman, inclu
 
 ---
 
-## 🗓️ September 25, 2026 — Day 25: DummyJSON API Testing with Postman
+### 🗓️ September 25, 2026 — Day 25: DummyJSON API Testing with Postman (/day-25-dummyjson)
 
 API testing practice using Postman and the DummyJSON API, focusing on GET requests, HTTP status validation, JSON response validation, and basic response-structure checks.
 
-### 🎯 Objective
+#### 🎯 Objective
 
 The objective of Day 25 was to practice basic API testing with Postman by validating multiple GET requests against the DummyJSON API.
 
@@ -813,7 +781,7 @@ The tests focused on:
 - Confirming that returned arrays contain at least one record
 - Running multiple API requests together as a collection
 
-### 🔖 Day 25 Summary
+#### 🔖 Day 25 Summary
 
 **Focus:** API Testing with Postman
 
@@ -835,7 +803,7 @@ The tests focused on:
 
 **Status:** ✅ ALL PASSED
 
-### 🔧 API Under Test
+#### 🔧 API Under Test
 
 **API:** DummyJSON
 
@@ -843,9 +811,9 @@ The tests focused on:
 
 **Environment:** Postman day 25 dummyjson
 
-### 📋 Requests
+#### 📋 Requests
 
-#### 1 Get Products
+**1. Get Products**
 
 **Method:** GET
 
@@ -856,7 +824,7 @@ The tests focused on:
 - products is an array
 - Array contains at least one record
 
-#### 2 Get Carts
+**2. Get Carts**
 
 **Method:** GET
 
@@ -867,7 +835,7 @@ The tests focused on:
 - carts is an array
 - Array contains at least one record
 
-#### 3 Get Comments
+**3. Get Comments**
 
 **Method:** GET
 
@@ -878,7 +846,7 @@ The tests focused on:
 - comments is an array
 - Array contains at least one record
 
-### 🧪 Test Strategy
+#### 🧪 Test Strategy
 
 | Validation Area | Products | Carts | Comments |
 | --- | --- | --- | --- |
@@ -887,7 +855,7 @@ The tests focused on:
 | Expected Top-Level Array | products | carts | comments |
 | Data Presence | At least one record | At least one record | At least one record |
 
-### 📊 Test Execution Results
+#### 📊 Test Execution Results
 
 **Run Date:** 25 Sep 2026
 
@@ -904,85 +872,60 @@ The tests focused on:
 | Test Pass Rate | 100% |
 | Run ID | 6a1c5cae-604d-4dd3-999b-75a830672763 |
 
-### 📋 Request Results
+#### 📋 Request Results
 
 | Request | Method | Status | Response Time | Tests |
 | --- | --- | --- | --- | --- |
-| Get Products | GET | 200 OK | \~450 ms | 4/4 passed |
-| Get Carts | GET | 200 OK | \~460 ms | 4/4 passed |
-| Get Comments | GET | 200 OK | \~453 ms | 4/4 passed |
+| Get Products | GET | 200 OK | ~450 ms | 4/4 passed |
+| Get Carts | GET | 200 OK | ~460 ms | 4/4 passed |
+| Get Comments | GET | 200 OK | ~453 ms | 4/4 passed |
 
-### 🔍 Detailed Results
+#### 🔍 Detailed Results
 
-**Get Products**
+**Get Products** — 4/4 tests passed
 
-4/4 tests passed
+- HTTP status validation passed.
+- JSON response validation passed.
+- products array validation passed.
+- Data presence validation passed.
 
-HTTP status validation passed.
+**Get Carts** — 4/4 tests passed
 
-JSON response validation passed.
+- HTTP status validation passed.
+- JSON response validation passed.
+- carts array validation passed.
+- Data presence validation passed.
 
-products array validation passed.
+**Get Comments** — 4/4 tests passed
 
-Data presence validation passed.
+- HTTP status validation passed.
+- JSON response validation passed.
+- comments array validation passed.
+- Data presence validation passed.
 
-**Get Carts**
+#### 📚 QA Learning Outcomes
 
-4/4 tests passed
+- HTTP status validation
+- Response format validation
+- Response schema/structure validation
+- Basic data validation
+- Collection-level execution
 
-HTTP status validation passed.
-
-JSON response validation passed.
-
-carts array validation passed.
-
-Data presence validation passed.
-
-**Get Comments**
-
-4/4 tests passed
-
-HTTP status validation passed.
-
-JSON response validation passed.
-
-comments array validation passed.
-
-Data presence validation passed.
-
-### 📚 QA Learning Outcomes
-
-HTTP status validation
-
-Response format validation
-
-Response schema/structure validation
-
-Basic data validation
-
-Collection-level execution
-
-### 📸 Run Evidence
+#### 📸 Run Evidence
 
 **Day-25-DummyJSON-API-Testing-Run-Report.html**
 
 The run evidence records:
 
-Collection execution status
+- Collection execution status
+- Individual request results
+- Individual tests
+- Response times
+- Overall pass/fail status
+- Run ID
+- Environment information
 
-Individual request results
-
-Individual tests
-
-Response times
-
-Overall pass/fail status
-
-Run ID
-
-Environment information
-
-### 🎯 Outcome
+#### 🎯 Outcome
 
 Day 25 completed with 3 API requests and 12 total tests, with all tests passing.
 
@@ -990,9 +933,9 @@ Day 25 completed with 3 API requests and 12 total tests, with all tests passing.
 
 ---
 
-## 🗓️ September 26, 2026 — Day 26: Rick and Morty GraphQL API Testing (/day-26)
+### 🗓️ September 26, 2026 — Day 26: Rick and Morty GraphQL API Testing (/day-26)
 
-### 🎯 Objective
+#### 🎯 Objective
 
 Day 26 focused on GraphQL API testing using Postman against the Rick and Morty GraphQL API.
 
@@ -1000,11 +943,11 @@ The goal was to move beyond basic REST GET validation and test GraphQL-specific 
 
 This completes the API Testing portion of Module 2.
 
-### 🚀 Collection Overview
+#### 🚀 Collection Overview
 
 The collection contains 10 POST requests structured into two core folders:
 
-### 📁 Characters
+**📁 Characters**
 
 **GET SINGLE CHARACTER:** Validates scalar fields (id, name, status, species, type, gender) and single nested objects (origin, location).
 
@@ -1016,7 +959,7 @@ The collection contains 10 POST requests structured into two core folders:
 
 **CHARACTERS PAGE 2:** Validates page parameter arguments directly within GraphQL queries (page: 2).
 
-### 📁 Episodes
+**📁 Episodes**
 
 **GET SINGLE EPISODE:** Validates single episode fetching and scalar assertions.
 
@@ -1028,7 +971,7 @@ The collection contains 10 POST requests structured into two core folders:
 
 **EPISODES PAGE 2:** Verifies pagination transitions on page 2.
 
-### 📊 Automated Assertions & Quality Checks
+#### 📊 Automated Assertions & Quality Checks
 
 Every request includes JavaScript tests checking:
 
@@ -1042,7 +985,7 @@ Every request includes JavaScript tests checking:
 
 **Pagination Contracts:** Verifies page state changes, e.g. prev != null on page 2
 
-### 🛠️ Environment Configuration
+#### 🛠️ Environment Configuration
 
 The environment file:
 
@@ -1061,7 +1004,7 @@ is pre-configured with the following variables stored in the Initial Value colum
 | episodeId3 | 3 | Tertiary episode ID |
 | page | 1 | Pagination page number |
 
-### 📁 Project Structure
+#### 📁 Project Structure
 
 ```text
 day-26/
@@ -1079,7 +1022,7 @@ day-26/
 └── README.md
 ```
 
-### 🎯 Day 26 Outcome
+#### 🎯 Day 26 Outcome
 
 Day 26 completes the API Testing track of the 90-day QA challenge.
 
@@ -1101,27 +1044,27 @@ The API portion progressed from REST API fundamentals through authentication, CR
 
 ---
 
-## 🗓️ September 27, 2026 — Day 27: SWAPI DevTools (/day-27-swapi-devtools)
+### 🗓️ September 27, 2026 — Day 27: SWAPI DevTools (/day-27-swapi-devtools)
 
-### Browser Console Log & HTTP Archive Analysis
+#### Browser Console Log & HTTP Archive Analysis
 
 This day focuses on using browser DevTools to inspect JavaScript execution, console messages, API requests, network traffic, and HTTP Archive (HAR) data while working with the Star Wars API (SWAPI).
 
-### 1. Browser Console Log (swapi.dev-1790504306524.log)
+#### 1. Browser Console Log (swapi.dev-1790504306524.log)
 
 This file records interactive session logs, JavaScript execution, API requests, and browser console warnings.
 
-### Extension & Content Script Warnings
+**Extension & Content Script Warnings**
 
 Repeated messages: contentScript.js:201 This page is not reloaded.
 
-### Network Blocking Errors (net::ERR_BLOCKED_BY_CLIENT)
+**Network Blocking Errors (net::ERR_BLOCKED_BY_CLIENT)**
 
 Failed GET requests to Twitter syndication endpoints: [https://syndication.twitter.com/i/jot/embeds](https://syndication.twitter.com/i/jot/embeds)...
 
 These requests were blocked by ad blockers or privacy extensions blocking embedded Twitter widgets.
 
-### Failed API Call (404 Not Found)
+**Failed API Call (404 Not Found)**
 
 An interactive call made via jquery-2.1.0.min.js:
 
@@ -1129,7 +1072,7 @@ GET [https://swapi.dev/api/vader](https://swapi.dev/api/vader)
 
 Result: 404 Not Found.
 
-### Asynchronous Message Channel Errors
+**Asynchronous Message Channel Errors**
 
 Multiple uncaught errors were recorded:
 
@@ -1137,15 +1080,13 @@ Error: A listener indicated an asynchronous response by returning true, but the 
 
 These occurred from embedded frames and scripts such as:
 
-github-btn.html
+- github-btn.html
+- platform.twitter.com
+- Other embedded scripts
 
-platform.twitter.com
+**JavaScript Fetch Requests & Executed Results**
 
-Other embedded scripts
-
-### JavaScript Fetch Requests & Executed Results
-
-#### 1. Luke Skywalker Query
+**1. Luke Skywalker Query**
 
 ```javascript
 fetch('https://swapi.dev/api/people/1/')
@@ -1155,45 +1096,33 @@ fetch('https://swapi.dev/api/people/1/')
 
 Result: The response returned Luke Skywalker's data, including:
 
-name: 'Luke Skywalker'
+- name: 'Luke Skywalker'
+- height: '172'
+- mass: '77'
+- hair_color: 'blond'
+- skin_color: 'fair'
 
-height: '172'
-
-mass: '77'
-
-hair_color: 'blond'
-
-skin_color: 'fair'
-
-#### 2. Tatooine Planet Query (getPlanet(1))
+**2. Tatooine Planet Query (getPlanet(1))**
 
 An async function was executed and the result was logged using console.table().
 
 Output Data:
 
-name: 'Tatooine'
-
-rotation_period: '23'
-
-orbital_period: '304'
-
-diameter: '10465'
-
-climate: 'arid'
-
-gravity: '1 standard'
-
-terrain: 'desert'
-
-population: '200000'
+- name: 'Tatooine'
+- rotation_period: '23'
+- orbital_period: '304'
+- diameter: '10465'
+- climate: 'arid'
+- gravity: '1 standard'
+- terrain: 'desert'
+- population: '200000'
 
 The response also contained links to associated:
 
-residents such as people/1/, people/2/, etc.
+- residents such as people/1/, people/2/, etc.
+- films such as films/1/, films/3/, etc.
 
-films such as films/1/, films/3/, etc.
-
-### CLI Command Copy-Paste Attempts
+**CLI Command Copy-Paste Attempts**
 
 curl commands were attempted directly inside the browser JavaScript console.
 
@@ -1203,33 +1132,26 @@ Uncaught SyntaxError: Unexpected identifier 'url'
 
 The error occurred because curl is a shell/CLI command and its Bash syntax is not valid JavaScript syntax in the browser console.
 
----
-
-### 2. HTTP Archive Log (chromewebdata.har)
+#### 2. HTTP Archive Log (chromewebdata.har)
 
 This .har file records network traffic, page navigation, static assets, and header/response details.
 
-### Page Navigation Timeline (pages)
+**Page Navigation Timeline (pages)**
 
 Multiple page views were recorded while navigating between:
 
-[https://swapi.dev/](https://swapi.dev/)
-
-[https://swapi.dev/about](https://swapi.dev/about)
-
-[https://swapi.dev/documentation](https://swapi.dev/documentation)
+- [https://swapi.dev/](https://swapi.dev/)
+- [https://swapi.dev/about](https://swapi.dev/about)
+- [https://swapi.dev/documentation](https://swapi.dev/documentation)
 
 Outbound links were also accessed to third-party GitHub repositories such as:
 
-SharpTrooper
+- SharpTrooper
+- xyz-angular-swapi
+- swapi-elixir
+- StarWarsAPI
 
-xyz-angular-swapi
-
-swapi-elixir
-
-StarWarsAPI
-
-### Network Entries & Responses (entries)
+**Network Entries & Responses (entries)**
 
 **Main Page Request**
 
@@ -1239,61 +1161,40 @@ Response: 304 Not Modified
 
 The response was cached through Amazon CloudFront / S3.
 
-### HTML Content Structure
+**HTML Content Structure**
 
 The captured HTML included the full SWAPI landing-page structure, including:
 
-SWAPI title and description: "The Star Wars API"
+- SWAPI title and description: "The Star Wars API"
+- Interactive API runner: [https://swapi.dev/api/](https://swapi.dev/api/)
+- Example endpoints:
+  - people/1/
+  - planets/3/
+  - starships/9/
+- Pre-populated JSON example for Luke Skywalker (people/1/)
+- FAQ sections:
+  - "What is this?"
+  - "How can I use it?"
+- Details regarding the transition from the legacy swapi.co domain
 
-Interactive API runner: [https://swapi.dev/api/](https://swapi.dev/api/)
-
-Example endpoints:
-
-people/1/
-
-planets/3/
-
-starships/9/
-
-Pre-populated JSON example for Luke Skywalker (people/1/)
-
-FAQ sections:
-
-"What is this?"
-
-"How can I use it?"
-
-Details regarding the transition from the legacy swapi.co domain
-
-### Static Resources Loaded
+**Static Resources Loaded**
 
 The HAR also captured static resources including:
 
-Bootstrap CSS:
+- Bootstrap CSS:
+  - bootstrap.min.css
+  - bootstrap.css
+- Custom stylesheet:
+  - custom.css
+- JavaScript dependencies:
+  - jquery-2.1.0.min.js
+  - bootstrap.min.js
+- Google Tag Manager gtag.js
+- Twitter widgets widgets.js
+- GitHub follow widget: ghbtns.com/github-btn.html
+- favicon.ico
 
-bootstrap.min.css
-
-bootstrap.css
-
-Custom stylesheet:
-
-custom.css
-
-JavaScript dependencies:
-
-jquery-2.1.0.min.js
-
-bootstrap.min.js
-
-Google Tag Manager gtag.js
-
-Twitter widgets widgets.js
-
-GitHub follow widget: ghbtns.com/github-btn.html
-
-favicon.ico
-
-### 3. Evidence Collected
+#### 3. Evidence Collected
 
 The DevTools session produced the following evidence artifacts:
 
@@ -1305,7 +1206,7 @@ The DevTools session produced the following evidence artifacts:
 | XHR Breakpoint Screenshot | Evidence of XHR breakpoint/pause behavior |
 | Storage Screenshot | Browser storage inspection evidence |
 
-### 4. Project Structure
+#### 4. Project Structure
 
 ```text
 day-27-swapi-devtools/
@@ -1324,67 +1225,49 @@ day-27-swapi-devtools/
 └── README.md
 ```
 
-### 5. DevTools Coverage
+#### 5. DevTools Coverage
 
 The collected evidence covers:
 
-Browser Console inspection
+- Browser Console inspection
+- JavaScript execution through the Console
+- API request execution and response inspection
+- HTTP status-code analysis
+- Network request blocking
+- JavaScript and asynchronous messaging errors
+- XHR/API request investigation
+- HAR network capture
+- Page navigation analysis
+- Static resource inspection
+- Storage inspection
+- XHR breakpoint evidence
+- Performance evaluation evidence
 
-JavaScript execution through the Console
-
-API request execution and response inspection
-
-HTTP status-code analysis
-
-Network request blocking
-
-JavaScript and asynchronous messaging errors
-
-XHR/API request investigation
-
-HAR network capture
-
-Page navigation analysis
-
-Static resource inspection
-
-Storage inspection
-
-XHR breakpoint evidence
-
-Performance evaluation evidence
-
-### 6. Outcome
+#### 6. Outcome
 
 Day 27 documents a practical DevTools investigation of SWAPI using browser Console and Network tooling, supported by captured logs, HAR data, screenshots, storage evidence, and performance evidence.
 
 The work demonstrates how browser DevTools can be used to distinguish between:
 
-Application/API errors
-
-Browser or extension-related blocking
-
-JavaScript console errors
-
-Network responses
-
-Cached responses
-
-Static resource loading
-
-Client-side execution issues
+- Application/API errors
+- Browser or extension-related blocking
+- JavaScript console errors
+- Network responses
+- Cached responses
+- Static resource loading
+- Client-side execution issues
 
 ---
 
-# 🗓️ September 29, 2026 — Day 29: ParaBank DevTools — DOM, Network, HAR & Web Performance
+### 🗓️ September 29, 2026 — Day 29: ParaBank DevTools — DOM, Network, HAR & Web Performance (/day-29-parabank-devtools)
 
-## Objective
+#### Objective
 
 Investigate the ParaBank Administration page using Chrome DevTools to understand the page structure, network activity, captured HAR evidence, and browser-side web performance characteristics.
 
 The day combines DOM inspection, Network investigation, HAR evidence capture, and Web Performance analysis into one DevTools-focused QA exercise.
 
-## Application Under Test
+#### Application Under Test
 
 **Application:** ParaBank
 
@@ -1394,65 +1277,49 @@ The day combines DOM inspection, Network investigation, HAR evidence capture, an
 
 **DevTools Areas:** Elements / DOM, Network, Performance
 
-## Scope
+#### Scope
 
 This exercise focused on observable browser-side evidence rather than application-source changes or assumptions.
 
-## DOM / Elements Inspection
+#### DOM / Elements Inspection
 
-### Reviewed:
+**Reviewed:**
 
-Overall HTML / DOM hierarchy
+- Overall HTML / DOM hierarchy
+- Main page containers and navigation structure
+- Administration, database, JMS, and login forms
+- Form controls and their attributes
+- IDs, names, classes, and other visible locator attributes
+- DOM structure relevant to UI automation
+- Accessibility-relevant markup
+- Hidden or unexpected DOM elements
 
-Main page containers and navigation structure
+#### Network Investigation
 
-Administration, database, JMS, and login forms
+**Reviewed:**
 
-Form controls and their attributes
+- Requests generated by the ParaBank Admin page
+- HTTP methods and status codes
+- Resource types
+- Request duration and timing data where available
+- Request initiators
+- Redirects
+- Errors and failed requests
+- API / XHR / Fetch activity
+- Caching and selected response headers
+- Request-chain / waterfall relationships visible in Network
 
-IDs, names, classes, and other visible locator attributes
-
-DOM structure relevant to UI automation
-
-Accessibility-relevant markup
-
-Hidden or unexpected DOM elements
-
-## Network Investigation
-
-### Reviewed:
-
-Requests generated by the ParaBank Admin page
-
-HTTP methods and status codes
-
-Resource types
-
-Request duration and timing data where available
-
-Request initiators
-
-Redirects
-
-Errors and failed requests
-
-API / XHR / Fetch activity
-
-Caching and selected response headers
-
-Request-chain / waterfall relationships visible in Network
-
-## HAR Evidence
+#### HAR Evidence
 
 Captured the Network evidence in HAR 1.2 format so that the browser-level request data can be retained as a machine-readable artifact.
 
-## Web Performance Investigation
+#### Web Performance Investigation
 
 Used Chrome DevTools Performance to inspect browser execution and rendering behavior.
 
 Performance evidence is retained separately from the Network evidence so that Network findings and Performance findings are not mixed together.
 
-## Key Network Findings
+#### Key Network Findings
 
 The captured Network investigation recorded 19 requests:
 
@@ -1470,7 +1337,7 @@ No 4xx responses, 5xx responses, failed requests, blocked requests, or redirects
 
 No API, XHR, or Fetch requests were visible in the captured network trace; the page relied on traditional document and static-resource loading for the observed page load.
 
-## Main Document Timing
+#### Main Document Timing
 
 The main document request for /parabank/admin.htm had:
 
@@ -1480,7 +1347,7 @@ The main document request for /parabank/admin.htm had:
 
 **Waiting portion:** 78% of the total document duration
 
-## Network Header Evidence
+#### Network Header Evidence
 
 Observed response/request-related evidence included:
 
@@ -1496,101 +1363,72 @@ Observed response/request-related evidence included:
 
 Caching behavior for the individual CSS, JavaScript, and image sub-resources was not determinable from the provided selected-header evidence.
 
-## Network Findings
+#### Network Findings
 
-The main document spent a significant portion of its request time waiting for the server response.
+- The main document spent a significant portion of its request time waiting for the server response.
+- template.css participates in an initiator chain that subsequently triggers multiple image requests.
+- Two separate CSS files (template.css and style.css) are loaded for the page.
 
-template.css participates in an initiator chain that subsequently triggers multiple image requests.
-
-Two separate CSS files (template.css and style.css) are loaded for the page.
-
-## Key DOM Findings
+#### Key DOM Findings
 
 The ParaBank Administration page uses a traditional table-based layout with major sections organized under containers such as:
 
-\#mainPanel
-
-\#topPanel
-
-\#headerPanel
-
-\#bodyPanel
-
-\#leftPanel
-
-\#rightPanel
-
-\#footermainPanel
+- `#mainPanel`
+- `#topPanel`
+- `#headerPanel`
+- `#bodyPanel`
+- `#leftPanel`
+- `#rightPanel`
+- `#footermainPanel`
 
 The DOM contains multiple forms and controls relevant to administration and login workflows.
 
-## Important Automation Locators
+#### Important Automation Locators
 
 Stable IDs identified during inspection include:
 
-\#soapEndpoint
+- `#soapEndpoint`
+- `#restEndpoint`
+- `#initialBalance`
+- `#minimumBalance`
+- `#loanProcessorThreshold`
+- `#loanProvider`
+- `#loanProcessor`
+- `#accessMode1`
+- `#accessMode2`
+- `#accessMode3`
+- `#accessMode4`
 
-\#restEndpoint
+**Relevant form names observed include:**
 
-\#initialBalance
+- initializeDB
+- toggleJms
+- login
 
-\#minimumBalance
-
-\#loanProcessorThreshold
-
-\#loanProvider
-
-\#loanProcessor
-
-\#accessMode1
-
-\#accessMode2
-
-\#accessMode3
-
-\#accessMode4
-
-### Relevant form names observed include:
-
-initializeDB
-
-toggleJms
-
-login
-
-## DOM / Accessibility Findings
+#### DOM / Accessibility Findings
 
 Observed DOM-level findings included:
 
-Form descriptions use bold table-cell text in places where explicit  elements could be used.
+- Form descriptions use bold table-cell text in places where explicit `<label>` elements could be used.
+- The interface relies heavily on tables for layout.
+- Inline styles are used for some presentation-related properties.
+- Many generic div and a elements do not have unique IDs.
+- The inspected controls did not show duplicate IDs in the critical form controls reviewed.
+- A div#fs_div_all element was present near the bottom of the body and was identified in the report as likely being injected by a browser extension or tool rather than being part of the core application logic.
+- The inspected images/clear.gif element had alt=null, while the ParaBank logo image had alt="ParaBank".
+- The page lacks modern semantic landmarks such as `<header>`, `<nav>`, `<main>`, and `<footer>` in the inspected structure.
 
-The interface relies heavily on tables for layout.
-
-Inline styles are used for some presentation-related properties.
-
-Many generic div and a elements do not have unique IDs.
-
-The inspected controls did not show duplicate IDs in the critical form controls reviewed.
-
-A div#fs_div_all element was present near the bottom of the body and was identified in the report as likely being injected by a browser extension or tool rather than being part of the core application logic.
-
-The inspected images/clear.gif element had alt=null, while the ParaBank logo image had alt="ParaBank".
-
-The page lacks modern semantic landmarks such as , , , and  in the inspected structure.
-
-## Web Performance Investigation
+#### Web Performance Investigation (Performance Panel)
 
 The ParaBank Admin page was also investigated with Chrome DevTools → Performance.
 
 The Performance investigation was kept separate from Network analysis so that:
 
-Network timings remain Network evidence.
+- Network timings remain Network evidence.
+- Browser execution/rendering observations remain Performance evidence.
+- HAR data remains raw Network evidence.
 
-Browser execution/rendering observations remain Performance evidence.
-
-HAR data remains raw Network evidence.
-
-## Performance Artifact Format
+#### Performance Artifact Format
 
 **Format used for Day 29: JSON**
 
@@ -1598,7 +1436,7 @@ This is a deliberate change from the earlier workflow in which performance-relat
 
 **Artifact-format note:** Previous ZIP-based packaging has not been rewritten or replaced in earlier days. The JSON format applies to today's Day 29 performance artifact.
 
-## Evidence Strategy
+#### Evidence Strategy
 
 The evidence is separated by purpose:
 
@@ -1609,7 +1447,7 @@ The evidence is separated by purpose:
 | HAR 1.2 | Machine-readable Network capture |
 | Performance recording / JSON | Browser execution, rendering and Performance-panel evidence |
 
-## Suggested Day 29 Project Structure
+#### Suggested Day 29 Project Structure
 
 ```text
 Day-29-Parabank-DevTools/
@@ -1625,57 +1463,47 @@ Day-29-Parabank-DevTools/
 ├── README.md
 ```
 
-## Investigation Output
+#### Investigation Output
 
-### DOM
+**DOM**
 
 A standalone HTML report was created from the DOM investigation summary so the findings can be reviewed as a browser-readable document.
 
-### Network
+**Network**
 
 The captured ParaBank Admin Network data was preserved as a HAR 1.2 artifact.
 
-### Performance
+**Performance**
 
 The Day 29 Performance evidence is retained in JSON format, replacing the ZIP packaging approach used in the earlier workflow for this day's artifact.
 
-## QA / Automation Relevance
+#### QA / Automation Relevance
 
 Day 29 connects browser DevTools investigation with practical QA work:
 
-DOM inspection helps identify reliable automation locators and structural issues.
+- DOM inspection helps identify reliable automation locators and structural issues.
+- Network investigation helps verify request behavior and detect HTTP-level problems.
+- HAR capture provides reusable, machine-readable evidence for debugging and documentation.
+- Performance analysis helps separate browser execution/rendering issues from pure network behavior.
+- Evidence-based reporting reinforces the project rule: **No evidence → No assumption.**
 
-Network investigation helps verify request behavior and detect HTTP-level problems.
-
-HAR capture provides reusable, machine-readable evidence for debugging and documentation.
-
-Performance analysis helps separate browser execution/rendering issues from pure network behavior.
-
-Evidence-based reporting reinforces the project rule: **No evidence → No assumption.**
-
-## Recommendations Identified From the Investigation
+#### Recommendations Identified From the Investigation
 
 Based on the captured findings:
 
-Investigate the server-side processing contributing to the main document's 327 ms waiting time.
-
-Review whether the two CSS files can be consolidated where appropriate.
-
-Review the CSS-to-image initiator chain and whether critical assets can be loaded without unnecessary dependency on CSS parsing.
-
-Replace table-based layout patterns with more appropriate CSS layout techniques when modernization is feasible.
-
-Add explicit  associations for form controls.
-
-Adopt semantic HTML landmarks where appropriate.
-
-Review the caching policy for the administration document and determine whether any portion can safely use caching.
+- Investigate the server-side processing contributing to the main document's 327 ms waiting time.
+- Review whether the two CSS files can be consolidated where appropriate.
+- Review the CSS-to-image initiator chain and whether critical assets can be loaded without unnecessary dependency on CSS parsing.
+- Replace table-based layout patterns with more appropriate CSS layout techniques when modernization is feasible.
+- Add explicit `<label>` associations for form controls.
+- Adopt semantic HTML landmarks where appropriate.
+- Review the caching policy for the administration document and determine whether any portion can safely use caching.
 
 ---
 
-# 🗓️ September 30, 2026 — Day 30: Random User DevTools & Module 2 Completion (/day-30-randomuser-devtools)
+### 🗓️ September 30, 2026 — Day 30: Random User DevTools & Module 2 Completion (/day-30-randomuser-devtools)
 
-## Overview
+#### Overview
 
 Day 30 focuses on using Chrome DevTools Console and Network Overrides to work with live API data directly from the browser, without changing or creating any backend code.
 
@@ -1686,9 +1514,7 @@ The Day 30 exercise uses Random User as the target application and demonstrates 
 1. Fetching and displaying user data through a Console script.
 2. Intercepting and modifying an API response using Chrome DevTools Local Overrides.
 
----
-
-## Objectives
+#### Objectives
 
 - Practice working with API data directly from Chrome DevTools.
 - Use the DevTools Console to fetch and process Random User API data.
@@ -1698,17 +1524,13 @@ The Day 30 exercise uses Random User as the target application and demonstrates 
 - Understand how frontend behavior can be tested with controlled network responses without backend changes.
 - **Wrap up and finalize Module 2: API Testing & DevTools.**
 
----
-
-## Target Application
+#### Target Application
 
 - **Website:** `https://randomuser.me/`
 - **API:** Random User API
 - The exercises use the live Random User application and its API response as the source of test data.
 
----
-
-## Final Module 2 Project Structure
+#### Final Module 2 Project Structure
 
 ```text
 Module-2-API-Testing_DevTools/
@@ -1722,7 +1544,7 @@ Module-2-API-Testing_DevTools/
 
 ---
 
-# ✅ Module 2 Completion — API Testing & DevTools
+### ✅ Module 2 Completion — API Testing & DevTools
 
 The API Testing portion was completed through Day 26, and the Browser DevTools portion was completed through Days 27, 29, and 30. Module 2 now receives its final ✅ Complete status.
 
@@ -1757,14 +1579,15 @@ Welcome to Module 3 - Deliberately Buggy Sites. This section tracks charter-base
 | October 2, 2026 | Day 32 | TestSheepNZ Basic Calculator (testsheepnz.github.io) | Session-Based Exploratory Testing, Type Coercion, Input Validation, Concatenation Mode, Integer Rounding & Differential Build Checks | ✅ Completed |
 | October 3, 2026 | Day 33 | Parking Cost Calculator (shino.de/parkcalc) | Parking Rate Boundaries, Date/Time Validation, Form State & Empty-Input Handling | ✅ Completed |
 | October 4, 2026 | Day 34 | QA Practice Bug Challenge (qa-practice.razvanvancea.ro) | Form State, Terms & Conditions Validation, Negative-Value Boundaries & Shopping Cart API Failure | ✅ Completed |
+| October 5, 2026 | Day 35 | Sweet Shop (sweetshop.netlify.app) | Catalog Exploration, Broken Asset Detection & DevTools Network Evidence | ✅ Completed |
 
 ---
 
-# 📅 Daily Execution Log
+## 📅 Daily Execution Log
 
-## 🗓️ October 1, 2026 — Day 31: AcademyBugs E-Commerce Exploratory Testing (/Day-31-AcademyBugs-e-commerce)
+### 🗓️ October 1, 2026 — Day 31: AcademyBugs E-Commerce Exploratory Testing (/Day-31-AcademyBugs-e-commerce)
 
-### Overview
+#### Overview
 
 Day 31 starts Module 3: Deliberately Buggy Sites — Exploratory Testing using AcademyBugs.com as the e-commerce practice target.
 
@@ -1772,7 +1595,7 @@ The goal of this session was to explore realistic user behavior and deliberately
 
 The exploratory planning used high-level test charters, supported by focused heuristics such as Operations & Time, Data & Structure, Data Boundaries & Sanitization, Platform & Visual Layout, and error/crash resilience.
 
-### Exploratory Test Charters
+#### Exploratory Test Charters
 
 | # | Charter | Focus | Result |
 | --- | --- | --- | --- |
@@ -1785,9 +1608,9 @@ The exploratory planning used high-level test charters, supported by focused heu
 
 **Note:** BUG-02 was discovered independently during exploration and was not part of the original planned charters.
 
-### Bugs Discovered
+#### Bugs Discovered
 
-#### BUG-01 — Lack of Request Debouncing / Click Throttling
+**BUG-01 — Lack of Request Debouncing / Click Throttling**
 
 **Title:** [UI / Network Defect] Action buttons lack click debouncing, triggering duplicate requests on rapid multi-click actions
 
@@ -1809,7 +1632,7 @@ The application should prevent duplicate processing through debouncing, click th
 
 **Evidence:** Loom recording provided during testing.
 
-#### BUG-02 — Intrusive Pop-Up Modal Cannot Be Dismissed
+**BUG-02 — Intrusive Pop-Up Modal Cannot Be Dismissed**
 
 **Title:** [UI / Modal Defect] Un-dismissable modal overlay traps pointer focus, ignoring close button triggers and form submissions
 
@@ -1833,7 +1656,7 @@ The close action or successful form submission should dismiss the modal, restore
 
 **Evidence:** Visual observation and DOM inspection of the modal state.
 
-#### BUG-03 — Responsive Layout Breakpoint Failure at 375px
+**BUG-03 — Responsive Layout Breakpoint Failure at 375px**
 
 **Title:** [Responsive / CSS Defect] Page layout fails to adapt to mobile viewport dimensions (375px), retaining desktop multi-column grid
 
@@ -1857,7 +1680,7 @@ The page should reflow appropriately for the mobile viewport and maintain usable
 
 **Evidence:** DevTools responsive-mode screenshot.
 
-#### BUG-04 — Offline Network Drop Without User Feedback
+**BUG-04 — Offline Network Drop Without User Feedback**
 
 **Title:** [Network / Error Handling Defect] Application fails silently during offline network drops without displaying user-facing connectivity alerts
 
@@ -1879,31 +1702,31 @@ The application should provide clear, accessible feedback when network connectiv
 
 **Priority:** P2 — Normal
 
-### Passed Exploratory Checks
+#### Passed Exploratory Checks
 
-#### Charter 2 — Cart State Mutation Across Tabs
+**Charter 2 — Cart State Mutation Across Tabs**
 
 The planned multi-tab exploration was performed to check for inconsistent cart state, quantity changes, removals, and checkout state between tabs.
 
 **Result:** Passed — no defect was added to the defect reports for this charter.
 
-#### Charter 3 — Extreme Boundary Input
+**Charter 3 — Extreme Boundary Input**
 
 The planned boundary-input exploration was performed using extreme and invalid input conditions.
 
 **Result:** Passed — no defect was added to the defect reports for this charter.
 
-#### Charter 4 — Mid-Checkout Interrupt & Back Navigation
+**Charter 4 — Mid-Checkout Interrupt & Back Navigation**
 
 The planned browser Back/Forward navigation exploration was performed to investigate checkout state retention and navigation behavior.
 
 **Result:** Passed — no defect was added to the defect reports for this charter.
 
-### Testing Approach
+#### Testing Approach
 
 The session focused on exploratory testing, using realistic and unexpected user behavior instead of relying only on predefined test cases.
 
-#### Key Heuristics Used
+**Key Heuristics Used**
 
 - **Operations & Time** — rapid repeated actions and timing-related behavior
 - **Data & Structure** — consistency between application state and displayed UI
@@ -1911,22 +1734,22 @@ The session focused on exploratory testing, using realistic and unexpected user 
 - **Platform & Visual Layout** — viewport and responsive behavior
 - **Performance & Crash Resilience** — network interruption and failure handling
 
-### Evidence
+#### Evidence
 
 The Defects_&_Bugreports directory contains the documented findings and supporting evidence.
 
-#### Screenshots
+**Screenshots**
 
 - Screenshots/03-responsive-375px.png
 
-#### Defect Reports
+**Defect Reports**
 
 - 01-Duplicate-items.md
 - 02-Intrusive-Pop-Up-Modal-Un-dismissable-via-Close-Icon-or-Form-Submission.md
 - 03-responsive-375px.md
 - 04-Error-Handling-&-User-Feedback.md
 
-### Folder Structure
+#### Folder Structure
 
 ```text
 Day-31-AcademyBugs-e-commerce/
@@ -1940,7 +1763,7 @@ Day-31-AcademyBugs-e-commerce/
 └── README.md
 ```
 
-### Day 31 Outcome
+#### Day 31 Outcome
 
 Day 31 resulted in four documented defects:
 
@@ -1963,15 +1786,15 @@ This day demonstrates exploratory QA skills including charter-based testing, une
 
 ---
 
-## 🗓️ October 2, 2026 — Day 32: Exploratory Testing on TestSheepNZ Basic Calculator (/Day-32-Basic-calculator)
+### 🗓️ October 2, 2026 — Day 32: Exploratory Testing on TestSheepNZ Basic Calculator (/Day-32-Basic-calculator)
 
-### Executive Summary
+#### Executive Summary
 
 This session continues **Module 3: Deliberately Buggy Sites & Exploratory Testing** using **Session-Based Test Management (SBTM)** on the [TestSheepNZ Basic Calculator](https://testsheepnz.github.io/BasicCalculator.html). The primary goal is to apply heuristic exploratory testing across multiple application builds (Prototype vs. Builds 1–8) to expose type-coercion bugs, state boundary failures, input validation flaws, and integer rounding defects.
 
 Unlike static test suites, testing was executed via session charters targeting mathematical operations, string concatenation modes, and differential build checks.
 
-### Target Site & Architecture Overview
+#### Target Site & Architecture Overview
 
 - **Target URL:** `https://testsheepnz.github.io/BasicCalculator.html`
 - **Baseline Target (Prototype):** Serves as ground truth (operates cleanly according to spec).
@@ -1979,38 +1802,38 @@ Unlike static test suites, testing was executed via session charters targeting m
 - **Supported Operations:** `Add`, `Subtract`, `Multiply`, `Divide`, and `Concatenate`.
 - **Special Controls:** `Integers only` checkbox (rounds/truncates decimal outputs).
 
-### Exploratory Session Charters
+#### Exploratory Session Charters
 
-#### Charter 1: Type & Input Boundaries (Mathematical Operations)
+**Charter 1: Type & Input Boundaries (Mathematical Operations)**
 
 - **Heuristic:** Input stress & data types.
 - **Scope:** Test string inputs, negative numbers, decimals, zero denominators ($x / 0$), extremely large numbers, and empty inputs across Builds 1–8 to verify numerical validation triggers.
 
-#### Charter 2: String Concatenation Mode
+**Charter 2: String Concatenation Mode**
 
 - **Heuristic:** Mode switching & state disabling.
 - **Scope:** Select "Concatenate", verify that inputs are treated strictly as strings, check that non-numeric characters are preserved, and confirm that the integer checkbox is disabled/ignored.
 
-#### Charter 3: Integer Toggle & Rounding Precision
+**Charter 3: Integer Toggle & Rounding Precision**
 
 - **Heuristic:** Data truncation & rounding algorithms.
 - **Scope:** Perform operations resulting in floating-point values (e.g., $5 / 2 = 2.5$) with the `Integers only` checkbox enabled and disabled to evaluate truncation/rounding mechanics.
 
-#### Charter 4: Build Comparison (Builds 1–8 vs. Prototype Baseline)
+**Charter 4: Build Comparison (Builds 1–8 vs. Prototype Baseline)**
 
 - **Heuristic:** Differential build testing.
 - **Scope:** Execute identical calculation sets against the Prototype baseline versus Builds 1–8 to uncover build-specific regressions and logic bugs.
 
-### Defect Inventory & Key Findings
+#### Defect Inventory & Key Findings
 
 | Bug ID | Title | Build | Category | Severity | Priority | File |
 | --- | --- | --- | --- | --- | --- | --- |
 | **BUG-01** | Addition performs string concatenation ($16 + 4 = 164$) | Build 2 | Calculation / Type Coercion | High | P1 | `01-Outputting Incorrect Calculation...md` |
 | **BUG-02** | Incomplete field validation & spurious error during Concatenate | Build 3 | Validation / UX Logic | Medium | P2 | `02-Incomplete Field Validation.md` |
 
-### Detailed Bug Reports
+#### Detailed Bug Reports
 
-#### 1. [Calculation / Logic Defect] Addition Operation Performs String Concatenation
+**1. [Calculation / Logic Defect] Addition Operation Performs String Concatenation**
 
 - **Build:** Build 2
 - **File:** `Defects_&_Bugreports/01-Outputting Incorrect Calculation...md`
@@ -2020,7 +1843,7 @@ Unlike static test suites, testing was executed via session charters targeting m
 - **Expected Result:** Inputs should be parsed as numbers (`parseFloat()`) to output `20`.
 - **Evidence:** Screenshot in `Defects_&_Bugreports/Screenshots/01-Outputting Incorrect Calculation...png`
 
-#### 2. [Validation / Logic Defect] Spurious Error & Incomplete Field Validation During Concatenate
+**2. [Validation / Logic Defect] Spurious Error & Incomplete Field Validation During Concatenate**
 
 - **Build:** Build 3
 - **File:** `Defects_&_Bugreports/02-Incomplete Field Validation.md`
@@ -2029,7 +1852,7 @@ Unlike static test suites, testing was executed via session charters targeting m
 - **Actual Result:** Inline red error `Number 1 is not a number` appears, suppressing field 2 validation while simultaneously printing `4` into the `Answer` field.
 - **Expected Result:** `Concatenate` should bypass numeric validation entirely, OR validate both fields without printing partial calculation results alongside active error states.
 
-### Project Structure
+#### Project Structure
 
 ```text
 Module-3-Deliberately-Buggy Sites_Exploratory-Testing
@@ -2044,22 +1867,22 @@ Day-32-Basic-calculator/
 
 ---
 
-## 🗓️ October 3, 2026 — Day 33: Exploratory Testing on Parking Cost Calculator (/Day-33-Parking-Tax)
+### 🗓️ October 3, 2026 — Day 33: Exploratory Testing on Parking Cost Calculator (/Day-33-Parking-Tax)
 
-### Executive Summary
+#### Executive Summary
 
 Day 33 continues **Module 3: Deliberately Buggy Sites & Exploratory Testing** with exploratory testing of the [Parking Cost Calculator](https://www.shino.de/parkcalc/). The session focused on parking-rate boundaries, entry/exit chronology, form state after calculation, and incomplete input handling.
 
 Four reproducible defects were documented. The checks used the rates displayed on the page as the expected behavior and ordinary date/time values unless the charter specifically tested invalid input.
 
-### Target Site & Rates
+#### Target Site & Rates
 
 - **Target URL:** https://www.shino.de/parkcalc/
 - **Application:** Parking Cost Calculator
 - **Lots tested:** Valet, Short-Term, Economy, Long-Term Garage, and Long-Term Surface.
 - **Relevant published rates:** Economy Parking is $2.00 per hour with a $9.00 daily maximum; other lots also publish daily caps. The page states that entry and leaving dates and times are required.
 
-### Exploratory Session Charters
+#### Exploratory Session Charters
 
 | Charter | Focus | Result |
 | --- | --- | --- |
@@ -2069,7 +1892,7 @@ Four reproducible defects were documented. The checks used the rates displayed o
 | Required Date Inputs | Submit the calculator with its default date values unchanged | 🐛 BUG-04 |
 | Rate and Duration Sampling | Check listed lots at short, daily, and weekly durations | Findings recorded above |
 
-### Defect Inventory
+#### Defect Inventory
 
 | Bug ID | Title | Category | Severity | Priority | Report |
 | --- | --- | --- | --- | --- | --- |
@@ -2078,9 +1901,9 @@ Four reproducible defects were documented. The checks used the rates displayed o
 | **BUG-03** | Selected parking lot reverts to Valet after calculation | UI State / Usability | Medium | P2 | [03-Parking-Lot-Selection-Resets-After-Calculation.md](Defects_&_Bugreports/03-Parking-Lot-Selection-Resets-After-Calculation.md) |
 | **BUG-04** | Submitting default dates returns a blank page without validation | Input Validation / Error Handling | Medium | P2 | [04-Blank-Dates-Return-Empty-Page.md](Defects_&_Bugreports/04-Blank-Dates-Return-Empty-Page.md) |
 
-### Detailed Findings
+#### Detailed Findings
 
-#### BUG-01 — Economy Lot Exceeds Published Daily Maximum
+**BUG-01 — Economy Lot Exceeds Published Daily Maximum**
 
 - **Severity / Priority:** High / P1
 - **Steps:** Select Economy Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 12:30 PM as exit; calculate.
@@ -2088,7 +1911,7 @@ Four reproducible defects were documented. The checks used the rates displayed o
 - **Expected:** Economy is listed at $2.00 per hour with a $9.00 daily maximum. Since the hourly charge reaches $10.00 at five billable hours, the quote should be capped at $9.00.
 - **Report:** [BUG-01 full report](Defects_&_Bugreports/01-Economy-Lot-Exceeds-Daily-Maximum.md)
 
-#### BUG-02 — Departure Before Entry Is Accepted
+**BUG-02 — Departure Before Entry Is Accepted**
 
 - **Severity / Priority:** Medium / P2
 - **Steps:** Select Valet Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 07:00 AM as exit; calculate.
@@ -2096,7 +1919,7 @@ Four reproducible defects were documented. The checks used the rates displayed o
 - **Expected:** Reject the invalid interval with a clear validation message; do not present a fare for negative parking duration.
 - **Report:** [BUG-02 full report](Defects_&_Bugreports/02-Departure-Before-Entry-Accepted.md)
 
-#### BUG-03 — Parking Lot Selection Resets After Calculation
+**BUG-03 — Parking Lot Selection Resets After Calculation**
 
 - **Severity / Priority:** Medium / P2
 - **Steps:** Select Economy Parking; enter 10/03/2026 08:00 AM as entry and 10/03/2026 08:00 PM as exit; calculate.
@@ -2104,7 +1927,7 @@ Four reproducible defects were documented. The checks used the rates displayed o
 - **Expected:** Preserve the selected lot after calculation, or clearly identify the lot used for the quote.
 - **Report:** [BUG-03 full report](Defects_&_Bugreports/03-Parking-Lot-Selection-Resets-After-Calculation.md)
 
-#### BUG-04 — Default Dates Return a Blank Page
+**BUG-04 — Default Dates Return a Blank Page**
 
 - **Severity / Priority:** Medium / P2
 - **Steps:** Open the calculator and click Calculate without replacing the default MM/DD/YYYY date values.
@@ -2112,11 +1935,11 @@ Four reproducible defects were documented. The checks used the rates displayed o
 - **Expected:** Keep the form available and explain that valid entry and leaving dates and times are required.
 - **Report:** [BUG-04 full report](Defects_&_Bugreports/04-Blank-Dates-Return-Empty-Page.md)
 
-### Testing Approach
+#### Testing Approach
 
 The session used charter-based exploratory testing and boundary analysis. Each finding was reproduced in the live calculator using its visible controls, and the resulting fare, duration, selected lot, or response state was compared with the page's rate information and the expected form behavior.
 
-### Project Structure
+#### Project Structure
 
 ```text
 Day-33-Parking-Tax/
@@ -2128,15 +1951,15 @@ Day-33-Parking-Tax/
     └── 04-Blank-Dates-Return-Empty-Page.md
 ```
 
-### Day 33 Outcome
+#### Day 33 Outcome
 
 Day 33 resulted in four documented defects covering fare calculation, chronology validation, post-submit selection state, and empty-input handling. This session applies exploratory QA techniques to financial calculations and the user-visible consistency of form results.
 
 ---
 
-## 🗓️ October 4, 2026 — Day 34: QA Practice Bug Challenge (/Day-34-Qa_practice-Bug-challenge)
+### 🗓️ October 4, 2026 — Day 34: QA Practice Bug Challenge (/Day-34-Qa_practice-Bug-challenge)
 
-### Overview
+#### Overview
 
 Day 34 focuses on deliberately buggy web application testing using the QA Practice application.
 
@@ -2144,7 +1967,7 @@ The session focused on identifying functional, UI/form-state, validation, bounda
 
 The documented findings cover registration workflow failures and a persistent shopping-cart product-loading failure.
 
-### Bugs Discovered
+#### Bugs Discovered
 
 | # | Bug | Area | Severity | Priority |
 | --- | --- | --- | --- | --- |
@@ -2153,7 +1976,7 @@ The documented findings cover registration workflow failures and a persistent sh
 | BUG-03 | Negative numeric values accepted without validation feedback | Validation / Boundary | Medium | P2 — Normal |
 | BUG-04 | Shopping cart fails to load products | API / Integration | High | P1 — Urgent |
 
-#### BUG-01 — "Terms and Conditions" Checkbox Permanently Disabled
+**BUG-01 — "Terms and Conditions" Checkbox Permanently Disabled**
 
 **Title:** [UI / Form Defect] "I agree with the terms and conditions" checkbox is permanently disabled, preventing form submission
 
@@ -2200,7 +2023,7 @@ The Terms and Conditions checkbox should be enabled by default or become enabled
 
 **Evidence:** Screenshot capturing the registration form together with DevTools Console output verifying that the checkbox .disabled property returns true.
 
-#### BUG-02 — Terms & Conditions Checkbox Bypass Allows Unauthorized Form Submission
+**BUG-02 — Terms & Conditions Checkbox Bypass Allows Unauthorized Form Submission**
 
 **Title:** [Validation / Logic Defect] Registration form submits successfully without requiring agreement to "Terms and Conditions"
 
@@ -2239,7 +2062,7 @@ The application should provide appropriate validation feedback, such as an inlin
 
 **Evidence:** Recorded video evidence demonstrating form submission while the Terms and Conditions checkbox remains unchecked.
 
-#### BUG-03 — Negative Numeric Inputs Accepted Without Validation
+**BUG-03 — Negative Numeric Inputs Accepted Without Validation**
 
 **Title:** [Validation / Boundary Defect] Registration fields accept negative numeric values without triggering validation warning messages
 
@@ -2278,7 +2101,7 @@ The invalid value should prevent successful form submission until it is correcte
 
 **Evidence:** Recorded video evidence demonstrating the negative-value input behavior.
 
-#### BUG-04 — Persistent Backend Request Failure Prevents Shopping Cart Product Loading
+**BUG-04 — Persistent Backend Request Failure Prevents Shopping Cart Product Loading**
 
 **Title:** [API / Integration Defect] Shopping cart fails to load products with error "Failed to load products. Please try again later" across stable network environments
 
@@ -2340,38 +2163,38 @@ These are investigation areas rather than confirmed root causes.
 
 **Evidence:** Screenshot capturing the SHOPPING CART section with the red inline error message and the empty cart state.
 
-### Testing Focus
+#### Testing Focus
 
 Day 34 concentrated on several important QA areas:
 
-#### UI & Form State
+**UI & Form State**
 
 - Checking whether required controls are actually interactable
 - Inspecting disabled DOM properties
 - Verifying form controls against their expected workflow state
 
-#### Form Validation & Business Logic
+**Form Validation & Business Logic**
 
 - Testing whether mandatory Terms and Conditions agreement is enforced
 - Checking whether form submission can bypass expected validation
 - Verifying that invalid values are rejected before submission
 
-#### Boundary Testing
+**Boundary Testing**
 
 - Testing negative numeric values
 - Observing whether invalid boundary values trigger appropriate validation feedback
 
-#### API & Integration Testing
+**API & Integration Testing**
 
 - Investigating persistent product-loading failures
 - Verifying behavior across independent network environments
 - Observing user-facing API failure feedback in the shopping-cart workflow
 
-### Evidence
+#### Evidence
 
 The Defects_&_Bugreports directory contains the documented defects and supporting evidence.
 
-#### Screenshots
+**Screenshots**
 
 ```text
 Screenshots/
@@ -2380,7 +2203,7 @@ Screenshots/
 └── 04{2}-Persistent Backend Request...
 ```
 
-#### Defect Reports
+**Defect Reports**
 
 ```text
 Defects_&_Bugreports/
@@ -2392,7 +2215,7 @@ Defects_&_Bugreports/
 
 The exact filenames may vary from the shortened names displayed in the project explorer.
 
-### Folder Structure
+#### Folder Structure
 
 ```text
 Day-34-Qa_practice-Bug-challenge/
@@ -2407,7 +2230,7 @@ Day-34-Qa_practice-Bug-challenge/
 └── README.md
 ```
 
-### Day 34 Outcome
+#### Day 34 Outcome
 
 Day 34 produced four documented defects across registration and e-commerce workflows:
 
@@ -2428,11 +2251,44 @@ The session demonstrates practical QA skills in:
 - Severity and priority classification
 - Evidence-based defect reporting
 
-### Key QA Takeaway
+**Key QA Takeaway**
 
 Day 34 demonstrates that a bug can exist at several layers of the same workflow: UI state, client-side validation, business logic, and backend integration.
 
 Rather than assuming the root cause, the investigation records the observed behavior and supporting evidence, while backend/API possibilities remain investigation areas until directly verified.
+
+---
+
+### 🗓️ October 5, 2026 — Day 35: Exploratory Testing on Sweet Shop (/Day-35-Sweet_Shop)
+
+#### Overview
+
+Day 35 uses exploratory testing and browser DevTools on the [Sweet Shop](https://sweetshop.netlify.app/) storefront. One reproducible defect was found in the catalog: the Wham Bars product image does not load.
+
+#### Defect Inventory
+
+| Bug ID | Title | Category | Severity | Priority | Report |
+| --- | --- | --- | --- | --- | --- |
+| BUG-01 | Wham Bars product image fails to load | UI / Broken Asset | Low | P3 — Low | [01-Wham-Bars-Product-Image-Fails-to-Load.md](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-35-Sweet_Shop/Defects_&_Bugreports/01-Wham-Bars-Product-Image-Fails-to-Load.md) |
+
+**BUG-01 — Wham Bars Product Image Fails to Load**
+
+- **Steps:** Open the catalog at `/sweets` and scroll to the Wham Bars product card.
+- **Actual:** The product image is broken. DevTools shows its request to `/img/whan.jpg` returns HTTP 404; the image element has `naturalWidth` 0.
+- **Expected:** The Wham Bars image should load in the catalog card.
+- **Evidence:** [DevTools evidence](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-35-Sweet_Shop/Defects_&_Bugreports/Evidence/01-Wham-Bars-Image-DevTools-Evidence.md) and [screenshot](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-35-Sweet_Shop/Defects_&_Bugreports/Evidence/01-Wham-Bars-Image-Broken.jpg).
+
+#### Project Structure
+
+```text
+Day-35-Sweet_Shop/
+├── README.md
+└── Defects_&_Bugreports/
+    ├── 01-Wham-Bars-Product-Image-Fails-to-Load.md
+    └── Evidence/
+        ├── 01-Wham-Bars-Image-DevTools-Evidence.md
+        └── 01-Wham-Bars-Image-Broken.jpg
+```
 
 ---
 
@@ -2441,7 +2297,6 @@ Rather than assuming the root cause, the investigation records the observed beha
 ## Module-1-UI-Automation/
 
 ```text
-Module-1-UI-Automation/
 Module-1-UI-Automation/
 
 ├── day-01-the-internet/
@@ -2669,7 +2524,6 @@ Module-1-UI-Automation/
 
 ```text
 Module-2-API-Testing_DevTools/
-Module-2-API-Testing_DevTools/
 
 ├── day-17-apichallenges-practice/
 │   ├── Collections/
@@ -2825,15 +2679,23 @@ Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 │   │   └── 04-Blank-Dates-Return-Empty-Page.md
 │   └── README.md
 │
-└── Day-34-Qa_practice-Bug-challenge/
+├── Day-34-Qa_practice-Bug-challenge/
+│   ├── Defects_&_Bugreports/
+│   │   ├── Screenshots/
+│   │   │   ├── 01-Checkbox Permanently Disabled...
+│   │   │   ├── 04-Persistent Backend Request Failure...
+│   │   │   └── 04{2}-Persistent Backend Request...
+│   │   ├── 01-Checkbox Permanently Disabled....
+│   │   ├── 02&03-Unauthorized Form Submission...
+│   │   └── 04-Persistent Backend Request Failure...
+│   └── README.md
+│
+└── Day-35-Sweet_Shop/
     ├── Defects_&_Bugreports/
-    │   ├── Screenshots/
-    │   │   ├── 01-Checkbox Permanently Disabled...
-    │   │   ├── 04-Persistent Backend Request Failure...
-    │   │   └── 04{2}-Persistent Backend Request...
-    │   ├── 01-Checkbox Permanently Disabled....
-    │   ├── 02&03-Unauthorized Form Submission...
-    │   └── 04-Persistent Backend Request Failure...
+    │   ├── Evidence/
+    │   │   ├── 01-Wham-Bars-Image-DevTools-Evidence.md
+    │   │   └── 01-Wham-Bars-Image-Broken.jpg
+    │   └── 01-Wham-Bars-Product-Image-Fails-to-Load.md
     └── README.md
 ```
 
@@ -2871,7 +2733,7 @@ Day 30 closed the DevTools track and Module 2 through Random User Console fetch 
 
 **Status:** 🔄 In Progress
 
-**Latest Milestone:** Day 34 — QA Practice Bug Challenge
+**Latest Milestone:** Day 35 — Sweet Shop exploratory testing
 
 **Primary Approach:** Charter-based and Session-Based Test Management (SBTM) exploratory testing
 
@@ -2883,11 +2745,13 @@ Day 33 continued Module 3 with exploratory testing of the Parking Cost Calculato
 
 Day 34 continued Module 3 with the QA Practice Bug Challenge, documenting four defects across registration form state, validation logic, boundary handling, and shopping-cart product loading.
 
+Day 35 continued Module 3 with exploratory testing of the Sweet Shop storefront, documenting one broken Wham Bars product image confirmed through DevTools. See the [Day 35 report](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-35-Sweet_Shop/README.md).
+
 ---
 
 # 🚀 Current Progress
 
-**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34
+**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35
 
 **Completed Modules:** Module 1, Module 2
 
@@ -2897,6 +2761,6 @@ Day 34 continued Module 3 with the QA Practice Bug Challenge, documenting four d
 
 **Latest DevTools Milestone:** Day 30 — Random User DevTools
 
-**Latest Milestone:** Day 34 — QA Practice Bug Challenge
+**Latest Milestone:** Day 35 — Sweet Shop exploratory testing
 
-**Next Milestone:** Module 3 — Buggy Sites/ Exploratory Testing
+**Next Milestone:** Module 3 — Buggy Sites / Exploratory Testing
