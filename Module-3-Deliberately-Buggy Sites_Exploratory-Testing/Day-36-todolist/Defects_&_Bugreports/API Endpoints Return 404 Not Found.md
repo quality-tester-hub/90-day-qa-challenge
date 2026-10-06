@@ -1,0 +1,9 @@
+User Perspective: As a software tester analyzing web network traffic, initiating client-side XHR requests for core data endpoints (learn.json and api) yields 404 Not Found HTTP responses from the backend server. This indicates that the client-side Angular/Base JavaScript framework is successfully attempting to fetch data resources, but the backend server or API routing layer fails to serve these resources at the requested paths.   Bug Report: Backend API Endpoints Return 404 Not Found During Resource Retrieval
+1. Title: [API / Server Defect] XHR requests to learn.json and api endpoints fail with 404 Not Found HTTP status codes  
+ 2. Environment:OS: macOS / Windows / Linux / Android   Browser/App: Google Chrome DevTools (Network Tab)   Device: Desktop / Mobile   Build/URL: Web Application Backend API Layer   
+ 3. Steps to Reproduce:Open the application in Google Chrome and access Developer Tools (F12) $\rightarrow$ Network tab.   Filter requests by Fetch/XHR.   Trigger page load or user actions that initiate backend data requests.   Inspect the HTTP status codes for outgoing learn.json and api XHR requests.  
+  4. Actual Result:The server responds with 404 Not Found HTTP status codes for both learn.json (initiated by base.js:137) and api (initiated by angular.js:10514), blocking local data synchronization and rendering. 
+    5. Expected Result:The backend API server should resolve the endpoint routes correctly, returning 200 OK HTTP status codes alongside valid JSON data payloads.
+    6. Severity: High (Breaks core client-server communication and dynamic data rendering).  
+     7. Priority: P1 - Urgent (Requires immediate fix to backend API routing, static file path mappings, or server environment configurations).  
+      8. Evidence: DevTools Network tab screenshot displaying 404 Not Found HTTP status codes for XHR requests to learn.json and api.  
