@@ -1582,6 +1582,7 @@ Welcome to Module 3 - Deliberately Buggy Sites. This section tracks charter-base
 | October 5, 2026 | Day 35 | Sweet Shop (sweetshop.netlify.app) | Catalog Exploration, Broken Asset Detection & DevTools Network Evidence | ✅ Completed |
 | October 6, 2026 | Day 36 | JamesM To-Do List (todolist.james.am) | UI State Logic, Task Completion Counter & Backend API 404 Investigation via DevTools Network | ✅ Completed |
 | October 7, 2026 | Day 37 | BugEater (bugeater.web.app) | Micro-Loan Interest Calculation, Floating-Point Precision, Input Validation & Timezone Scheduling (Jetlag Bug) | ✅ Completed |
+| October 8, 2026 | Day 38 | Ministry of Testing (ministryoftesting.com) | Fetch/XHR Network Traffic, Request Payloads, Response Status Codes & Response Bodies | ✅ Completed |
 
 ---
 
@@ -3114,6 +3115,104 @@ The recommended next step is regression testing after fixes, using the same base
 
 ---
 
+### 🗓️ October 8, 2026 — Day 38: Ministry of Testing Exploratory Testing (/Day-38-Ministry-Of-Testing)
+
+#### Overview
+
+**Target:** [Ministry of Testing](https://www.ministryoftesting.com/)
+
+**Focus:** Network traffic, especially Fetch/XHR request payloads and response status codes/bodies
+
+**Session date:** October 8, 2026
+
+#### Outcome
+
+The public homepage's observed Fetch/XHR traffic did not provide evidence of a product API defect. The application search page was also checked with the query `testing`; it returned HTTP 200 and displayed “Must be logged in to use global search.” That is consistent with an access gate, and no requirement was available to establish that it is defective.
+
+The associated report preserves the request/response evidence and records why this session did **not** confirm a bug. It does not label expected access control or unrelated third-party telemetry as a Ministry of Testing defect. An authenticated session or a reproducible product API failure is needed to file a substantiated defect with a JSON API response.
+
+#### Contents
+
+- [Network finding and evidence](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-38-Ministry-Of-Testing/Defects_&_Bugreports/01-API-Log-Defect.md)
+
+#### Reproducing the observation
+
+1. Open the public homepage and inspect Fetch/XHR traffic in the browser Network panel.
+2. Submit the search query `testing`.
+3. Observe the search response and the page message about needing to be logged in.
+
+#### Network Finding and Evidence
+
+##### Session
+
+| Field | Value |
+| --- | --- |
+| Application | Ministry of Testing — `https://www.ministryoftesting.com/` |
+| Date | October 8, 2026 |
+| Browser | Chromium-based browser in VS Code |
+| Test data | Search term `testing` |
+| Finding status | Inconclusive; no product API defect confirmed |
+
+##### Request and response evidence
+
+###### Search request (Fetch)
+
+The following same-origin Fetch request was made without signing in. No request body was sent.
+
+```http
+GET https://www.ministryoftesting.com/search?q=testing
+Accept: text/html
+```
+
+```http
+HTTP/1.1 200
+Content-Type: text/html; charset=utf-8
+```
+
+Response body excerpt:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A global community of practice for software testing, quality engineering, QA and | MoTaverse</title>
+```
+
+Rendered response content:
+
+```text
+Search
+Must be logged in to use global search
+```
+
+###### Public homepage Fetch/XHR traffic
+
+The homepage reload produced these Fetch/XHR exchanges (no application API failure was observed):
+
+| Method | Endpoint | Status | Payload / response |
+| --- | --- | ---: | --- |
+| `GET` | `https://cdn.getgist.com/widget/settings/project_zui7pcpe.txt` | `200` | Widget settings request; no request payload |
+| `POST` | `https://events.getgist.com/event_data` | `200` | Third-party page-view telemetry; not an application API |
+| `GET` | `https://cdn.getgist.com/translation_files/en_translation.json` | `200` | Translation resource; no request payload |
+
+The telemetry request contains third-party tracking identifiers and is intentionally not reproduced here. None of these responses establishes a defect in Ministry of Testing's product API.
+
+##### Actual vs. expected
+
+**Actual:** The unauthenticated search request returned an HTML page with HTTP 200. The page told the user that login is required to use global search.
+
+**Expected:** No API contract or product requirement was available to determine whether this route should return an HTML access-gate page, redirect to sign-in, or respond with an authorization status. Since the observed result may be intentional access control, no incorrect expected response can be asserted.
+
+##### Severity / priority
+
+**Not assigned.** Severity and priority apply to a confirmed defect; this evidence does not confirm one.
+
+##### Follow-up needed to file a defect
+
+Repeat the session with an authorized test account or provide a reproducible application API failure and its captured request/response. Compare that evidence with the intended API contract before assigning severity and priority.
+
+---
+
 # 📁 Project Structure
 
 ## Module-1-UI-Automation/
@@ -3531,12 +3630,17 @@ Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 │   │   └── 02-Backend-API-Endpoints-Return-404-Not-Found.md
 │   └── README.md
 │
-└── Day-37-bugeater.web.app/
+├── Day-37-bugeater.web.app/
+│   ├── Defects_&_Bugreports/
+│   │   ├── Screenshots/
+│   │   │   └── 01-Micro-Loan-Interest.png
+│   │   ├── 01-Micro-Loan-Interest.md
+│   │   └── 02-The-Jetlag-Bug.md
+│   └── README.md
+│
+└── Day-38-Ministry-Of-Testing/
     ├── Defects_&_Bugreports/
-    │   ├── Screenshots/
-    │   │   └── 01-Micro-Loan-Interest.png
-    │   ├── 01-Micro-Loan-Interest.md
-    │   └── 02-The-Jetlag-Bug.md
+    │   └── 01-API-Log-Defect.md
     └── README.md
 ```
 
@@ -3574,7 +3678,7 @@ Day 30 closed the DevTools track and Module 2 through Random User Console fetch 
 
 **Status:** 🔄 In Progress
 
-**Latest Milestone:** Day 37 — BugEater exploratory testing
+**Latest Milestone:** Day 38 — Ministry of Testing exploratory testing
 
 **Primary Approach:** Charter-based and Session-Based Test Management (SBTM) exploratory testing
 
@@ -3592,11 +3696,13 @@ Day 36 continued Module 3 with exploratory testing of the JamesM To-Do List, doc
 
 Day 37 continued Module 3 with two BugEater exploratory challenges. Micro-Loan Interest documented two defects (floating-point precision noise and missing empty/non-numeric input validation), and The Jetlag Bug documented three timezone-engine defects (incorrect UTC offset, inverted UTC-5 sign, and Asia/Tokyo mapped to UTC+8). See the [Day 37 report](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-37-bugeater.web.app/README.md).
 
+Day 38 continued Module 3 with exploratory testing of Ministry of Testing Fetch/XHR traffic. The unauthenticated search returned HTTP 200 and displayed a login-required message; no product API defect was confirmed. See the [Day 38 report](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-38-Ministry-Of-Testing/README.md).
+
 ---
 
 # 🚀 Current Progress
 
-**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35, Day 36, Day 37
+**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, Day 38
 
 **Completed Modules:** Module 1, Module 2
 
@@ -3606,6 +3712,6 @@ Day 37 continued Module 3 with two BugEater exploratory challenges. Micro-Loan I
 
 **Latest DevTools Milestone:** Day 30 — Random User DevTools
 
-**Latest Milestone:** Day 37 — BugEater exploratory testing
+**Latest Milestone:** Day 38 — Ministry of Testing exploratory testing
 
 **Next Milestone:** Module 3 — Buggy Sites / Exploratory Testing
