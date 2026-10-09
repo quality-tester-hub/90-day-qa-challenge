@@ -1,4 +1,4 @@
-# 90-day-qa-challenge
+# # 90-day-qa-challenge
 
 QA/QE 90-Days Portfolio | 7 Modules: UI Automation, API/DevTools, Buggy Sites, Security, E2E Workflows, Performance & Advanced Target Envs
 
@@ -1583,6 +1583,7 @@ Welcome to Module 3 - Deliberately Buggy Sites. This section tracks charter-base
 | October 6, 2026 | Day 36 | JamesM To-Do List (todolist.james.am) | UI State Logic, Task Completion Counter & Backend API 404 Investigation via DevTools Network | ✅ Completed |
 | October 7, 2026 | Day 37 | BugEater (bugeater.web.app) | Micro-Loan Interest Calculation, Floating-Point Precision, Input Validation & Timezone Scheduling (Jetlag Bug) | ✅ Completed |
 | October 8, 2026 | Day 38 | Ministry of Testing (ministryoftesting.com) | Fetch/XHR Network Traffic, Request Payloads, Response Status Codes & Response Bodies | ✅ Completed |
+| October 9, 2026 | Day 39 | Evil Tester Console Driver (testpages.eviltester.com) | DevTools Console Execution, Game Loop Validation, Console Rendering & HAR Network Analysis | ✅ Completed |
 
 ---
 
@@ -3213,6 +3214,64 @@ Repeat the session with an authorized test account or provide a reproducible app
 
 ---
 
+### 🗓️ October 9, 2026 — Day 39: Evil Tester Console Driver Game (/Day-39-EvilTester)
+
+#### Overview
+
+This session documents exploratory testing performed on Evil Tester's practice platform, specifically focusing on the **Console Driver** game. Testing evaluated the core JavaScript game loop, console UI rendering, event handling, and network requests via DevTools and HAR exports.
+
+- **Target Application:** `testpages.eviltester.com`
+- **Challenge:** Console Driver (`/fun-and-games/console-driver/`)
+- **Primary Browser:** Google Chrome / Brave Browser
+- **Session Focus:** DevTools Console Execution, Game Loop Validation & HAR Network Traffic Analysis
+
+#### Summary of Defects & Findings
+
+| Bug ID | Title | Severity | Priority | Status |
+| --- | --- | --- | --- | --- |
+| BUG-001 | Console Driver game fails to render or execute game state in DevTools console | High | P1 — High | Defect Logged |
+| BUG-002 | Console output formatting continuously expands canvas/text state without boundary clearing | Medium | P2 — Normal | Defect Logged |
+
+#### Key Defect Highlights
+
+**1. Console Driver Game Execution Failure (`01-Execution Failure.md`)**
+
+- **Issue:** Pressing Space as instructed fails to initialize the active game loop or render track output (`V`, `*`, `X`) inside the browser DevTools console panel.
+- **Network Observation:** Page assets return HTTP 304 Not Modified / HTTP 200 OK, confirming that network delivery is functional, but the client-side JavaScript execution or console output binding fails.
+- **Evidence:** Captured in raw `01-Execution Failure.har` log.
+
+**2. Console Rendering Expansion Issue (`02-Continuously Expands.md`)**
+
+- **Issue:** When console logs trigger, output buffers repeatedly expand without clearing previous game state lines.
+- **Evidence:** Documented under `Evidence/02-Continuously Expands`.
+
+#### Reproduction Commands (cURL Baseline)
+
+```bash
+curl --url 'https://testpages.eviltester.com/fun-and-games/console-driver/' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'
+```
+
+#### Project Structure
+
+```text
+Day-39-EvilTester/
+├── README.md
+├── Defects_&_Bugreports/
+│   ├── 01-Execution Failure.md
+│   └── 02-Continuously Expands.md
+└── Evidence/
+    ├── 01-Execution Failure.har
+    └── 02-Continuously Expands
+```
+
+#### Conclusion
+
+Day 39 exploratory testing on Evil Tester identified key execution failures in the Console Driver game logic. Despite valid static asset responses over HTTP, the client-side rendering script fails to execute in modern browser console environments.
+
+---
+
 # 📁 Project Structure
 
 ## Module-1-UI-Automation/
@@ -3638,9 +3697,18 @@ Module-3-Deliberately-Buggy Sites_Exploratory-Testing/
 │   │   └── 02-The-Jetlag-Bug.md
 │   └── README.md
 │
-└── Day-38-Ministry-Of-Testing/
+├── Day-38-Ministry-Of-Testing/
+│   ├── Defects_&_Bugreports/
+│   │   └── 01-API-Log-Defect.md
+│   └── README.md
+│
+└── Day-39-EvilTester/
     ├── Defects_&_Bugreports/
-    │   └── 01-API-Log-Defect.md
+    │   ├── 01-Execution Failure.md
+    │   └── 02-Continuously Expands.md
+    ├── Evidence/
+    │   ├── 01-Execution Failure.har
+    │   └── 02-Continuously Expands
     └── README.md
 ```
 
@@ -3678,7 +3746,7 @@ Day 30 closed the DevTools track and Module 2 through Random User Console fetch 
 
 **Status:** 🔄 In Progress
 
-**Latest Milestone:** Day 38 — Ministry of Testing exploratory testing
+**Latest Milestone:** Day 39 — Evil Tester Console Driver exploratory testing
 
 **Primary Approach:** Charter-based and Session-Based Test Management (SBTM) exploratory testing
 
@@ -3698,11 +3766,13 @@ Day 37 continued Module 3 with two BugEater exploratory challenges. Micro-Loan I
 
 Day 38 continued Module 3 with exploratory testing of Ministry of Testing Fetch/XHR traffic. The unauthenticated search returned HTTP 200 and displayed a login-required message; no product API defect was confirmed. See the [Day 38 report](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-38-Ministry-Of-Testing/README.md).
 
+Day 39 continued Module 3 with exploratory testing of the Evil Tester Console Driver game, documenting two defects: the game failing to initialize or render track output in the DevTools console, and console output continuously expanding without clearing previous state. HTTP asset delivery was functional, so the failures were isolated to client-side execution. See the [Day 39 report](Module-3-Deliberately-Buggy%20Sites_Exploratory-Testing/Day-39-EvilTester/README.md).
+
 ---
 
 # 🚀 Current Progress
 
-**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, Day 38
+**Completed Days:** 01–27, Day 29, Day 30, Day 31, Day 32, Day 33, Day 34, Day 35, Day 36, Day 37, Day 38, Day 39
 
 **Completed Modules:** Module 1, Module 2
 
@@ -3712,6 +3782,6 @@ Day 38 continued Module 3 with exploratory testing of Ministry of Testing Fetch/
 
 **Latest DevTools Milestone:** Day 30 — Random User DevTools
 
-**Latest Milestone:** Day 38 — Ministry of Testing exploratory testing
+**Latest Milestone:** Day 39 — Evil Tester Console Driver exploratory testing
 
 **Next Milestone:** Module 3 — Buggy Sites / Exploratory Testing
