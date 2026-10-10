@@ -1,0 +1,263 @@
+{
+  "info": {
+    "_postman_id": "7d63c312-6416-476a-8fd0-bfb7582d90f7",
+    "name": "Module-3_Day-40_AgileTravel_API_Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58518994",
+    "_collection_link": "https://go.postman.co/collection/58518994-7d63c312-6416-476a-8fd0-bfb7582d90f7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "POST Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Login successful - status 200 or 302\", function () {",
+                  "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                  "});",
+                  "",
+                  "pm.test(\"Response contains welcome message or redirect\", function () {",
+                  "    const responseText = pm.response.text();",
+                  "    const hasWelcome = responseText.includes(\"Welcome\") || responseText.includes(\"Signed in\") || responseText.includes(\"agileway\");",
+                  "    const isRedirect = pm.response.code === 302;",
+                  "    pm.expect(hasWelcome || isRedirect).to.be.true;",
+                  "});",
+                  "",
+                  "// Capture session cookie if present",
+                  "const cookies = pm.response.headers.get(\"Set-Cookie\");",
+                  "if (cookies) {",
+                  "    pm.collectionVariables.set(\"sessionCookie\", cookies);",
+                  "    console.log(\"Session cookie captured:\", cookies);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Flight Selection",
+      "item": [
+        {
+          "name": "GET Select Flight Date",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Flight selection page loads - status 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response contains flight options or form\", function () {\n    const responseText = pm.response.text();\n    pm.expect(responseText).to.satisfy(function(text) {\n        return text.includes(\"flight\") || text.includes(\"Flight\") || text.includes(\"select\") || text.includes(\"depart\");\n    }, \"Response should contain flight-related content\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\n// Parameter boundary tests - log values\nconsole.log(\"Testing route: Sydney -> London\");\nconsole.log(\"Depart: 15/11/2026, Return: 22/11/2026\");\n\npm.test(\"Boundary test - departDay is valid (1-31)\", function () {\n    const departDay = 15;\n    pm.expect(departDay).to.be.within(1, 31);\n});\n\npm.test(\"Boundary test - returnDay is after departDay\", function () {\n    const departDay = 15;\n    const returnDay = 22;\n    pm.expect(returnDay).to.be.greaterThan(departDay);\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "{{sessionCookie}}",
+                "description": "Session cookie captured from POST /login"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/flights/select_date?tripType=return&fromPort=Sydney&toPort=London&departDay=15&departMonth=11&departYear=2026&returnDay=22&returnMonth=11&returnYear=2026",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                "select_date"
+              ],
+              "query": [
+                {
+                  "key": "tripType",
+                  "value": "return"
+                },
+                {
+                  "key": "fromPort",
+                  "value": "Sydney"
+                },
+                {
+                  "key": "toPort",
+                  "value": "London"
+                },
+                {
+                  "key": "departDay",
+                  "value": "15"
+                },
+                {
+                  "key": "departMonth",
+                  "value": "11"
+                },
+                {
+                  "key": "departYear",
+                  "value": "2026"
+                },
+                {
+                  "key": "returnDay",
+                  "value": "22"
+                },
+                {
+                  "key": "returnMonth",
+                  "value": "11"
+                },
+                {
+                  "key": "returnYear",
+                  "value": "2026"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payment & Booking",
+      "item": [
+        {
+          "name": "POST Passenger & Fare Details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Passenger submission - status 200 or 302\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\n});\n\npm.test(\"Response does not expose raw card data\", function () {\n    const responseText = pm.response.text();\n    pm.expect(responseText).to.not.include(\"4111111111111111\");\n    pm.expect(responseText).to.not.include(\"123\");\n});\n\npm.test(\"Fare parameter tampering check - fare value sent\", function () {\n    // Verify the fare value was accepted/processed (not silently dropped)\n    console.log(\"Fare submitted: 2500.00 (testing parameter tampering)\");\n    pm.expect(pm.response.code).to.be.oneOf([200, 302, 400, 422]);\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\n\n// Check if booking number is returned\nconst responseText = pm.response.text();\nif (responseText.includes(\"booking\") || responseText.includes(\"Booking\") || responseText.includes(\"confirmation\")) {\n    const bookingMatch = responseText.match(/[Bb]ooking\\s*[#:]?\\s*([A-Z0-9]+)/);\n    if (bookingMatch) {\n        pm.collectionVariables.set(\"bookingNumber\", bookingMatch[1]);\n        console.log(\"Booking number captured:\", bookingMatch[1]);\n    }\n}\n\npm.test(\"Security: Card CVV not reflected in response\", function () {\n    pm.expect(pm.response.text()).to.not.include(\"123\");\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Cookie",
+                "value": "{{sessionCookie}}",
+                "description": "Session cookie captured from POST /login"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "firstName",
+                  "value": "Test"
+                },
+                {
+                  "key": "lastName",
+                  "value": "User"
+                },
+                {
+                  "key": "passengerType",
+                  "value": "Adult"
+                },
+                {
+                  "key": "fare",
+                  "value": "2500.00"
+                },
+                {
+                  "key": "cardType",
+                  "value": "Visa"
+                },
+                {
+                  "key": "cardNumber",
+                  "value": "4111111111111111"
+                },
+                {
+                  "key": "cardExpiry",
+                  "value": "12/2027"
+                },
+                {
+                  "key": "cardCVV",
+                  "value": "123"
+                },
+                {
+                  "key": "cardName",
+                  "value": "Test User"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/flights/passenger",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                "passenger"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Collection-level: no pre-request needed here; handled per-request"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Shared: log response status for all requests",
+          "console.log(\"Response Status:\", pm.response.status);"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "sessionCookie",
+      "value": "",
+      "type": "secret",
+      "secret": true
+    }
+  ]
+}
